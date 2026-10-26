@@ -1,6 +1,6 @@
 # Hari Om Cuisine of India — Laravel Recreation
 
-A pixel-perfect recreation of the [Hari Om Cuisine of India website](https://hari-om-bites.base44.app/) built with **Laravel 11 / PHP 8.3+**, **Blade Components**, **Tailwind CSS**, **Alpine.js**, and **SQLite / MySQL**.
+A pixel-perfect recreation of the [Hari Om Cuisine of India website](https://hari-om-bites.base44.app/) built with **Laravel 11 / PHP 8.3+**, **Blade Components**, **Bootstrap 5**, **Alpine.js**, and **SQLite / MySQL**.
 
 ---
 
@@ -50,7 +50,7 @@ This project is a high-fidelity website reverse-engineering and reconstruction o
 ## 🛠️ Technology Stack
 
 - **Backend**: Laravel 11.x, PHP 8.3+, Eloquent ORM, SQLite / MySQL support
-- **Frontend**: Blade Templates, Tailwind CSS (v4), Alpine.js, Vanilla JS
+- **Frontend**: Blade Templates, Bootstrap 5, Alpine.js, Vanilla JS
 - **Build Tool**: Vite 8.x
 - **Fonts**: Google Fonts (`Cormorant Garamond` & `Montserrat`)
 - **Testing**: PHPUnit / Pest Feature Tests

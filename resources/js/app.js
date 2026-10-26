@@ -1,3 +1,4 @@
+import 'bootstrap';
 import Alpine from 'alpinejs';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
@@ -62,6 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 1024: {
                     slidesPerView: 3,
                     spaceBetween: 28
+                }
+            }
+        });
+    }
+
+    // 2.5 Chef's Selection Signature Dishes Slider
+    const chefSlider = document.querySelector('.chef-swiper');
+    if (chefSlider) {
+        new Swiper(chefSlider, {
+            modules: [Pagination, Autoplay],
+            slidesPerView: 1,
+            spaceBetween: 32,
+            speed: 700,
+            loop: true,
+            grabCursor: true,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            pagination: {
+                el: '.chef-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    const num = ('0' + (index + 1)).slice(-2);
+                    return '<button type="button" class="' + className + ' chef-bullet" aria-label="Go to dish ' + num + '"><span>' + num + '</span></button>';
                 }
             }
         });

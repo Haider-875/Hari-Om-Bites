@@ -1,61 +1,62 @@
 @extends('admin.layout', ['title' => 'Table Reservations'])
 
 @section('content')
-    <div class="mb-6">
-        <h2 class="text-lg font-semibold text-ink">Table Reservations ({{ $reservations->total() }})</h2>
-        <p class="text-xs text-ink/50">Manage booking requests and update guest statuses.</p>
+    <div class="mb-4">
+        <h2 class="fs-5 fw-semibold text-ink m-0">Table Reservations ({{ $reservations->total() }})</h2>
+        <p class="small text-ink-50 m-0">Manage booking requests and update guest statuses.</p>
     </div>
 
-    <div class="bg-paper rounded-sm border border-ink/10 shadow-sm overflow-hidden">
-        <table class="w-full text-left border-collapse">
-            <thead>
-                <tr class="border-b border-ink/10 bg-[#faf6ee] text-[10px] uppercase tracking-wider text-ink/50">
-                    <th class="p-4">Customer</th>
-                    <th class="p-4">Party Size</th>
-                    <th class="p-4">Date & Time</th>
-                    <th class="p-4">Notes</th>
-                    <th class="p-4">Status</th>
-                    <th class="p-4 text-right">Update</th>
+    <div class="bg-paper rounded-sm border border-ink-10 shadow-sm overflow-hidden table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead style="background-color: #faf6ee;">
+                <tr class="border-bottom border-ink-10 text-uppercase tracking-wider-custom text-ink-50" style="font-size: 10px;">
+                    <th class="p-3">Customer</th>
+                    <th class="p-3">Party Size</th>
+                    <th class="p-3">Date & Time</th>
+                    <th class="p-3">Notes</th>
+                    <th class="p-3">Status</th>
+                    <th class="p-3 text-end">Update</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-ink/10 text-xs">
+            <tbody class="small">
                 @forelse($reservations as $res)
-                    <tr class="hover:bg-white/50 transition-colors">
-                        <td class="p-4">
-                            <span class="font-semibold text-ink block">{{ $res->name }}</span>
-                            <span class="text-[11px] text-ink/50">{{ $res->phone }} · {{ $res->email }}</span>
+                    <tr>
+                        <td class="p-3">
+                            <span class="fw-semibold text-ink d-block small">{{ $res->name }}</span>
+                            <span class="text-ink-50 d-block" style="font-size: 11px;">{{ $res->phone }} · {{ $res->email }}</span>
                         </td>
-                        <td class="p-4 font-semibold text-terracotta">
+                        <td class="p-3 fw-semibold text-terracotta small">
                             {{ $res->guests }} {{ Str::plural('person', $res->guests) }}
                         </td>
-                        <td class="p-4">
-                            <span class="font-medium text-ink block">{{ $res->date->format('l, M d, Y') }}</span>
-                            <span class="text-[11px] text-ink/50">{{ $res->time }}</span>
+                        <td class="p-3">
+                            <span class="fw-medium text-ink d-block small">{{ $res->date->format('l, M d, Y') }}</span>
+                            <span class="text-ink-50 d-block" style="font-size: 11px;">{{ $res->time }}</span>
                         </td>
-                        <td class="p-4 text-ink/70 italic max-w-xs">
+                        <td class="p-3 text-ink-70 fst-italic small max-w-xs">
                             {{ $res->special_requests ?: 'None' }}
                         </td>
-                        <td class="p-4">
-                            <span class="px-2.5 py-1 text-[9px] uppercase tracking-wider rounded-full {{ $res->status === 'confirmed' ? 'bg-emerald-100 text-emerald-800' : ($res->status === 'cancelled' ? 'bg-red-100 text-red-800' : 'bg-amber-100 text-amber-800') }}">
+                        <td class="p-3">
+                            <span class="px-2 py-1 text-uppercase tracking-wider-custom rounded-full" 
+                                  style="font-size: 9px; {{ $res->status === 'confirmed' ? 'background-color: #d1fae5; color: #065f46;' : ($res->status === 'cancelled' ? 'background-color: #fee2e2; color: #991b1b;' : 'background-color: #fef3c7; color: #92400e;') }}">
                                 {{ $res->status }}
                             </span>
                         </td>
-                        <td class="p-4 text-right">
-                            <form action="{{ route('admin.reservations.status', $res) }}" method="POST" class="inline-flex gap-2">
+                        <td class="p-3 text-end">
+                            <form action="{{ route('admin.reservations.status', $res) }}" method="POST" class="d-inline-flex gap-2 m-0">
                                 @csrf
                                 @method('PATCH')
                                 @if($res->status !== 'confirmed')
-                                    <button type="submit" name="status" value="confirmed" class="text-xs text-emerald-700 hover:underline">Confirm</button>
+                                    <button type="submit" name="status" value="confirmed" class="border-0 bg-transparent p-0 small text-decoration-none cursor-pointer" style="color: #047857;">Confirm</button>
                                 @endif
                                 @if($res->status !== 'cancelled')
-                                    <button type="submit" name="status" value="cancelled" class="text-xs text-red-600 hover:underline">Cancel</button>
+                                    <button type="submit" name="status" value="cancelled" class="border-0 bg-transparent p-0 small text-danger text-decoration-none cursor-pointer">Cancel</button>
                                 @endif
                             </form>
                         </td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6" class="p-8 text-center text-xs text-ink/40">
+                        <td colspan="6" class="p-4 text-center small text-ink-40">
                             No reservations recorded.
                         </td>
                     </tr>
@@ -63,7 +64,7 @@
             </tbody>
         </table>
 
-        <div class="p-4 border-t border-ink/10">
+        <div class="p-3 border-top border-ink-10">
             {{ $reservations->links() }}
         </div>
     </div>
