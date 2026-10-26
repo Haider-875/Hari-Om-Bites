@@ -118,4 +118,41 @@ class HariOmWebsiteTest extends TestCase
         $dashboardResponse->assertSee('Dashboard Overview');
         $dashboardResponse->assertSee('Total Menu Items');
     }
+
+    public function test_story_page_loads_successfully(): void
+    {
+        $response = $this->get('/story');
+        $response->assertStatus(200);
+        $response->assertSee('Our Heritage');
+        $response->assertSee('Sub-Zero Alaska');
+        $response->assertSee('Clay Tandoor Oven');
+    }
+
+    public function test_gallery_page_loads_successfully(): void
+    {
+        $response = $this->get('/gallery');
+        $response->assertStatus(200);
+        $response->assertSee('Visual Journey');
+        $response->assertSee('All Imagery');
+        $response->assertSee('Dishes & Curries', false);
+    }
+
+    public function test_reservations_page_loads_successfully(): void
+    {
+        $response = $this->get('/reservations');
+        $response->assertStatus(200);
+        $response->assertSee('Reserve Your');
+        $response->assertSee('Table Request');
+        $response->assertSee('Request Table Reservation');
+    }
+
+    public function test_contact_page_loads_successfully(): void
+    {
+        $response = $this->get('/contact');
+        $response->assertStatus(200);
+        $response->assertSee('Visit Us in');
+        $response->assertSee('1528 S Cushman St');
+        $response->assertSee('Send Us a Message');
+    }
 }
+

@@ -18,7 +18,7 @@
         <div class="bg-paper p-6 rounded-sm border border-ink/10 shadow-sm">
             <span class="text-[10px] uppercase tracking-widest text-ink/40">Pending Bookings</span>
             <p class="font-display text-4xl text-saffron mt-2">{{ $pendingReservations }}</p>
-            <a href="{{ route('admin.reservations.index') }}" class="text-xs text-terracotta hover:underline mt-1 block">Manage requests →</a>
+            <a href="{{ route('admin.reservations.index') }}" class="text-xs text-terracotta hover:underline mt-1 block">Manage requests</a>
         </div>
 
         <div class="bg-paper p-6 rounded-sm border border-ink/10 shadow-sm">
@@ -64,11 +64,11 @@
                 </a>
                 <a href="{{ route('admin.menu.index') }}" class="flex items-center justify-between p-3 rounded-sm border border-ink/10 hover:border-terracotta/40 hover:bg-[#faf6ee] transition-colors">
                     <span class="text-xs font-medium text-ink">Update Dish Prices & Availability</span>
-                    <span class="text-xs text-terracotta">Manage →</span>
+                    <span class="text-xs text-terracotta">Manage</span>
                 </a>
                 <a href="{{ route('admin.settings.index') }}" class="flex items-center justify-between p-3 rounded-sm border border-ink/10 hover:border-terracotta/40 hover:bg-[#faf6ee] transition-colors">
                     <span class="text-xs font-medium text-ink">Update Hours & Contact Info</span>
-                    <span class="text-xs text-terracotta">Edit →</span>
+                    <span class="text-xs text-terracotta">Edit</span>
                 </a>
             </div>
         </div>

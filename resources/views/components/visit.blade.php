@@ -39,16 +39,15 @@
             </dl>
 
             <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-                <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="group inline-flex items-center justify-center gap-2 rounded-full bg-terracotta px-7 py-4 text-[10px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-ink">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary">
                     Get directions
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
                 </a>
-                <a href="tel:+19073283218" class="inline-flex items-center justify-center gap-2 rounded-full border border-terracotta/25 px-7 py-4 text-[10px] uppercase tracking-[0.2em] text-terracotta transition-colors hover:bg-saffron hover:text-ink">
+                <a href="tel:+19073283218" class="btn-secondary">
                     Call to order
                 </a>
                 <button type="button" 
                         @click="reservationOpen = true"
-                        class="inline-flex items-center justify-center gap-2 rounded-full border border-saffron/40 px-7 py-4 text-[10px] uppercase tracking-[0.2em] text-terracotta transition-colors hover:bg-saffron hover:text-ink cursor-pointer">
+                        class="btn-secondary">
                     Book a Table
                 </button>
             </div>
@@ -56,7 +55,7 @@
 
         <!-- Right: Map Imagery Card -->
         <div class="lg:col-span-6">
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="group relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-ink">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="group relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-ink shadow-xl">
                 <div class="absolute inset-0 opacity-40 transition-opacity duration-700 group-hover:opacity-55">
                     <img src="/images/spices.png" class="w-full h-full inset-0 absolute object-cover" alt="Indian spices arranged on a dark surface">
                 </div>
@@ -65,7 +64,7 @@
                     <div class="flex items-start justify-between">
                         <span class="rounded-full border border-white/25 px-4 py-2 text-[9px] uppercase tracking-[0.2em] text-white/70">Fairbanks, AK 99701</span>
                         <span class="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white/70 transition-colors duration-500 group-hover:border-saffron group-hover:text-saffron">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right h-4 w-4"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </span>
                     </div>
                     <div>
@@ -118,22 +117,22 @@
                 <div class="grid grid-cols-3 gap-4">
                     <div>
                         <label class="block text-[10px] uppercase tracking-[0.16em] text-ink/60">Date</label>
-                        <input type="date" name="reservation_date" required class="mt-1 w-full rounded border border-terracotta/20 bg-white/70 px-3 py-2 text-sm focus:border-saffron focus:outline-none">
+                        <input type="date" name="date" required class="mt-1 w-full rounded border border-terracotta/20 bg-white/70 px-3 py-2 text-sm focus:border-saffron focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-[10px] uppercase tracking-[0.16em] text-ink/60">Time</label>
-                        <input type="time" name="reservation_time" required class="mt-1 w-full rounded border border-terracotta/20 bg-white/70 px-3 py-2 text-sm focus:border-saffron focus:outline-none">
+                        <input type="time" name="time" required class="mt-1 w-full rounded border border-terracotta/20 bg-white/70 px-3 py-2 text-sm focus:border-saffron focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-[10px] uppercase tracking-[0.16em] text-ink/60">Guests</label>
-                        <input type="number" name="party_size" min="1" max="20" value="2" required class="mt-1 w-full rounded border border-terracotta/20 bg-white/70 px-3 py-2 text-sm focus:border-saffron focus:outline-none">
+                        <input type="number" name="guests" min="1" max="20" value="2" required class="mt-1 w-full rounded border border-terracotta/20 bg-white/70 px-3 py-2 text-sm focus:border-saffron focus:outline-none">
                     </div>
                 </div>
                 <div>
                     <label class="block text-[10px] uppercase tracking-[0.16em] text-ink/60">Special Requests</label>
                     <textarea name="special_requests" rows="2" class="mt-1 w-full rounded border border-terracotta/20 bg-white/70 px-3 py-2 text-sm focus:border-saffron focus:outline-none"></textarea>
                 </div>
-                <button type="submit" class="w-full rounded-full bg-terracotta py-3.5 text-[10px] uppercase tracking-[0.2em] text-paper transition hover:bg-saffron hover:text-ink">
+                <button type="submit" class="btn-primary w-full text-center">
                     Confirm Reservation Request
                 </button>
             </form>

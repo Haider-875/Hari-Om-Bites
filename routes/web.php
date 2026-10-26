@@ -15,6 +15,12 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/api/menu', [MenuController::class, 'api'])->name('menu.api');
+Route::get('/story', [HomeController::class, 'story'])->name('story');
+Route::get('/about', [HomeController::class, 'story'])->name('about');
+Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
+Route::get('/reservations', [HomeController::class, 'reservations'])->name('reservations');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/visit', [HomeController::class, 'contact'])->name('visit');
 
 Route::post('/reservation', [HomeController::class, 'reservationStore'])->name('reservation.store');
 Route::post('/contact', [HomeController::class, 'contactStore'])->name('contact.store');

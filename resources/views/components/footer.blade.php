@@ -21,10 +21,11 @@
             <div class="lg:col-span-2">
                 <p class="label-caps text-white/40">Explore</p>
                 <ul class="mt-5 space-y-3 text-sm text-white/70">
-                    <li><a class="transition-colors hover:text-saffron" href="/#story">Our story</a></li>
-                    <li><a class="transition-colors hover:text-saffron" href="/#selection">Chef's selection</a></li>
-                    <li><a class="transition-colors hover:text-saffron" href="/menu">Full menu</a></li>
-                    <li><a class="transition-colors hover:text-saffron" href="/#visit">Visit us</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('story') }}">Our story</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('menu') }}">Full menu</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('gallery') }}">Food gallery</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('reservations') }}">Reservations</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('contact') }}">Visit & Contact</a></li>
                 </ul>
             </div>
 
@@ -32,11 +33,11 @@
             <div class="lg:col-span-2">
                 <p class="label-caps text-white/40">The menu</p>
                 <ul class="mt-5 space-y-3 text-sm text-white/70">
-                    <li><a class="transition-colors hover:text-saffron" href="/menu#appetizers">Appetizers</a></li>
-                    <li><a class="transition-colors hover:text-saffron" href="/menu#soups">Soups</a></li>
-                    <li><a class="transition-colors hover:text-saffron" href="/menu#veg-entrees">Veg Entrees</a></li>
-                    <li><a class="transition-colors hover:text-saffron" href="/menu#non-veg-entrees">Non Veg Entrees</a></li>
-                    <li><a class="transition-colors hover:text-saffron" href="/menu#thali-platter">Thali Platter</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('menu') }}#appetizers">Appetizers</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('menu') }}#soups">Soups</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('menu') }}#veg-entrees">Veg Entrees</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('menu') }}#non-veg-entrees">Non Veg Entrees</a></li>
+                    <li><a class="transition-colors hover:text-saffron" href="{{ route('menu') }}#thali-platter">Thali Platter</a></li>
                 </ul>
             </div>
 
@@ -51,10 +52,11 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-4 w-4 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     +1 907-328-3218
                 </a>
-                <a href="tel:+19073283218" class="mt-6 inline-flex items-center gap-2 rounded-full border border-saffron/50 px-5 py-3 text-[10px] uppercase tracking-[0.22em] text-saffron transition-colors hover:bg-saffron hover:text-ink">
-                    Call to order
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right h-3.5 w-3.5"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
-                </a>
+                <div class="mt-6">
+                    <a href="tel:+19073283218" class="btn-secondary-dark">
+                        Call to order
+                    </a>
+                </div>
             </div>
         </div>
 

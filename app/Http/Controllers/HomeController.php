@@ -82,6 +82,83 @@ class HomeController extends Controller
         ));
     }
 
+    public function story()
+    {
+        $settings = Setting::pluck('value', 'key')->all();
+        $totalDishes = MenuItem::count();
+        $vegCount = MenuItem::whereJsonContains('tags', 'V')->count();
+        $gfCount = MenuItem::whereJsonContains('tags', 'GF')->count();
+
+        $cultureGallery = [
+            [
+                'title' => 'The shrine',
+                'caption' => 'Ganesh, fresh flowers and a hand-painted Om on the green wall — the heart of our dining room.',
+                'src' => asset('images/cultureShrine.jpg'),
+            ],
+            [
+                'title' => 'Booths & murals',
+                'caption' => 'Burgundy booths under our Alaska mural, hung with fabric lanterns and fairy lights.',
+                'src' => asset('images/cultureBooths.jpg'),
+            ],
+            [
+                'title' => 'Our door on Cushman',
+                'caption' => 'Up the red stairs on South Cushman Street — look for the Om and the gold drapes.',
+                'src' => asset('images/cultureExterior.jpg'),
+            ],
+            [
+                'title' => 'Tandoor Craft',
+                'caption' => 'Fresh dough slapped directly onto blistering clay tandoor walls at 800 degrees.',
+                'src' => asset('images/tandoor.png'),
+            ],
+            [
+                'title' => 'Spices of Punjab',
+                'caption' => 'Cardamom pods, cloves, mace, cinnamon, cumin, and dried Kashmiri chilies.',
+                'src' => asset('images/spices.png'),
+            ],
+            [
+                'title' => 'Dining Atmosphere',
+                'caption' => 'Warm, golden illumination and aromatic spice scents greeting every Alaskan evening.',
+                'src' => asset('images/interior.png'),
+            ],
+        ];
+
+        return view('pages.story', compact('settings', 'cultureGallery', 'totalDishes', 'vegCount', 'gfCount'));
+    }
+
+    public function gallery()
+    {
+        $settings = Setting::pluck('value', 'key')->all();
+
+        $galleryItems = [
+            ['title' => 'Fresh Tandoor Naan', 'category' => 'Craft', 'img' => asset('images/tandoor.png'), 'caption' => 'Puffed to blistered perfection inside the 800° clay tandoor oven.'],
+            ['title' => 'Lamb Rogan Josh', 'category' => 'Dishes', 'img' => asset('images/lamb.png'), 'caption' => 'Slow-braised tender lamb simmered in glossy tomato and Kashmiri spices.'],
+            ['title' => 'Vegetable Samosas', 'category' => 'Dishes', 'img' => asset('images/samosas.png'), 'caption' => 'Golden fried pastries filled with cumin-spiced potatoes and green peas.'],
+            ['title' => 'The Holy Shrine', 'category' => 'Interior', 'img' => asset('images/cultureShrine.jpg'), 'caption' => 'Ganesh, fresh marigolds, and hand-painted sacred Om welcoming diners.'],
+            ['title' => 'Dining Booths & Alaska Mural', 'category' => 'Interior', 'img' => asset('images/cultureBooths.jpg'), 'caption' => 'Warm burgundy booths beneath our hand-painted Alaska mural and fabric lanterns.'],
+            ['title' => 'The Cushman Entrance', 'category' => 'Interior', 'img' => asset('images/cultureExterior.jpg'), 'caption' => 'Our historic entrance on South Cushman Street in downtown Fairbanks.'],
+            ['title' => 'Whole Indian Spices', 'category' => 'Craft', 'img' => asset('images/spices.png'), 'caption' => 'Whole spices hand-roasted and ground fresh daily in our kitchen.'],
+            ['title' => 'Shahi Paneer', 'category' => 'Dishes', 'img' => asset('images/paneer.png'), 'caption' => 'Delicate house paneer cheese in rich cashew cream and tomato gravy.'],
+            ['title' => 'Thali Feast', 'category' => 'Dishes', 'img' => asset('images/thali.png'), 'caption' => 'The crown jewel of Indian dining — four chef curries, rice, naan, and raitha.'],
+            ['title' => 'Warm Dining Room', 'category' => 'Interior', 'img' => asset('images/interior.png'), 'caption' => 'Cosy respite from Alaska sub-zero nights filled with laughter and spices.'],
+            ['title' => 'Crisp Vegetable Pakoras', 'category' => 'Dishes', 'img' => asset('images/pakoras.png'), 'caption' => 'Chickpea batter fritters served with tangy tamarind and mint chutneys.'],
+            ['title' => 'Alaskan Craft Beer & Ales', 'category' => 'Craft', 'img' => asset('images/beer.png'), 'caption' => 'Locally brewed Alaskan beers poured fresh to pair with authentic heat.'],
+        ];
+
+        return view('pages.gallery', compact('settings', 'galleryItems'));
+    }
+
+    public function reservations()
+    {
+        $settings = Setting::pluck('value', 'key')->all();
+        return view('pages.reservations', compact('settings'));
+    }
+
+    public function contact()
+    {
+        $settings = Setting::pluck('value', 'key')->all();
+        return view('pages.contact', compact('settings'));
+    }
+
     public function reservationStore(Request $request)
     {
         $validated = $request->validate([

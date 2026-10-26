@@ -70,10 +70,10 @@ class="min-h-screen bg-paper">
         <div class="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/70 to-ink"></div>
 
         <div class="relative mx-auto max-w-[92rem] px-5 sm:px-8">
-            <a class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-white/50 transition-colors hover:text-saffron" 
+            <a class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-white/70 transition-colors hover:text-saffron" 
                href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-3.5 w-3.5"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
-                Hari Om · Fairbanks
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Back to Home
             </a>
 
             <div class="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
@@ -291,8 +291,8 @@ class="min-h-screen bg-paper">
                 <p class="mt-2 text-sm text-ink/60">1528 S Cushman St · Fairbanks, Alaska</p>
             </div>
             <a href="tel:+19073283218" 
-               class="rounded-full bg-terracotta px-7 py-4 text-[10px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-saffron hover:text-ink">
-                +1 907-328-3218
+               class="btn-primary">
+                Call +1 907-328-3218
             </a>
         </div>
     </main>
