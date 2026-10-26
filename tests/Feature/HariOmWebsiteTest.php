@@ -37,13 +37,12 @@ class HariOmWebsiteTest extends TestCase
         $response = $this->get('/menu');
 
         $response->assertStatus(200);
-        $response->assertSee('The digital menu');
+        $response->assertSee('Our Menu');
         $response->assertSee('Appetizers');
         $response->assertSee('Papad');
         $response->assertSee('Vegetable Samosas');
         $response->assertSee('Rogan Josh');
         $response->assertSee('Thali Platter');
-        $response->assertSee('Our Menu');
     }
 
     public function test_menu_api_returns_json_categories(): void

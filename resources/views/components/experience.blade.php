@@ -1,35 +1,31 @@
 <section id="experience" class="relative isolate overflow-hidden bg-ink py-24 sm:py-32">
-    <!-- Ambience Background Image -->
+    <!-- Ambient Interior Image -->
     <div class="absolute inset-0 opacity-30">
-        <img src="{{ asset('images/interior.png') }}"
-             alt="Warm Indian restaurant interior with copper accents and a snowy Fairbanks window"
-             class="h-full w-full object-cover" />
+        <span class="inline-block relative h-full w-full">
+            <img src="/images/interior.png" 
+                 class="w-full h-full inset-0 absolute object-cover" 
+                 alt="Warm Indian restaurant interior with copper accents and a snowy Fairbanks window">
+        </span>
     </div>
-
-    <!-- Gradient Overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-ink via-ink/70 to-ink"></div>
 
     <div class="relative mx-auto max-w-[92rem] px-5 sm:px-8">
-        <!-- Section Title -->
         <div class="max-w-2xl">
             <p class="label-caps text-saffron">The experience</p>
             <h2 class="mt-5 font-display text-5xl leading-[0.95] text-paper sm:text-6xl lg:text-7xl">
-                Good food, good people,
-                <span class="block italic text-saffron">good times</span>
+                Good food, good people,<span class="block italic text-saffron">good times</span>
             </h2>
             <p class="mt-6 max-w-lg text-sm leading-[1.9] text-white/60">
                 Walk in from the cold and the kitchen does the rest — spice in the air, bread coming off the tandoor, and a table that keeps filling up.
             </p>
         </div>
 
-        <!-- 3 Pillars Grid -->
+        <!-- 3 Feature Cards -->
         <div class="mt-14 grid gap-px overflow-hidden rounded-sm border border-white/10 bg-white/10 sm:grid-cols-3">
-            <!-- Dine In -->
+            <!-- Dine in -->
             <div class="group bg-ink/70 p-7 backdrop-blur-sm transition-colors duration-500 hover:bg-ink/90 sm:p-9">
                 <div class="flex h-11 w-11 items-center justify-center rounded-full border border-saffron/40 text-saffron transition-colors duration-500 group-hover:bg-saffron group-hover:text-ink">
-                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed h-4 w-4"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"></path><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"></path><path d="m2.1 21.8 6.4-6.3"></path><path d="m19 5-7 7"></path></svg>
                 </div>
                 <h3 class="mt-6 font-display text-3xl text-paper">Dine in</h3>
                 <p class="mt-3 text-[13px] leading-[1.85] text-white/55">
@@ -37,12 +33,10 @@
                 </p>
             </div>
 
-            <!-- Take Out -->
+            <!-- Take out -->
             <div class="group bg-ink/70 p-7 backdrop-blur-sm transition-colors duration-500 hover:bg-ink/90 sm:p-9">
                 <div class="flex h-11 w-11 items-center justify-center rounded-full border border-saffron/40 text-saffron transition-colors duration-500 group-hover:bg-saffron group-hover:text-ink">
-                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag h-4 w-4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                 </div>
                 <h3 class="mt-6 font-display text-3xl text-paper">Take out</h3>
                 <p class="mt-3 text-[13px] leading-[1.85] text-white/55">
@@ -53,9 +47,7 @@
             <!-- Catering -->
             <div class="group bg-ink/70 p-7 backdrop-blur-sm transition-colors duration-500 hover:bg-ink/90 sm:p-9">
                 <div class="flex h-11 w-11 items-center justify-center rounded-full border border-saffron/40 text-saffron transition-colors duration-500 group-hover:bg-saffron group-hover:text-ink">
-                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
                 <h3 class="mt-6 font-display text-3xl text-paper">Catering</h3>
                 <p class="mt-3 text-[13px] leading-[1.85] text-white/55">

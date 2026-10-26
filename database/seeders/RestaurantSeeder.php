@@ -11,6 +11,9 @@ class RestaurantSeeder extends Seeder
 {
     public function run(): void
     {
+        MenuItem::query()->delete();
+        Category::query()->delete();
+
         // Settings
         Setting::updateOrCreate(['key' => 'name'], ['value' => 'Hari Om Cuisine Of India']);
         Setting::updateOrCreate(['key' => 'short_name'], ['value' => 'Hari Om']);

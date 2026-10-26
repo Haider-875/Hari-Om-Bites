@@ -38,6 +38,19 @@ class MenuItem extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function getFormattedPriceAttribute(): string
+    {
+        if (!empty($this->price_label)) {
+            return $this->price_label;
+        }
+        return $this->price > 0 ? '$' . rtrim(rtrim(number_format((float) $this->price, 2), '0'), '.') : '';
+    }
+
+    public function getDietaryTagsAttribute(): array
+    {
+        return $this->tags ?? [];
+    }
+
     public function getImageUrlAttribute(): string
     {
         if ($this->image) {

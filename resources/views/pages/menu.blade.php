@@ -5,7 +5,7 @@
     searchQuery: '',
     selectedTags: [],
     activeCategory: '{{ $categories->first()?->slug }}',
-    menuDrawerOpen: false,
+    totalItems: {{ $categories->sum(fn($c) => $c->menuItems->count()) }},
 
     toggleTag(tag) {
         if (this.selectedTags.includes(tag)) {
@@ -15,24 +15,26 @@
         }
     },
 
-    clearFilters() {
-        this.searchQuery = '';
-        this.selectedTags = [];
-    },
-
     matchesItem(name, desc, tags) {
         const query = this.searchQuery.trim().toLowerCase();
-        const matchesQuery = !query || name.toLowerCase().includes(query) || desc.toLowerCase().includes(query);
+        const matchesQuery = !query || name.toLowerCase().includes(query) || (desc && desc.toLowerCase().includes(query));
         const matchesTags = !this.selectedTags.length || this.selectedTags.every(t => tags.includes(t));
         return matchesQuery && matchesTags;
     },
 
+    get filteredCount() {
+        let count = 0;
+        document.querySelectorAll('[data-menu-item]').forEach(el => {
+            if (el.offsetParent !== null) count++;
+        });
+        return count;
+    },
+
     scrollToCategory(id) {
         this.activeCategory = id;
-        this.menuDrawerOpen = false;
         const target = document.getElementById(id);
         if (target) {
-            const top = target.getBoundingClientRect().top + window.scrollY - 150;
+            const top = target.getBoundingClientRect().top + window.scrollY - 160;
             window.scrollTo({ top: top, behavior: 'smooth' });
         }
     },
@@ -56,254 +58,243 @@
 }"
 class="min-h-screen bg-paper">
 
-    <!-- Hero Spice Banner -->
+    <!-- Hero Spice Header Banner -->
     <section class="relative isolate overflow-hidden bg-ink pb-14 pt-28 sm:pb-16 sm:pt-36">
         <div class="absolute inset-0 opacity-25">
-            <img src="{{ asset('images/spices.png') }}"
-                 alt="Whole Indian spices in dark bowls"
-                 class="h-full w-full object-cover" />
+            <span class="inline-block relative h-full w-full">
+                <img src="/images/spices.png" 
+                     class="w-full h-full inset-0 absolute object-cover" 
+                     alt="Whole Indian spices in dark bowls">
+            </span>
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/70 to-ink"></div>
 
         <div class="relative mx-auto max-w-[92rem] px-5 sm:px-8">
-            <a href="{{ route('home') }}"
-               class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-white/50 transition-colors hover:text-saffron">
-                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
+            <a class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-white/50 transition-colors hover:text-saffron" 
+               href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-3.5 w-3.5"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
                 Hari Om · Fairbanks
             </a>
 
             <div class="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                    <p class="label-caps text-saffron">The digital menu</p>
-                    <h1 class="mt-4 font-display text-5xl leading-[0.95] text-paper sm:text-6xl lg:text-7xl">
-                        From the tandoor,
-                        <span class="block italic text-saffron">to your table</span>
+                    <p class="label-caps text-saffron">Dine in · Take out · Catering</p>
+                    <h1 class="mt-4 font-display text-6xl leading-[0.9] text-paper sm:text-7xl lg:text-8xl">
+                        Our Menu
                     </h1>
-                    <p class="mt-5 max-w-md text-sm leading-[1.85] text-white/60">
-                        Every curry, biryani, bread and pour — cooked fresh to order in Fairbanks.
+                    <p class="mt-5 max-w-xl text-sm leading-relaxed text-white/55">
+                        61 dishes and pours, from crisp pakoras and tandoor breads to slow-cooked curries, thali platters, wine and Alaskan beer.
                     </p>
                 </div>
 
-                <div class="flex items-center gap-6 border-t border-white/10 pt-6 lg:border-t-0 lg:pt-0">
-                    <div>
-                        <p class="font-display text-4xl text-saffron">{{ $categories->sum(fn($c) => $c->menuItems->count()) }}</p>
-                        <p class="mt-1 text-[9px] uppercase tracking-[0.2em] text-white/40">Dishes available</p>
-                    </div>
-                </div>
+                <a href="tel:+19073283218" 
+                   class="inline-flex w-fit items-center gap-3 rounded-full bg-saffron px-6 py-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink transition-colors hover:bg-paper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-4 w-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Call to order · +1 907-328-3218
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Search & Dietary Filter Sticky Bar -->
-    <div class="sticky top-16 z-30 border-y border-terracotta/15 bg-paper/95 py-4 backdrop-blur-md lg:top-20">
-        <div class="mx-auto flex max-w-[92rem] flex-col gap-4 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-            <!-- Search Input -->
-            <div class="relative flex-1 max-w-md">
-                <svg class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <input type="text"
-                       x-model="searchQuery"
-                       placeholder="Search dishes, ingredients, curries..."
-                       class="w-full rounded-full border border-ink/15 bg-white/70 py-2.5 pl-10 pr-9 text-xs tracking-wide text-ink placeholder-ink/40 transition-colors focus:border-terracotta focus:bg-white focus:outline-none" />
-                <button type="button"
-                        x-show="searchQuery.length > 0"
-                        @click="searchQuery = ''"
-                        style="display: none;"
-                        class="absolute right-3 top-1/2 -translate-y-1/2 text-ink/40 hover:text-ink text-sm">&times;</button>
-            </div>
+    <!-- Sticky Search & Category Navigation Bar -->
+    <div class="sticky top-16 z-30 border-y border-terracotta/10 bg-paper/95 backdrop-blur-md lg:top-20">
+        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+            <div class="flex items-center gap-3 pt-2.5">
+                <!-- Search Input -->
+                <div class="relative flex-1 sm:max-w-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-ink/35"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                    <input type="search" 
+                           x-model="searchQuery" 
+                           placeholder="Search the menu" 
+                           aria-label="Search the menu" 
+                           class="h-9 w-full rounded-full border border-terracotta/15 bg-white/70 pl-9 pr-3 text-xs text-ink placeholder:text-ink/35 focus:border-saffron focus:outline-none">
+                </div>
 
-            <!-- Dietary Filter Pills & Clear Action -->
-            <div class="flex flex-wrap items-center gap-2">
-                <button type="button"
-                        @click="toggleTag('GF')"
-                        :class="selectedTags.includes('GF') ? 'bg-terracotta text-paper border-terracotta' : 'bg-white/60 text-ink/70 border-ink/15 hover:border-terracotta/40'"
-                        class="rounded-full border px-4 py-2 text-[10px] uppercase tracking-[0.16em] transition-colors">
-                    Gluten Free (GF)
-                </button>
-                <button type="button"
-                        @click="toggleTag('V')"
-                        :class="selectedTags.includes('V') ? 'bg-terracotta text-paper border-terracotta' : 'bg-white/60 text-ink/70 border-ink/15 hover:border-terracotta/40'"
-                        class="rounded-full border px-4 py-2 text-[10px] uppercase tracking-[0.16em] transition-colors">
-                    Vegetarian (V)
-                </button>
-                <button type="button"
-                        x-show="searchQuery || selectedTags.length > 0"
-                        @click="clearFilters()"
-                        style="display: none;"
-                        class="text-[10px] uppercase tracking-[0.16em] text-terracotta underline ml-2 hover:text-ink">
-                    Clear all
-                </button>
-            </div>
-        </div>
-
-        <!-- Category Horizontal Quick Scroll Bar -->
-        <div class="mx-auto max-w-[92rem] px-5 sm:px-8 mt-3">
-            <div class="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
-                @foreach($categories as $cat)
-                    <button type="button"
-                            @click="scrollToCategory('{{ $cat->slug }}')"
-                            :class="activeCategory === '{{ $cat->slug }}' ? 'border-terracotta text-terracotta bg-terracotta/5 font-semibold' : 'border-transparent text-ink/50 hover:text-ink'"
-                            class="shrink-0 rounded-sm border-b-2 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] transition-colors">
-                        {{ $cat->name }}
+                <!-- Dietary Filter Pills -->
+                <div class="flex shrink-0 items-center gap-1.5">
+                    <button type="button" 
+                            @click="toggleTag('GF')"
+                            title="Gluten free" 
+                            class="rounded-full border px-3 py-2 text-[9px] uppercase tracking-[0.14em] transition-colors duration-300 cursor-pointer"
+                            :class="selectedTags.includes('GF') ? 'bg-terracotta text-paper border-terracotta' : 'border-terracotta/20 text-terracotta/70 hover:border-terracotta/50'">
+                        <span class="hidden sm:inline">Gluten free</span><span class="sm:hidden">GF</span>
                     </button>
-                @endforeach
+                    <button type="button" 
+                            @click="toggleTag('V')"
+                            title="Vegetarian" 
+                            class="rounded-full border px-3 py-2 text-[9px] uppercase tracking-[0.14em] transition-colors duration-300 cursor-pointer"
+                            :class="selectedTags.includes('V') ? 'bg-terracotta text-paper border-terracotta' : 'border-terracotta/20 text-terracotta/70 hover:border-terracotta/50'">
+                        <span class="hidden sm:inline">Vegetarian</span><span class="sm:hidden">V</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Category Horizontal Scroller -->
+            <div class="py-2.5">
+                <div class="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 sm:mx-0 sm:px-0">
+                    @foreach ($categories as $cat)
+                        <button type="button" 
+                                @click="scrollToCategory('{{ $cat->slug }}')"
+                                class="relative shrink-0 rounded-full px-4 py-2 text-[10px] uppercase tracking-[0.18em] transition-colors duration-300 cursor-pointer"
+                                :class="activeCategory === '{{ $cat->slug }}' ? 'text-paper' : 'text-terracotta/70 hover:text-terracotta'">
+                            <span x-show="activeCategory === '{{ $cat->slug }}'" class="absolute inset-0 rounded-full bg-terracotta"></span>
+                            <span class="relative z-10">{{ $cat->name }}</span>
+                        </button>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Main Menu Content Container -->
-    <div class="mx-auto max-w-[92rem] px-5 py-12 sm:px-8 sm:py-16">
-        @foreach($categories as $cat)
-            <section id="{{ $cat->slug }}" class="mb-20 scroll-mt-36 last:mb-0">
+    <!-- Main Dishes Container -->
+    <main class="relative mx-auto max-w-6xl px-5 pb-24 sm:px-8">
+        <p class="pt-8 text-[10px] uppercase tracking-[0.2em] text-ink/40">
+            Showing 61 of 61 · (GF) gluten free · (V) vegetarian · (N) contains nuts
+        </p>
+
+        @foreach ($categories as $cat)
+            <section id="{{ $cat->slug }}" class="scroll-mt-44 pt-14 sm:pt-20">
                 <!-- Category Heading -->
-                <div class="border-b border-terracotta/20 pb-4">
-                    <div class="flex items-baseline justify-between">
-                        <h2 class="font-display text-4xl text-ember sm:text-5xl">{{ $cat->name }}</h2>
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-ink/40">{{ $cat->menuItems->count() }} items</span>
-                    </div>
-                    @if($cat->tagline)
-                        <p class="mt-1 text-xs text-terracotta/75 italic">{{ $cat->tagline }}</p>
-                    @endif
+                <div class="text-center">
+                    <p class="label-caps text-saffron">
+                        {{ str_pad($cat->sort_order, 2, '0', STR_PAD_LEFT) }} · {{ $cat->description }}
+                    </p>
+                    <h2 class="mt-3 font-display text-4xl uppercase tracking-[0.04em] text-ember sm:text-5xl">
+                        {{ $cat->name }}
+                    </h2>
+                    <div class="mx-auto mt-5 h-px w-16 bg-terracotta/25"></div>
                 </div>
 
-                @if($cat->layout !== 'lists')
-                    <!-- Standard Row Layout Items -->
-                    <div class="divide-y divide-dashed divide-ink/10">
-                        @foreach($cat->menuItems as $item)
-                            <div x-show="matchesItem('{{ addslashes($item->name) }}', '{{ addslashes($item->description) }}', {{ json_encode($item->tags ?: []) }})"
-                                 class="group dashed-row py-5 sm:py-6">
-                                <div class="flex items-start gap-4 sm:gap-5">
-                                    <!-- Image Thumbnail -->
-                                    <div class="relative shrink-0">
-                                        <span class="absolute -inset-1.5 rounded-full bg-saffron/0 transition-colors duration-500 group-hover:bg-saffron/10"></span>
-                                        <div class="relative h-[68px] w-[68px] overflow-hidden rounded-full ring-1 ring-ink/5 shadow-[0_14px_30px_-18px_rgba(23,23,23,0.55)] transition-transform duration-700 group-hover:scale-[1.07] sm:h-[86px] sm:w-[86px] lg:h-[96px] lg:w-[96px]">
-                                            <img src="{{ $item->image_url }}" alt="{{ $item->name }}" class="h-full w-full object-cover" />
-                                        </div>
-                                    </div>
-
-                                    <!-- Item Details -->
-                                    <div class="min-w-0 flex-1">
-                                        <div class="flex items-baseline justify-between gap-3">
-                                            <h4 class="text-[15px] font-semibold leading-snug text-ember sm:text-base">
-                                                <span>{{ $item->name }}</span>
-                                                @if($item->tags)
-                                                    @foreach($item->tags as $tag)
-                                                        <span class="ml-1.5 align-middle text-[9px] font-medium uppercase tracking-[0.12em] text-terracotta/55">
-                                                            ({{ $tag }})
-                                                        </span>
-                                                    @endforeach
-                                                @endif
-                                            </h4>
-                                            <span class="shrink-0 text-[15px] font-semibold text-ember sm:text-base">
-                                                {{ $item->price_label ?: ('$' . number_format($item->price, 0)) }}
-                                            </span>
-                                        </div>
-                                        @if($item->description)
-                                            <p class="mt-1.5 max-w-prose text-[13px] leading-relaxed text-ink/65 sm:text-sm">
-                                                {{ $item->description }}
-                                            </p>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
+                <!-- Special Protein Banner for Non-Veg Entrees -->
+                @if ($cat->slug === 'non-veg-entrees')
+                    <div class="mx-auto mt-7 max-w-3xl rounded-sm border border-saffron/30 bg-saffron/5 px-5 py-4 text-center text-[10px] uppercase leading-relaxed tracking-[0.14em] text-terracotta">
+                        Choose your protein — Chicken $26 · Lamb $32 · Shrimp $34 · Fish $32. Alaskan goat when available $34.
                     </div>
-                @else
-                    <!-- Multi-dish / List Cards Layout (e.g. Thali Platter) -->
-                    <div class="mt-6 grid gap-6 sm:grid-cols-2">
-                        @foreach($cat->menuItems as $item)
-                            <div x-show="matchesItem('{{ addslashes($item->name) }}', '{{ addslashes($item->description) }}', {{ json_encode($item->tags ?: []) }})"
-                                 class="rounded-sm border border-terracotta/10 bg-white/60 p-6 sm:p-8">
+                @endif
+
+                <!-- Special Description for Thali Platter -->
+                @if ($cat->slug === 'thali-platter')
+                    <div class="mx-auto mt-7 max-w-2xl text-center text-xs leading-relaxed text-ink/65">
+                        Thali is the cornerstone of our menu. It is a generous platter consisting of a wide variety of dishes that provide texture and vivid colors, showcasing the diverse flavors of India. Includes chef's choice of four dishes, one chicken dish (non-veg), basmati rice, naan, papad, raitha and dessert.
+                    </div>
+                @endif
+
+                <!-- Wine Specialty Cards -->
+                @if ($cat->slug === 'wine')
+                    <div class="mt-8 border-t border-dashed border-ink/10">
+                        <div class="grid gap-6 pt-8 md:grid-cols-2">
+                            <!-- Red Wine Card -->
+                            <div class="rounded-sm border border-terracotta/10 bg-white/60 p-6 sm:p-8">
                                 <div class="flex items-center gap-5">
-                                    <div class="h-20 w-20 shrink-0 overflow-hidden rounded-full ring-1 ring-ink/5 shadow-[0_16px_34px_-20px_rgba(23,23,23,0.6)] sm:h-24 sm:w-24">
-                                        <img src="{{ $item->image_url }}" alt="{{ $item->name }}" class="h-full w-full object-cover" />
+                                    <div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-1 ring-ink/5 shadow-[0_16px_34px_-20px_rgba(23,23,23,0.6)] sm:h-24 sm:w-24">
+                                        <img src="/images/redWine.png" class="w-full h-full inset-0 absolute object-cover" alt="Red Wine">
                                     </div>
                                     <div>
-                                        <h4 class="font-display text-3xl leading-none text-ember">{{ $item->name }}</h4>
-                                        <p class="mt-2 text-[11px] uppercase tracking-[0.22em] text-terracotta/60">
-                                            {{ $item->price_label ?: ('$' . number_format($item->price, 0)) }}
-                                        </p>
+                                        <h4 class="font-display text-3xl leading-none text-ember">Red Wine</h4>
+                                        <p class="mt-2 text-[11px] uppercase tracking-[0.22em] text-terracotta/60">$12 Glass</p>
                                     </div>
                                 </div>
-                                @if($item->details)
-                                    <ul class="mt-6 space-y-2.5">
-                                        @foreach($item->details as $line)
-                                            <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70">
-                                                <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>
-                                                <span>{{ $line }}</span>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
+                                <ul class="mt-6 space-y-2.5">
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Catenary Cabernet Sauvignon, Argentina</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Broadside Margarita Cabernet Sauvignon, California</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Argyle Pinot Noir, Oregon</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Cloudline Pinot Noir, Oregon</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Hahn Pinot Noir, California</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Guigal Côtes du Rhône Rouge, France</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Coltibuono Chianti Cetamura, Italy</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Marques de Cáceres Rioja Red, Spain</li>
+                                </ul>
                             </div>
-                        @endforeach
+
+                            <!-- White Wine Card -->
+                            <div class="rounded-sm border border-terracotta/10 bg-white/60 p-6 sm:p-8">
+                                <div class="flex items-center gap-5">
+                                    <div class="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-1 ring-ink/5 shadow-[0_16px_34px_-20px_rgba(23,23,23,0.6)] sm:h-24 sm:w-24">
+                                        <img src="/images/whiteWine.png" class="w-full h-full inset-0 absolute object-cover" alt="White Wine">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-display text-3xl leading-none text-ember">White Wine</h4>
+                                        <p class="mt-2 text-[11px] uppercase tracking-[0.22em] text-terracotta/60">$12 Glass</p>
+                                    </div>
+                                </div>
+                                <ul class="mt-6 space-y-2.5">
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Guigal Côtes du Rhône Blanc, France</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Chehalem INOX Unoaked Chardonnay, Oregon</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Hahn Chardonnay, California</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Villa Wolf Gewürztraminer, Germany</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Lageder Riff Pinot Grigio, Italy</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Ponzi Pinot Gris, Oregon</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Clean Slate Riesling, Germany</li>
+                                    <li class="flex items-start gap-3 text-[13px] leading-relaxed text-ink/70"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-saffron"></span>Saracco Moscato d'Asti, Italy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <!-- 2-Column Dish List Grid -->
+                    <div class="mt-8 border-t border-dashed border-ink/10">
+                        <ul class="grid gap-x-12 md:grid-cols-2">
+                            @foreach ($cat->menuItems as $item)
+                                <li data-menu-item
+                                    x-show="matchesItem('{{ addslashes($item->name) }}', '{{ addslashes($item->description ?? '') }}', {{ json_encode($item->dietary_tags ?? []) }})"
+                                    class="group dashed-row">
+                                    <div class="flex items-start gap-4 py-5 sm:gap-5 sm:py-6">
+                                        <!-- Dish Thumbnail with circular frame and ring shadow -->
+                                        <div class="relative shrink-0">
+                                            <span class="absolute -inset-1.5 rounded-full bg-saffron/0 transition-colors duration-500 group-hover:bg-saffron/10"></span>
+                                            <div class="relative h-[68px] w-[68px] overflow-hidden rounded-full ring-1 ring-ink/5 shadow-[0_14px_30px_-18px_rgba(23,23,23,0.55)] transition-transform duration-700 group-hover:scale-[1.07] sm:h-[86px] sm:w-[86px] lg:h-[96px] lg:w-[96px]">
+                                                <img src="{{ $item->image_url }}" 
+                                                     class="w-full h-full inset-0 absolute object-cover" 
+                                                     alt="{{ $item->name }}"
+                                                     loading="eager">
+                                            </div>
+                                        </div>
+
+                                        <!-- Dish Details -->
+                                        <div class="min-w-0 flex-1">
+                                            <div class="flex items-baseline justify-between gap-3">
+                                                <h4 class="text-[15px] font-semibold leading-snug text-ember sm:text-base">
+                                                    {{ $item->name }}
+                                                    @if (in_array('GF', $item->dietary_tags ?? []))
+                                                        <span title="Gluten free" class="ml-1.5 align-middle text-[9px] font-medium uppercase tracking-[0.12em] text-terracotta/55">(GF)</span>
+                                                    @endif
+                                                    @if (in_array('V', $item->dietary_tags ?? []))
+                                                        <span title="Vegetarian" class="ml-1.5 align-middle text-[9px] font-medium uppercase tracking-[0.12em] text-terracotta/55">(V)</span>
+                                                    @endif
+                                                    @if (in_array('N', $item->dietary_tags ?? []))
+                                                        <span title="Contains nuts" class="ml-1.5 align-middle text-[9px] font-medium uppercase tracking-[0.12em] text-terracotta/55">(N)</span>
+                                                    @endif
+                                                </h4>
+                                                <span class="shrink-0 text-[15px] font-semibold text-ember sm:text-base">
+                                                    {{ $item->formatted_price }}
+                                                </span>
+                                            </div>
+                                            @if ($item->description)
+                                                <p class="mt-1.5 max-w-prose text-[13px] leading-relaxed text-ink/65 sm:text-sm">
+                                                    {{ $item->description }}
+                                                </p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 @endif
             </section>
         @endforeach
-    </div>
 
-    <!-- Floating "Our Menu" Quick Navigation Button (Component aO) -->
-    <div class="fixed bottom-5 right-5 z-40 sm:bottom-7 sm:right-7">
-        <button type="button"
-                @click="menuDrawerOpen = true"
-                class="flex items-center gap-2 rounded-sm bg-ink px-5 py-3 text-[10px] uppercase tracking-[0.2em] text-paper shadow-[0_18px_40px_-18px_rgba(23,23,23,0.8)] transition-colors duration-300 hover:bg-terracotta">
-            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7" />
-            </svg>
-            Our Menu
-        </button>
-    </div>
-
-    <!-- Quick Jump Modal Dialog -->
-    <div x-show="menuDrawerOpen"
-         x-transition:enter="transition ease-out duration-300"
-         x-transition:enter-start="opacity-0"
-         x-transition:enter-end="opacity-100"
-         x-transition:leave="transition ease-in duration-200"
-         x-transition:leave-start="opacity-100"
-         x-transition:leave-end="opacity-0"
-         style="display: none;"
-         class="fixed inset-0 z-50 flex items-end justify-center bg-ink/60 p-4 backdrop-blur-sm sm:items-center">
-        <div @click.away="menuDrawerOpen = false"
-             class="w-full max-w-lg rounded-sm bg-paper p-6 shadow-2xl sm:p-8">
-            <div class="flex items-center justify-between">
-                <p class="label-caps text-saffron">Jump to a section</p>
-                <button type="button"
-                        aria-label="Close menu navigation"
-                        @click="menuDrawerOpen = false"
-                        class="flex h-8 w-8 items-center justify-center rounded-full border border-ink/10 text-ink/50 transition-colors hover:text-ink">
-                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+        <!-- Hungry yet? Call the kitchen banner -->
+        <div class="mt-20 flex flex-col items-center justify-between gap-6 border-t border-terracotta/15 pt-10 text-center sm:flex-row sm:text-left">
+            <div>
+                <p class="font-display text-3xl text-ember">Hungry yet? Call the kitchen.</p>
+                <p class="mt-2 text-sm text-ink/60">1528 S Cushman St · Fairbanks, Alaska</p>
             </div>
-
-            <!-- Categories 2-Column List -->
-            <div class="mt-5 grid grid-cols-2 gap-x-4">
-                @foreach($categories as $idx => $cat)
-                    <button type="button"
-                            @click="scrollToCategory('{{ $cat->slug }}')"
-                            class="group flex items-baseline justify-between border-b border-dashed border-ink/10 py-3 text-left transition-colors hover:border-terracotta/40">
-                        <span class="text-sm text-ink/80 transition-colors group-hover:text-terracotta">{{ $cat->name }}</span>
-                        <span class="text-[9px] uppercase tracking-[0.16em] text-ink/30">0{{ $idx + 1 }}</span>
-                    </button>
-                @endforeach
-            </div>
-
-            <!-- Back to top button -->
-            <button type="button"
-                    @click="window.scrollTo({ top: 0, behavior: 'smooth' }); menuDrawerOpen = false"
-                    class="mt-6 flex w-full items-center justify-center gap-2 rounded-sm bg-terracotta py-3 text-[10px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-ink">
-                <span>Back to top</span>
-                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-            </button>
+            <a href="tel:+19073283218" 
+               class="rounded-full bg-terracotta px-7 py-4 text-[10px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-saffron hover:text-ink">
+                +1 907-328-3218
+            </a>
         </div>
-    </div>
+    </main>
 </div>
 @endsection
