@@ -43,9 +43,9 @@
                     <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary">
                         Get directions
                     </a>
-                    <a href="tel:+19073283218" class="btn-secondary-dark">
+                    <!-- <a href="tel:+19073283218" class="btn-secondary-dark">
                         Call to order
-                    </a>
+                    </a> -->
                     <button type="button" 
                             @click="reservationOpen = true"
                             class="btn-secondary-dark">

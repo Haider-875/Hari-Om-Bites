@@ -173,7 +173,7 @@
         <div>
             <a href="{{ route('menu') }}" class="ref-menu-cta group">
                 <span>View the full menu</span>
-                <span class="ref-menu-cta-bar"></span>
+                <!-- <span class="ref-menu-cta-bar"></span> -->
             </a>
         </div>
     </div>

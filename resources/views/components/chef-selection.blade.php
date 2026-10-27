@@ -90,9 +90,9 @@ $dishes = [
                                             <a href="tel:+19073283218" class="btn-terracotta">
                                                 Order this dish
                                             </a>
-                                            <a href="{{ route('menu') }}" class="btn-secondary-dark">
+                                            <!-- <a href="{{ route('menu') }}" class="btn-secondary-dark">
                                                 View in menu
-                                            </a>
+                                            </a> -->
                                         </div>
                                     </div>
                                 </div>
