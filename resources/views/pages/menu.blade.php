@@ -6,6 +6,9 @@
     selectedTags: [],
     activeCategory: '{{ $categories->first()?->slug }}',
     totalItems: {{ $categories->sum(fn($c) => $c->menuItems->count()) }},
+    indicatorLeft: 0,
+    indicatorWidth: 0,
+    indicatorReady: false,
 
     toggleTag(tag) {
         if (this.selectedTags.includes(tag)) {
@@ -30,16 +33,39 @@
         return count;
     },
 
-    scrollToCategory(id) {
+    updateIndicator(el) {
+        if (!el) {
+            el = this.$el.querySelector(`.ref-tab-btn[data-cat-slug='${this.activeCategory}']`);
+        }
+        if (!el) return;
+        const insetX = 8;
+        this.indicatorLeft = el.offsetLeft + insetX;
+        this.indicatorWidth = Math.max(16, el.offsetWidth - (insetX * 2));
+        this.indicatorReady = true;
+    },
+
+    scrollToCategory(id, el) {
         this.activeCategory = id;
+        const btn = el || this.$el.querySelector(`.ref-tab-btn[data-cat-slug='${id}']`);
+        if (btn) {
+            this.updateIndicator(btn);
+            btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
         const target = document.getElementById(id);
         if (target) {
-            const top = target.getBoundingClientRect().top + window.scrollY - 160;
+            const top = target.getBoundingClientRect().top + window.scrollY - 170;
             window.scrollTo({ top: top, behavior: 'smooth' });
         }
     },
 
     init() {
+        this.$nextTick(() => {
+            this.updateIndicator();
+        });
+        window.addEventListener('resize', () => {
+            this.updateIndicator();
+        });
+
         if (window.location.hash) {
             const hash = window.location.hash.substring(1);
             setTimeout(() => this.scrollToCategory(hash), 300);
@@ -48,11 +74,20 @@
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollPos = window.scrollY + 200;
+            let currentSlug = this.activeCategory;
             sections.forEach(section => {
                 if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
-                    this.activeCategory = section.id;
+                    currentSlug = section.id;
                 }
             });
+            if (currentSlug !== this.activeCategory) {
+                this.activeCategory = currentSlug;
+                const activeBtn = this.$el.querySelector(`.ref-tab-btn[data-cat-slug='${currentSlug}']`);
+                if (activeBtn) {
+                    this.updateIndicator(activeBtn);
+                    activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }
         }, { passive: true });
     }
 }"
@@ -97,54 +132,54 @@ class="min-vh-100 bg-paper">
         </div>
     </section>
 
-    <!-- Sticky Search & Category Navigation Bar -->
-    <div class="sticky-top border-top border-bottom border-terracotta-10 bg-paper-95 backdrop-blur-md" style="top: 4rem; z-index: 1020;">
+    <!-- Sticky Search & Category Navigation Bar (Matched to Homepage UI) -->
+    <div class="sticky-top border-top border-bottom border-terracotta-10 bg-paper-95 backdrop-blur-md" style="top: 4.75rem; z-index: 1020;">
         <div class="max-w-6xl px-3 px-sm-4">
-            <div class="d-flex align-items-center gap-3 pt-2">
-                <!-- Search Input -->
-                <div class="position-relative flex-grow-1 flex-sm-grow-0" style="max-width: 20rem;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search position-absolute text-ink-35 pointer-events-none" style="left: 0.75rem; top: 50%; transform: translateY(-50%); width: 0.9rem; height: 0.9rem;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <div class="d-flex align-items-center gap-3 pt-3 pb-2">
+                <!-- Search Input with Warm Saffron/Terracotta Focus Glow -->
+                <div class="position-relative flex-grow-1 flex-sm-grow-0" style="max-width: 22rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search position-absolute text-terracotta-40 pointer-events-none" style="left: 0.85rem; top: 50%; transform: translateY(-50%); width: 0.95rem; height: 0.95rem;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
                     <input type="search" 
                            x-model="searchQuery" 
-                           placeholder="Search the menu" 
+                           placeholder="Search the menu..." 
                            aria-label="Search the menu" 
-                           class="form-control form-control-sm rounded-full bg-white-70 border-terracotta-15 text-ink text-xs ps-4 pe-3" 
-                           style="height: 2.25rem;">
+                           class="menu-search-input">
                 </div>
 
                 <!-- Dietary Filter Pills -->
-                <div class="d-flex flex-shrink-0 align-items-center gap-1">
+                <div class="d-flex flex-shrink-0 align-items-center gap-2">
                     <button type="button" 
                             @click="toggleTag('GF')"
                             title="Gluten free" 
-                            class="rounded-full border px-3 py-1 text-uppercase tracking-wider-custom transition-colors cursor-pointer"
-                            style="font-size: 9px;"
-                            :class="selectedTags.includes('GF') ? 'bg-terracotta text-paper border-terracotta' : 'border-terracotta-20 text-terracotta-70'">
+                            class="menu-filter-pill"
+                            :class="selectedTags.includes('GF') ? 'is-active' : ''">
                         <span class="d-none d-sm-inline">Gluten free</span><span class="d-sm-none">GF</span>
                     </button>
                     <button type="button" 
                             @click="toggleTag('V')"
                             title="Vegetarian" 
-                            class="rounded-full border px-3 py-1 text-uppercase tracking-wider-custom transition-colors cursor-pointer"
-                            style="font-size: 9px;"
-                            :class="selectedTags.includes('V') ? 'bg-terracotta text-paper border-terracotta' : 'border-terracotta-20 text-terracotta-70'">
+                            class="menu-filter-pill"
+                            :class="selectedTags.includes('V') ? 'is-active' : ''">
                         <span class="d-none d-sm-inline">Vegetarian</span><span class="d-sm-none">V</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Category Horizontal Scroller -->
-            <div class="py-2">
-                <div class="no-scrollbar d-flex gap-2 overflow-x-auto">
-                    @foreach ($categories as $cat)
-                        <button type="button" 
-                                @click="scrollToCategory('{{ $cat->slug }}')"
-                                class="position-relative flex-shrink-0 rounded-full px-3 py-1 text-uppercase tracking-wider-custom transition-colors cursor-pointer border-0"
-                                style="font-size: 10px;"
-                                :class="activeCategory === '{{ $cat->slug }}' ? 'bg-terracotta text-paper shadow-sm' : 'bg-transparent text-terracotta-70'">
-                            <span class="position-relative" style="z-index: 10;">{{ $cat->name }}</span>
-                        </button>
-                    @endforeach
+            <!-- Scrollable Category Tabs Bar with Spring Gliding Saffron Underline (matching homepage exactly) -->
+            <div class="menu-nav-tabs-track">
+                @foreach ($categories as $cat)
+                    <button type="button" 
+                            data-cat-slug="{{ $cat->slug }}"
+                            @click="scrollToCategory('{{ $cat->slug }}', $event.currentTarget)"
+                            class="ref-tab-btn"
+                            :class="activeCategory === '{{ $cat->slug }}' ? 'is-active' : ''">
+                        <span>{{ $cat->name }}</span>
+                    </button>
+                @endforeach
+
+                <!-- Spring Gliding Saffron Underline (stiffness: 360, damping: 32) -->
+                <div class="ref-tab-indicator"
+                     :style="'left: ' + indicatorLeft + 'px; width: ' + indicatorWidth + 'px; opacity: ' + (indicatorReady ? 1 : 0) + ';'">
                 </div>
             </div>
         </div>
@@ -153,7 +188,7 @@ class="min-vh-100 bg-paper">
     <!-- Main Dishes Container -->
     <main class="position-relative max-w-6xl px-3 px-sm-4 pb-5">
         <p class="pt-4 text-uppercase tracking-wider-custom text-ink-40 m-0" style="font-size: 10px;">
-            Showing 61 of 61 · (GF) gluten free · (V) vegetarian · (N) contains nuts
+            <span x-text="'Showing ' + (searchQuery || selectedTags.length ? filteredCount : totalItems) + ' of ' + totalItems">Showing 61 of 61</span> · (GF) gluten free · (V) vegetarian · (N) contains nuts
         </p>
 
         @foreach ($categories as $cat)
