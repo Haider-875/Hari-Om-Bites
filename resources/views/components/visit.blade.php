@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </a>
-                <p class="mt-3 text-center text-uppercase tracking-wider-custom text-ink-35 m-0" style="font-size: 10px;">
+                <p class="mt-3 text-center text-uppercase tracking-wider-custom text-ink-75 fw-medium m-0" style="font-size: 10px;">
                     Call for today's kitchen hours · +1 907-328-3218
                 </p>
             </div>

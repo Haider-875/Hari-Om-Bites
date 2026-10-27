@@ -187,7 +187,7 @@ class="min-vh-100 bg-paper">
 
     <!-- Main Dishes Container -->
     <main class="position-relative max-w-6xl px-3 px-sm-4 pb-5">
-        <p class="pt-4 text-uppercase tracking-wider-custom text-ink-40 m-0" style="font-size: 10px;">
+        <p class="pt-4 text-uppercase tracking-wider-custom text-ink-75 fw-semibold m-0" style="font-size: 10px;">
             <span x-text="'Showing ' + (searchQuery || selectedTags.length ? filteredCount : totalItems) + ' of ' + totalItems">Showing 61 of 61</span> · (GF) gluten free · (V) vegetarian · (N) contains nuts
         </p>
 

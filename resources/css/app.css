@@ -80,7 +80,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.28em;
     font-size: 10px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .tracking-wider-custom {
@@ -166,7 +166,15 @@ a {
 /* Theme Colors - Texts */
 .text-ink { color: #171717 !important; }
 .text-paper { color: #fdfbf7 !important; }
-.text-saffron { color: #d97706 !important; }
+.text-saffron { color: #b45309 !important; }
+.bg-ink .text-saffron,
+.bg-ink-70 .text-saffron,
+.bg-ink-80 .text-saffron,
+.bg-ink-90 .text-saffron,
+.bg-ink-95 .text-saffron,
+.bg-ink-98 .text-saffron {
+    color: #f59e0b !important;
+}
 .text-terracotta { color: #7c2d12 !important; }
 .text-ember { color: #8b2519 !important; }
 
@@ -176,33 +184,33 @@ a {
 .hover-scale-104:hover { transform: scale(1.04); }
 .hover-scale-103:hover { transform: scale(1.03); }
 
-/* Text opacities */
-.text-ink-30 { color: rgba(23, 23, 23, 0.30) !important; }
-.text-ink-35 { color: rgba(23, 23, 23, 0.35) !important; }
-.text-ink-40 { color: rgba(23, 23, 23, 0.40) !important; }
-.text-ink-45 { color: rgba(23, 23, 23, 0.45) !important; }
-.text-ink-50 { color: rgba(23, 23, 23, 0.50) !important; }
-.text-ink-55 { color: rgba(23, 23, 23, 0.55) !important; }
-.text-ink-60 { color: rgba(23, 23, 23, 0.60) !important; }
-.text-ink-65 { color: rgba(23, 23, 23, 0.65) !important; }
-.text-ink-70 { color: rgba(23, 23, 23, 0.70) !important; }
-.text-ink-75 { color: rgba(23, 23, 23, 0.75) !important; }
-.text-ink-80 { color: rgba(23, 23, 23, 0.80) !important; }
+/* Text opacities - enhanced contrast for readability */
+.text-ink-30 { color: rgba(23, 23, 23, 0.65) !important; }
+.text-ink-35 { color: rgba(23, 23, 23, 0.70) !important; }
+.text-ink-40 { color: rgba(23, 23, 23, 0.75) !important; }
+.text-ink-45 { color: rgba(23, 23, 23, 0.80) !important; }
+.text-ink-50 { color: rgba(23, 23, 23, 0.84) !important; }
+.text-ink-55 { color: rgba(23, 23, 23, 0.87) !important; }
+.text-ink-60 { color: rgba(23, 23, 23, 0.90) !important; }
+.text-ink-65 { color: rgba(23, 23, 23, 0.92) !important; }
+.text-ink-70 { color: rgba(23, 23, 23, 0.94) !important; }
+.text-ink-75 { color: rgba(23, 23, 23, 0.97) !important; }
+.text-ink-80 { color: rgba(23, 23, 23, 0.99) !important; }
 
-.text-white-30 { color: rgba(255, 255, 255, 0.30) !important; }
-.text-white-35 { color: rgba(255, 255, 255, 0.35) !important; }
-.text-white-40 { color: rgba(255, 255, 255, 0.40) !important; }
-.text-white-45 { color: rgba(255, 255, 255, 0.45) !important; }
-.text-white-50 { color: rgba(255, 255, 255, 0.50) !important; }
-.text-white-55 { color: rgba(255, 255, 255, 0.55) !important; }
-.text-white-60 { color: rgba(255, 255, 255, 0.60) !important; }
-.text-white-70 { color: rgba(255, 255, 255, 0.70) !important; }
-.text-white-80 { color: rgba(255, 255, 255, 0.80) !important; }
-.text-white-85 { color: rgba(255, 255, 255, 0.85) !important; }
+.text-white-30 { color: rgba(255, 255, 255, 0.65) !important; }
+.text-white-35 { color: rgba(255, 255, 255, 0.70) !important; }
+.text-white-40 { color: rgba(255, 255, 255, 0.75) !important; }
+.text-white-45 { color: rgba(255, 255, 255, 0.80) !important; }
+.text-white-50 { color: rgba(255, 255, 255, 0.85) !important; }
+.text-white-55 { color: rgba(255, 255, 255, 0.88) !important; }
+.text-white-60 { color: rgba(255, 255, 255, 0.92) !important; }
+.text-white-70 { color: rgba(255, 255, 255, 0.96) !important; }
+.text-white-80 { color: rgba(255, 255, 255, 0.98) !important; }
+.text-white-85 { color: rgba(255, 255, 255, 1.0) !important; }
 
-.text-terracotta-55 { color: rgba(124, 45, 18, 0.55) !important; }
-.text-terracotta-60 { color: rgba(124, 45, 18, 0.60) !important; }
-.text-terracotta-70 { color: rgba(124, 45, 18, 0.70) !important; }
+.text-terracotta-55 { color: rgba(124, 45, 18, 0.85) !important; }
+.text-terracotta-60 { color: rgba(124, 45, 18, 0.90) !important; }
+.text-terracotta-70 { color: rgba(124, 45, 18, 0.95) !important; }
 
 /* Borders */
 .border-terracotta-10 { border-color: rgba(124, 45, 18, 0.10) !important; }
@@ -856,13 +864,14 @@ a {
     text-transform: uppercase;
     line-height: 1.625;
     letter-spacing: 0.16em;
-    color: rgba(23, 23, 23, 0.45);
+    color: rgba(23, 23, 23, 0.85);
     margin: 0;
 }
 .ref-menu-subtitle span {
     display: block;
     margin-top: 0.25rem;
-    color: rgba(23, 23, 23, 0.30);
+    color: rgba(23, 23, 23, 0.70);
+    font-weight: 500;
 }
 
 /* Scrollable Category Tabs Bar */
@@ -900,20 +909,20 @@ a {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    font-weight: 500;
+    font-weight: 600;
     border: none;
     background: transparent;
     cursor: pointer;
     white-space: nowrap;
-    color: rgba(23, 23, 23, 0.40);
+    color: rgba(23, 23, 23, 0.72);
     transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ref-tab-btn:hover {
-    color: rgba(124, 45, 18, 0.70);
+    color: var(--color-terracotta);
 }
 .ref-tab-btn.is-active {
     color: var(--color-terracotta);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 /* Spring Gliding Active Underline (mimics Framer Motion layoutId stiffness: 360, damping: 32) */
@@ -966,7 +975,7 @@ a {
     box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.18);
 }
 .menu-search-input::placeholder {
-    color: rgba(23, 23, 23, 0.40);
+    color: rgba(23, 23, 23, 0.65);
 }
 
 .menu-filter-pill {
@@ -979,9 +988,9 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.16em;
     border-radius: 9999px;
-    border: 1px solid rgba(124, 45, 18, 0.18);
+    border: 1px solid rgba(124, 45, 18, 0.30);
     background: transparent;
-    color: rgba(23, 23, 23, 0.55);
+    color: rgba(23, 23, 23, 0.85);
     cursor: pointer;
     transition: all 0.25s ease;
     white-space: nowrap;
@@ -989,13 +998,13 @@ a {
 .menu-filter-pill:hover {
     border-color: var(--color-terracotta);
     color: var(--color-terracotta);
-    background: rgba(124, 45, 18, 0.04);
+    background: rgba(124, 45, 18, 0.08);
 }
 .menu-filter-pill.is-active {
     background: var(--color-terracotta);
     border-color: var(--color-terracotta);
-    color: var(--color-paper);
-    box-shadow: 0 2px 8px rgba(124, 45, 18, 0.22);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(124, 45, 18, 0.25);
 }
 
 
@@ -1088,7 +1097,7 @@ a {
     margin: 0.25rem 0 0 0;
     font-size: 12px;
     line-height: 1.5;
-    color: rgba(23, 23, 23, 0.55);
+    color: rgba(23, 23, 23, 0.82);
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -1101,7 +1110,8 @@ a {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: rgba(23, 23, 23, 0.35);
+    font-weight: 600;
+    color: rgba(23, 23, 23, 0.75);
 }
 
 /* Signature Reference View Full Menu Button */

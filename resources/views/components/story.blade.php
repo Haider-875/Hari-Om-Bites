@@ -43,15 +43,15 @@
                 <div class="row g-3 mt-4 pt-4 border-top border-terracotta-15">
                     <div class="col-4">
                         <p class="font-display text-terracotta m-0" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">61</p>
-                        <p class="mt-2 text-uppercase text-ink-45 mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Dishes &amp; pours</p>
+                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Dishes &amp; pours</p>
                     </div>
                     <div class="col-4">
                         <p class="font-display text-terracotta m-0" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">20</p>
-                        <p class="mt-2 text-uppercase text-ink-45 mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Vegetarian</p>
+                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Vegetarian</p>
                     </div>
                     <div class="col-4">
                         <p class="font-display text-terracotta m-0" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">42</p>
-                        <p class="mt-2 text-uppercase text-ink-45 mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Gluten free</p>
+                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Gluten free</p>
                     </div>
                 </div>
 
