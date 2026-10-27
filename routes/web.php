@@ -92,6 +92,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Reservations
         Route::get('/reservations', [AdminController::class, 'reservationIndex'])->name('reservations.index');
         Route::patch('/reservations/{reservation}/status', [AdminController::class, 'reservationStatus'])->name('reservations.status');
+        Route::delete('/reservations/{reservation}', [AdminController::class, 'reservationDestroy'])->name('reservations.destroy');
 
         // Settings
         Route::get('/settings', [AdminController::class, 'settingsIndex'])->name('settings.index');

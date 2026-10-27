@@ -80,26 +80,38 @@
                                 </span>
                             </td>
                             <td class="py-3 px-4 text-end">
-                                <form action="{{ route('admin.reservations.status', $res) }}" method="POST" class="d-inline-flex gap-1.5 m-0">
-                                    @csrf
-                                    @method('PATCH')
-                                    @if($res->status !== 'confirmed')
-                                        <button type="submit" name="status" value="confirmed" class="btn-admin-action btn-admin-confirm">
-                                            <svg style="width: 0.85rem; height: 0.85rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                <div class="d-inline-flex align-items-center gap-1.5 m-0">
+                                    <form action="{{ route('admin.reservations.status', $res) }}" method="POST" class="d-inline-flex gap-1.5 m-0">
+                                        @csrf
+                                        @method('PATCH')
+                                        @if($res->status !== 'confirmed')
+                                            <button type="submit" name="status" value="confirmed" class="btn-admin-action btn-admin-confirm">
+                                                <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <span>Confirm</span>
+                                            </button>
+                                        @endif
+                                        @if($res->status !== 'cancelled')
+                                            <button type="submit" name="status" value="cancelled" class="btn-admin-action btn-admin-cancel" onclick="return confirm('Cancel this reservation?');">
+                                                <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                                <span>Cancel</span>
+                                            </button>
+                                        @endif
+                                    </form>
+                                    <form action="{{ route('admin.reservations.destroy', $res) }}" method="POST" class="d-inline-flex m-0" onsubmit="return confirm('Delete this reservation inquiry permanently?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn-admin-action btn-admin-delete" title="Delete Inquiry">
+                                            <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                             </svg>
-                                            <span>Confirm</span>
+                                            <span>Delete</span>
                                         </button>
-                                    @endif
-                                    @if($res->status !== 'cancelled')
-                                        <button type="submit" name="status" value="cancelled" class="btn-admin-action btn-admin-cancel" onclick="return confirm('Cancel this reservation?');">
-                                            <svg style="width: 0.85rem; height: 0.85rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
-                                            </svg>
-                                            <span>Cancel</span>
-                                        </button>
-                                    @endif
-                                </form>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     @empty
@@ -179,25 +191,35 @@
 
                 <!-- Action Button Row -->
                 <div class="admin-mobile-btn-row">
-                    <form action="{{ route('admin.reservations.status', $res) }}" method="POST" class="d-flex gap-2 w-100 m-0">
+                    <form action="{{ route('admin.reservations.status', $res) }}" method="POST" class="d-flex gap-1.5 flex-grow-1 m-0">
                         @csrf
                         @method('PATCH')
                         @if($res->status !== 'confirmed')
                             <button type="submit" name="status" value="confirmed" class="btn-admin-action btn-admin-confirm">
-                                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span>Confirm Booking</span>
+                                <span>Confirm</span>
                             </button>
                         @endif
                         @if($res->status !== 'cancelled')
                             <button type="submit" name="status" value="cancelled" class="btn-admin-action btn-admin-cancel" onclick="return confirm('Cancel this reservation?');">
-                                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                                 <span>Cancel</span>
                             </button>
                         @endif
+                    </form>
+                    <form action="{{ route('admin.reservations.destroy', $res) }}" method="POST" class="m-0" onsubmit="return confirm('Delete this reservation inquiry permanently?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-admin-action btn-admin-delete" title="Delete Inquiry">
+                            <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                            <span>Delete</span>
+                        </button>
                     </form>
                 </div>
             </div>

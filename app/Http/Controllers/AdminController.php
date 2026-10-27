@@ -246,6 +246,12 @@ class AdminController extends Controller
         return back()->with('success', 'Reservation status updated.');
     }
 
+    public function reservationDestroy(Reservation $reservation)
+    {
+        $reservation->delete();
+        return back()->with('success', 'Reservation inquiry deleted successfully.');
+    }
+
     // --- Settings ---
     public function settingsIndex()
     {
