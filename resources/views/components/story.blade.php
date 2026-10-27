@@ -29,7 +29,7 @@
 
             <!-- Story Copy & Metrics Column -->
             <div class="col-12 col-lg-6 ps-lg-4 ps-xl-5">
-                <p class="label-caps text-saffron mb-0">Our story</p>
+                <p class="label-caps text-saffron mb-0" style="font-size: 10px; letter-spacing: 0.2em;">Our story</p>
                 <h2 class="mt-3 mt-lg-4 font-display text-ember display-title-section">
                     Slow-cooked,<span class="d-block fst-italic text-terracotta">never rushed</span>
                 </h2>

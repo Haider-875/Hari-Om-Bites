@@ -10,20 +10,17 @@
         <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
 
         <div class="position-relative max-w-92rem px-3 px-sm-4">
-            <div class="max-w-3xl">
-                <p class="label-caps text-saffron m-0">Our Heritage & Craft</p>
-                <h1 class="mt-3 font-display text-paper display-title-hero m-0">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="label-caps text-saffron m-0 text-center" style="font-size: 10px; letter-spacing: 0.2em;">Our Heritage & Craft</p>
+                <h1 class="mt-3 font-display text-paper m-0 text-center" style="font-size: 26px; line-height: 1.25;">
                     A Warm Hearth in<span class="d-block fst-italic text-terracotta">Sub-Zero Alaska</span>
                 </h1>
-                <p class="mt-4 max-w-2xl text-white-70 leading-relaxed fs-6 m-0">
+                <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0 mx-auto text-center" style="font-size: 14px;">
                     Since opening our doors on South Cushman Street in Fairbanks, Hari Om Cuisine of India has stood as an authentic culinary sanctuary — bringing the deep aromas, clay-oven traditions, and golden spices of Punjab to the heart of Alaska.
                 </p>
-                <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start align-items-center gap-3">
+                <div class="mt-4 pt-2 d-flex justify-content-center align-items-center gap-3">
                     <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                         Explore Full Menu
-                    </a>
-                    <a href="{{ route('reservations') }}" class="btn-secondary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
-                        Reserve a Table
                     </a>
                 </div>
             </div>
@@ -33,7 +30,7 @@
     <!-- Heritage Stats Bar -->
     <section class="border-top border-bottom border-terracotta-15 py-4" style="background-color: rgba(255, 255, 255, 0.6);">
         <div class="max-w-92rem px-3 px-sm-4">
-            <div class="row g-4 text-center text-sm-start">
+            <div class="row g-4 text-center">
                 <div class="col-6 col-sm-3">
                     <p class="font-display fs-1 text-ember m-0">14+</p>
                     <p class="mt-1 text-uppercase tracking-wider-custom text-ink-50 m-0" style="font-size: 10px;">Years on Cushman St</p>
@@ -59,12 +56,12 @@
         <div class="max-w-92rem px-3 px-sm-4">
             <div class="row g-4 g-lg-5 align-items-center">
                 <!-- Left Narrative -->
-                <div class="col-12 col-lg-6">
-                    <p class="label-caps text-saffron m-0">The Tradition</p>
-                    <h2 class="mt-3 font-display text-ember display-title-section m-0">
+                <div class="col-12 col-lg-6 text-center text-lg-start">
+                    <p class="label-caps text-saffron m-0 text-center text-lg-start" style="font-size: 10px; letter-spacing: 0.2em;">The Tradition</p>
+                    <h2 class="mt-3 font-display text-ember m-0 text-center text-lg-start" style="font-size: 26px; line-height: 1.25;">
                         Slow Food, Clay Ovens &<span class="d-block fst-italic text-terracotta">Generations of Flavor</span>
                     </h2>
-                    <div class="mt-4 d-flex flex-column gap-3 text-ink-75 leading-relaxed">
+                    <div class="mt-4 d-flex flex-column gap-3 text-ink-75 leading-relaxed text-center text-lg-start" style="font-size: 14px;">
                         <p class="m-0">
                             In our home region of Punjab, cooking is never rushed. From sun-dried coriander, green cardamom, and Kashmiri chilies ground each dawn to curries simmered for hours until the aromatics melt into velvety reductions, Indian cuisine is an act of heartfelt devotion.
                         </p>
@@ -76,10 +73,7 @@
                         </p>
                     </div>
 
-                    <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start align-items-center gap-3">
-                        <a href="tel:+19073283218" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
-                            Call the Kitchen
-                        </a>
+                    <div class="mt-4 pt-2 d-flex justify-content-center justify-content-lg-start align-items-center gap-3">
                         <a href="{{ route('gallery') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                             View Photo Gallery
                         </a>
@@ -114,12 +108,10 @@
     <!-- Cultural Gallery Carousel -->
     <section class="bg-paper-dark py-5" style="padding-top: 5rem !important; padding-bottom: 5rem !important;">
         <div class="max-w-92rem px-3 px-sm-4">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3">
-                <div>
-                    <p class="label-caps text-saffron m-0">Inside Hari Om</p>
-                    <h2 class="mt-3 font-display text-ember display-title-section m-0">Atmosphere & Spirit</h2>
-                </div>
-                <p class="max-w-md small leading-relaxed text-ink-65 m-0">
+            <div class="text-center max-w-2xl mx-auto">
+                <p class="label-caps text-saffron m-0 text-center" style="font-size: 10px; letter-spacing: 0.2em;">Inside Hari Om</p>
+                <h2 class="mt-2 font-display text-ember m-0 text-center" style="font-size: 26px; line-height: 1.25;">Atmosphere & Spirit</h2>
+                <p class="mt-2 leading-relaxed text-ink-65 m-0 mx-auto text-center" style="font-size: 14px;">
                     Swipe or browse through the visual details that make our Cushman Street dining room an authentic home away from home.
                 </p>
             </div>
@@ -138,10 +130,10 @@
                                              loading="lazy">
                                         <div class="position-absolute inset-0 bg-gradient-t-ink-subtle"></div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-between p-4 flex-grow-1">
+                                    <div class="d-flex flex-column justify-content-between p-4 flex-grow-1 text-center">
                                         <div>
-                                            <h3 class="font-display fs-4 text-ember m-0">{{ $item['title'] }}</h3>
-                                            <p class="mt-2 small leading-relaxed text-ink-65 m-0">{{ $item['caption'] }}</p>
+                                            <h3 class="font-display text-ember m-0 text-center" style="font-size: 20px;">{{ $item['title'] }}</h3>
+                                            <p class="mt-2 leading-relaxed text-ink-65 m-0 text-center" style="font-size: 14px;">{{ $item['caption'] }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -158,18 +150,15 @@
     <!-- Dine With Us CTA -->
     <section class="bg-ink py-5 text-paper" style="padding-top: 5rem !important; padding-bottom: 5rem !important;">
         <div class="max-w-4xl px-3 px-sm-4 text-center mx-auto">
-            <p class="label-caps text-saffron m-0">Join Us for Dinner</p>
-            <h2 class="mt-3 font-display text-paper display-title-hero m-0">
+            <p class="label-caps text-saffron m-0 text-center" style="font-size: 10px; letter-spacing: 0.2em;">Join Us for Dinner</p>
+            <h2 class="mt-3 font-display text-paper m-0 text-center" style="font-size: 26px; line-height: 1.25;">
                 Experience Genuine Punjabi Hospitality
             </h2>
-            <p class="mx-auto mt-4 max-w-2xl small leading-relaxed text-white-60 m-0">
+            <p class="mx-auto mt-3 max-w-2xl leading-relaxed text-white-60 m-0 text-center" style="font-size: 14px;">
                 Whether celebrating a milestone or seeking the comforting embrace of hot tandoor bread and slow-simmered curry, a table is waiting for you.
             </p>
-            <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
-                <a href="{{ route('reservations') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
-                    Book Your Table
-                </a>
-                <a href="{{ route('contact') }}" class="btn-secondary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
+            <div class="mt-4 pt-2 d-flex justify-content-center align-items-center gap-3">
+                <a href="{{ route('contact') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                     Directions & Hours
                 </a>
             </div>
