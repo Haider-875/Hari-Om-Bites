@@ -573,17 +573,22 @@ a {
         gap: 0.75rem !important;
     }
 
-    /* Contact Page Buttons — Keep Side-by-Side in 1 Row */
-    .contact-button-row {
+    /* Contact & Gallery Page Buttons — Keep Side-by-Side in 1 Row */
+    .contact-button-row,
+    .gallery-button-row {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         align-items: center !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
         width: auto !important;
         gap: 0.65rem !important;
     }
-    .contact-button-row .btn-primary {
+    .contact-button-row {
+        justify-content: flex-start !important;
+    }
+    .contact-button-row .btn-primary,
+    .gallery-button-row .btn-primary {
         margin: 0 !important;
         width: auto !important;
         max-width: none !important;

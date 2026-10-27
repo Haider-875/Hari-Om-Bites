@@ -153,11 +153,11 @@
             <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Taste in Person</p>
             <h2 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">Join Us for Dinner Tonight</h2>
             <p class="mt-2 text-ink-65 m-0" style="font-size: 14px;">Serving authentic Punjabi flavors on S Cushman Street in Fairbanks.</p>
-            <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
-                <a href="{{ route('reservations') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
+            <div class="mt-4 pt-2 d-flex flex-row flex-nowrap justify-content-center align-items-center gap-2 gap-sm-3 gallery-button-row">
+                <a href="{{ route('reservations') }}" class="btn-primary text-center justify-content-center text-nowrap px-3" style="min-height: 38px; width: auto; max-width: none; margin: 0 !important;">
                     Book a Table
                 </a>
-                <a href="tel:+19073283218" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
+                <a href="tel:+19073283218" class="btn-primary text-center justify-content-center text-nowrap px-3" style="min-height: 38px; width: auto; max-width: none; margin: 0 !important;">
                     Call +1 907-328-3218
                 </a>
             </div>
