@@ -591,6 +591,57 @@ a {
         flex: 0 1 auto !important;
     }
 
+    /* Our Menu Section & Headings (Compact & Proportionate on Mobile) */
+    .ref-menu-section {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.75rem !important;
+    }
+    .ref-menu-title {
+        font-size: clamp(1.65rem, 5vw, 2.15rem) !important;
+        line-height: 1.1 !important;
+        margin-top: 0.35rem !important;
+    }
+    .ref-menu-subtitle {
+        font-size: 10px !important;
+        letter-spacing: 0.12em !important;
+    }
+    .ref-tabs-track {
+        margin-top: 1.25rem !important;
+        gap: 0.25rem !important;
+    }
+    .ref-tab-btn {
+        padding: 0.45rem 0.75rem 0.65rem 0.75rem !important;
+        font-size: 11.5px !important;
+    }
+    .ref-dish-item {
+        padding-top: 0.65rem !important;
+        padding-bottom: 0.65rem !important;
+        gap: 0.75rem !important;
+    }
+    .ref-dish-img-wrap {
+        width: 2.85rem !important;
+        height: 2.85rem !important;
+    }
+    .ref-dish-title {
+        font-size: 13px !important;
+    }
+    .ref-dish-price {
+        font-size: 12.5px !important;
+    }
+    .ref-dish-desc {
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+    }
+
+    /* Menu Page Inner Banner & Category Headings on Mobile */
+    .menu-category-title {
+        font-size: clamp(1.35rem, 4.2vw, 1.75rem) !important;
+        line-height: 1.2 !important;
+    }
+    .dish-title {
+        font-size: clamp(1.05rem, 3vw, 1.2rem) !important;
+    }
+
     /* Hero slider pagination position lower on mobile */
     .hero-pagination {
         bottom: 4.15rem !important;
@@ -995,13 +1046,19 @@ a {
     position: relative;
     overflow: hidden;
     background-color: var(--color-paper);
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3.25rem;
 }
 @media (min-width: 640px) {
     .ref-menu-section {
-        padding-top: 7rem;
-        padding-bottom: 7rem;
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .ref-menu-section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
     }
 }
 
@@ -1021,15 +1078,15 @@ a {
 
 .ref-menu-title {
     font-family: var(--font-display) !important;
-    font-size: 3rem;
-    line-height: 0.95;
+    font-size: clamp(1.85rem, 3.8vw, 2.85rem);
+    line-height: 1.05;
     color: var(--color-ember);
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0 0 0;
     letter-spacing: -0.01em;
 }
 @media (min-width: 640px) {
     .ref-menu-title {
-        font-size: 3.75rem;
+        font-size: 3rem;
     }
 }
 
@@ -1803,23 +1860,23 @@ img.object-cover {
    ========================================================================== */
 .menu-category-title {
     font-family: var(--font-display, serif) !important;
-    font-size: clamp(2rem, 3.5vw, 2.75rem) !important;
-    line-height: 1.15 !important;
+    font-size: clamp(1.45rem, 2.8vw, 2.2rem) !important;
+    line-height: 1.18 !important;
     color: var(--color-ember) !important;
-    letter-spacing: 0.04em !important;
+    letter-spacing: 0.02em !important;
     font-weight: 600 !important;
 }
 .menu-category-meta {
     font-family: var(--font-sans) !important;
-    font-size: 12px !important;
-    letter-spacing: 0.22em !important;
+    font-size: 11px !important;
+    letter-spacing: 0.18em !important;
     text-transform: uppercase !important;
     color: var(--color-saffron) !important;
     font-weight: 600 !important;
 }
 .dish-title {
     font-family: var(--font-display, serif) !important;
-    font-size: clamp(1.2rem, 1.8vw, 1.45rem) !important; /* 19px – 23px (Card Heading scale 20-24px) */
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem) !important;
     font-weight: 600 !important;
     color: var(--color-ember) !important;
     line-height: 1.25 !important;
@@ -1828,15 +1885,15 @@ img.object-cover {
 .dish-price {
     flex-shrink: 0 !important;
     font-family: var(--font-sans) !important;
-    font-size: clamp(1rem, 1.4vw, 1.15rem) !important; /* 16px – 18.5px */
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem) !important;
     font-weight: 700 !important;
     color: var(--color-ember) !important;
     letter-spacing: 0.02em !important;
 }
 .dish-description {
     font-family: var(--font-sans) !important;
-    font-size: clamp(0.92rem, 1.1vw, 1.02rem) !important; /* 14.5px – 16.5px (Paragraph scale 15-16px) */
-    line-height: 1.65 !important;
+    font-size: clamp(0.875rem, 0.95vw, 0.975rem) !important;
+    line-height: 1.6 !important;
     color: rgba(23, 23, 23, 0.72) !important;
 }
 .dish-dietary-tag {
