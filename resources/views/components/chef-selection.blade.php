@@ -100,15 +100,6 @@ $dishes = [
             </div>
         </div>
 
-        <!-- Bottom Pagination Indicator Bar (Clean Numbers Only, No Text Clutter) -->
-        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-4 pt-3 border-top border-terracotta-10">
-            <div class="d-flex align-items-center gap-3">
-                <span class="label-caps text-ink-75 fw-semibold" style="font-size: 9px;">Signature Dishes</span>
-                <div class="chef-pagination"></div>
-            </div>
-            <div class="d-none d-sm-flex align-items-center gap-2 text-ink-70 fw-medium" style="font-size: 11px; letter-spacing: 0.05em;">
-                <span>Handcrafted with fresh spices · Made to order</span>
-            </div>
-        </div>
+
     </div>
 </section>

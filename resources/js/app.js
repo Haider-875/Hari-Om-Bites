@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chefSlider = document.querySelector('.chef-swiper');
     if (chefSlider) {
         new Swiper(chefSlider, {
-            modules: [Pagination, Autoplay],
+            modules: [Autoplay],
             slidesPerView: 1,
             spaceBetween: 32,
             speed: 700,
@@ -120,14 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 delay: 6000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
-            },
-            pagination: {
-                el: '.chef-pagination',
-                clickable: true,
-                renderBullet: function (index, className) {
-                    const num = ('0' + (index + 1)).slice(-2);
-                    return '<button type="button" class="' + className + ' chef-bullet" aria-label="Go to dish ' + num + '"><span>' + num + '</span></button>';
-                }
             }
         });
     }
