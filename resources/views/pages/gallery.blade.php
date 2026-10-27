@@ -17,47 +17,49 @@
         </div>
         <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
 
-        <div class="position-relative max-w-92rem px-3 px-sm-4 text-center text-sm-start">
-            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Visual Journey</p>
-            <h1 class="mt-3 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">
-                Food & Atmosphere<span class="d-block fst-italic text-terracotta">Gallery</span>
-            </h1>
-            <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0" style="font-size: 14px;">
-                Explore the colorful vibrancy of our kitchen — from freshly blistered tandoori breads and slow-simmered rich curries to our cozy, warm Fairbanks dining room.
-            </p>
+        <div class="position-relative max-w-92rem px-3 px-sm-4 text-center">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="label-caps text-saffron m-0 text-center" style="font-size: 10px; letter-spacing: 0.2em;">Visual Journey</p>
+                <h1 class="mt-3 font-display text-paper m-0 text-center" style="font-size: 26px; line-height: 1.25;">
+                    Food & Atmosphere<span class="d-block fst-italic text-terracotta">Gallery</span>
+                </h1>
+                <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0 mx-auto text-center" style="font-size: 14px;">
+                    Explore the colorful vibrancy of our kitchen — from freshly blistered tandoori breads and slow-simmered rich curries to our cozy, warm Fairbanks dining room.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Interactive Category Filter Navigation -->
-    <div class="sticky-top border-top border-bottom border-terracotta-15 bg-paper-95 py-3 backdrop-blur-md" style="top: 4.75rem; z-index: 1020;">
+    <!-- Interactive Category Filter Navigation (Non-sticky) -->
+    <div class="border-top border-bottom border-terracotta-15 bg-paper-95 py-3">
         <div class="max-w-92rem px-3 px-sm-4 d-flex align-items-center justify-content-between gap-3">
             <div class="d-flex align-items-center gap-2 overflow-x-auto pb-1 pb-sm-0" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
                 <button type="button" 
                         @click="activeCategory = 'All'" 
-                        class="rounded-full px-3 px-sm-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0 flex-shrink-0"
-                        style="font-size: 10px; min-height: 38px;"
-                        :class="activeCategory === 'All' ? 'bg-terracotta text-paper shadow-sm' : 'border border-terracotta-25 text-terracotta bg-transparent'">
+                        class="text-uppercase tracking-wider-custom transition-all cursor-pointer flex-shrink-0"
+                        style="font-size: 10.5px; min-height: 38px; padding: 0.5rem 1.2rem;"
+                        :class="activeCategory === 'All' ? 'btn-primary' : 'btn-secondary text-ink'">
                     All Imagery
                 </button>
                 <button type="button" 
                         @click="activeCategory = 'Dishes'" 
-                        class="rounded-full px-3 px-sm-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0 flex-shrink-0"
-                        style="font-size: 10px; min-height: 38px;"
-                        :class="activeCategory === 'Dishes' ? 'bg-terracotta text-paper shadow-sm' : 'border border-terracotta-25 text-terracotta bg-transparent'">
+                        class="text-uppercase tracking-wider-custom transition-all cursor-pointer flex-shrink-0"
+                        style="font-size: 10.5px; min-height: 38px; padding: 0.5rem 1.2rem;"
+                        :class="activeCategory === 'Dishes' ? 'btn-primary' : 'btn-secondary text-ink'">
                     Dishes & Curries
                 </button>
                 <button type="button" 
                         @click="activeCategory = 'Craft'" 
-                        class="rounded-full px-3 px-sm-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0 flex-shrink-0"
-                        style="font-size: 10px; min-height: 38px;"
-                        :class="activeCategory === 'Craft' ? 'bg-terracotta text-paper shadow-sm' : 'border border-terracotta-25 text-terracotta bg-transparent'">
+                        class="text-uppercase tracking-wider-custom transition-all cursor-pointer flex-shrink-0"
+                        style="font-size: 10.5px; min-height: 38px; padding: 0.5rem 1.2rem;"
+                        :class="activeCategory === 'Craft' ? 'btn-primary' : 'btn-secondary text-ink'">
                     Tandoor & Spices
                 </button>
                 <button type="button" 
                         @click="activeCategory = 'Interior'" 
-                        class="rounded-full px-3 px-sm-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0 flex-shrink-0"
-                        style="font-size: 10px; min-height: 38px;"
-                        :class="activeCategory === 'Interior' ? 'bg-terracotta text-paper shadow-sm' : 'border border-terracotta-25 text-terracotta bg-transparent'">
+                        class="text-uppercase tracking-wider-custom transition-all cursor-pointer flex-shrink-0"
+                        style="font-size: 10.5px; min-height: 38px; padding: 0.5rem 1.2rem;"
+                        :class="activeCategory === 'Interior' ? 'btn-primary' : 'btn-secondary text-ink'">
                     Atmosphere & Booths
                 </button>
             </div>

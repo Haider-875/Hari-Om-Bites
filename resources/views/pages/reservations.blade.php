@@ -9,14 +9,16 @@
         </div>
         <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
 
-        <div class="position-relative max-w-92rem px-3 px-sm-4 text-center text-sm-start">
-            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Dine In Experience</p>
-            <h1 class="mt-3 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">
-                Reserve Your<span class="d-block fst-italic text-terracotta">Table</span>
-            </h1>
-            <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0" style="font-size: 14px;">
-                Join us for an unforgettable evening of Punjabi hospitality, warm tandoor breads, and comforting curries on South Cushman Street.
-            </p>
+        <div class="position-relative max-w-92rem px-3 px-sm-4 text-center">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="label-caps text-saffron m-0 text-center" style="font-size: 10px; letter-spacing: 0.2em;">Dine In Experience</p>
+                <h1 class="mt-3 font-display text-paper m-0 text-center" style="font-size: 26px; line-height: 1.25;">
+                    Reserve Your<span class="d-block fst-italic text-terracotta">Table</span>
+                </h1>
+                <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0 mx-auto text-center" style="font-size: 14px;">
+                    Join us for an unforgettable evening of Punjabi hospitality, warm tandoor breads, and comforting curries on South Cushman Street.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -97,9 +99,11 @@
                                 <textarea name="special_requests" rows="3" class="form-control mt-2 border-terracotta-20 bg-paper text-ink" placeholder="Let us know if celebrating an anniversary, preferred booth seating, or severe allergies."></textarea>
                             </div>
 
-                            <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-3" style="min-height: 38px;">
-                                Table Reservation
-                            </button>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn-primary hero-cta-btn text-center justify-content-center">
+                                    Table Reservation
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -9,14 +9,16 @@
         </div>
         <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
 
-        <div class="position-relative max-w-92rem px-3 px-sm-4 text-center text-sm-start">
-            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Location & Inquiries</p>
-            <h1 class="mt-3 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">
-                Visit Us in<span class="d-block fst-italic text-terracotta">Fairbanks</span>
-            </h1>
-            <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0" style="font-size: 14px;">
-                Located on South Cushman Street, just minutes from downtown Fairbanks. Stop by for dinner, order take out, or reach out regarding catering.
-            </p>
+        <div class="position-relative max-w-92rem px-3 px-sm-4 text-center">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="label-caps text-saffron m-0 text-center" style="font-size: 10px; letter-spacing: 0.2em;">Location & Inquiries</p>
+                <h1 class="mt-3 font-display text-paper m-0 text-center" style="font-size: 26px; line-height: 1.25;">
+                    Visit Us in<span class="d-block fst-italic text-terracotta">Fairbanks</span>
+                </h1>
+                <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0 mx-auto text-center" style="font-size: 14px;">
+                    Located on South Cushman Street, just minutes from downtown Fairbanks. Stop by for dinner, order take out, or reach out regarding catering.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -135,9 +137,11 @@
                                 <textarea name="message" rows="5" required class="form-control contact-form-input mt-2 border-terracotta-20 bg-paper text-ink" placeholder="Tell us how we can help you..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-3" style="min-height: 38px;">
-                                Submit Message
-                            </button>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn-primary hero-cta-btn text-center justify-content-center">
+                                    Submit Message
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>

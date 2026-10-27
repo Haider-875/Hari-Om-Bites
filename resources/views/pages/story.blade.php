@@ -19,7 +19,7 @@
                     Since opening our doors on South Cushman Street in Fairbanks, Hari Om Cuisine of India has stood as an authentic culinary sanctuary — bringing the deep aromas, clay-oven traditions, and golden spices of Punjab to the heart of Alaska.
                 </p>
                 <div class="mt-4 pt-2 d-flex justify-content-center align-items-center gap-3">
-                    <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
+                    <a href="{{ route('menu') }}" class="btn-primary hero-cta-btn text-center justify-content-center">
                         Explore Full Menu
                     </a>
                 </div>
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="mt-4 pt-2 d-flex justify-content-center justify-content-lg-start align-items-center gap-3">
-                        <a href="{{ route('gallery') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
+                        <a href="{{ route('gallery') }}" class="btn-primary hero-cta-btn text-center justify-content-center">
                             View Photo Gallery
                         </a>
                     </div>
@@ -158,7 +158,7 @@
                 Whether celebrating a milestone or seeking the comforting embrace of hot tandoor bread and slow-simmered curry, a table is waiting for you.
             </p>
             <div class="mt-4 pt-2 d-flex justify-content-center align-items-center gap-3">
-                <a href="{{ route('contact') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
+                <a href="{{ route('contact') }}" class="btn-primary hero-cta-btn text-center justify-content-center">
                     Directions & Hours
                 </a>
             </div>

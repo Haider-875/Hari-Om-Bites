@@ -87,7 +87,7 @@ $dishes = [
 
                                         <!-- Order & Menu Buttons (Centered on mobile) -->
                                         <div class="mt-4 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
-                                            <a href="tel:+19073283218" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
+                                            <a href="tel:+19073283218" class="btn-primary hero-cta-btn text-center justify-content-center">
                                                 Order this dish
                                             </a>
                                         </div>
