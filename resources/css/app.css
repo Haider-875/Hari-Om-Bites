@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -95,14 +95,15 @@ a {
     letter-spacing: 0.35em;
 }
 
-/* Navbar Link Indicator (Recommended Scale: 14–16px) */
+/* Navbar Link Indicator (A taste of India style - Cormorant Garamond Italic 12px) */
 .nav-link-custom {
     position: relative;
-    font-family: var(--font-sans);
-    font-size: 14.5px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    font-family: var(--font-display), 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 12px !important;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.05em;
     transition: color 0.3s ease;
     text-decoration: none;
     padding: 0.35rem 0;
