@@ -585,9 +585,8 @@ a {
         justify-content: center !important;
         width: 100% !important;
         gap: 0.65rem !important;
-    }
-    .visit-button-row {
-        justify-content: flex-start !important;
+        margin-top: 1.5rem !important;
+        padding-top: 0 !important;
     }
     .contact-button-row .btn-primary,
     .gallery-button-row .btn-primary,
@@ -598,6 +597,8 @@ a {
     .modal-button-row .btn-secondary,
     .visit-button-row .btn-secondary {
         margin: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
         width: 140px !important;
         min-width: 125px !important;
         max-width: 155px !important;
@@ -1914,16 +1915,15 @@ img.object-cover {
     flex-wrap: nowrap !important;
     align-items: center !important;
     gap: 0.75rem !important;
+    margin-top: 1.5rem !important;
+    padding-top: 0 !important;
 }
 
 .gallery-button-row,
 .contact-button-row,
-.modal-button-row {
-    justify-content: center !important;
-}
-
+.modal-button-row,
 .visit-button-row {
-    justify-content: flex-start !important;
+    justify-content: center !important;
 }
 
 .contact-button-row .btn-primary,
@@ -1939,6 +1939,8 @@ img.object-cover {
     max-width: 155px !important;
     flex: 0 1 140px !important;
     margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     text-align: center !important;
     justify-content: center !important;
     align-items: center !important;

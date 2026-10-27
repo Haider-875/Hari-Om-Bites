@@ -133,7 +133,7 @@
                         <span class="text-uppercase tracking-widest-custom text-saffron m-0" style="font-size: 10px;" x-text="activeItem.category"></span>
                         <h3 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;" x-text="activeItem.title"></h3>
                         <p class="mt-3 leading-relaxed text-ink-75 m-0" style="font-size: 14px;" x-text="activeItem.caption"></p>
-                        <div class="mt-4 pt-2 d-flex flex-row flex-nowrap justify-content-center justify-content-sm-start align-items-center gap-2 gap-sm-3 modal-button-row">
+                        <div class="d-flex flex-row flex-nowrap justify-content-center align-items-center gap-2 gap-sm-3 modal-button-row">
                             <a href="{{ route('menu') }}" class="btn-primary text-center justify-content-center text-nowrap px-3" style="min-height: 38px; width: 140px; margin: 0 !important;">
                                 Order on Menu
                             </a>
@@ -153,7 +153,7 @@
             <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Taste in Person</p>
             <h2 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">Join Us for Dinner Tonight</h2>
             <p class="mt-2 text-ink-65 m-0" style="font-size: 14px;">Serving authentic Punjabi flavors on S Cushman Street in Fairbanks.</p>
-            <div class="mt-4 pt-2 d-flex flex-row flex-nowrap justify-content-center align-items-center gap-2 gap-sm-3 gallery-button-row">
+            <div class="d-flex flex-row flex-nowrap justify-content-center align-items-center gap-2 gap-sm-3 gallery-button-row">
                 <a href="{{ route('reservations') }}" class="btn-primary text-center justify-content-center text-nowrap px-3" style="min-height: 38px; width: 140px; margin: 0 !important;">
                     Book a Table
                 </a>

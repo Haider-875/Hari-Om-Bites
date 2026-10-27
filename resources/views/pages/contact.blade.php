@@ -66,11 +66,11 @@
                                 </div>
                             </dl>
 
-                            <div class="mt-4 pt-2 d-flex flex-row flex-nowrap align-items-center justify-content-center gap-2 gap-sm-3 contact-button-row w-100">
-                                <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary text-center justify-content-center text-nowrap" style="min-height: 38px; width: 140px; margin: 0 !important; padding: 8px 14px !important; font-size: 11px !important;">
+                            <div class="d-flex flex-row flex-nowrap align-items-center justify-content-center gap-2 gap-sm-3 contact-button-row w-100">
+                                <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary text-center justify-content-center text-nowrap px-3" style="min-height: 38px; width: 140px; margin: 0 !important;">
                                     Direction
                                 </a>
-                                <a href="tel:+19073283218" class="btn-primary text-center justify-content-center text-nowrap" style="min-height: 38px; width: 140px; margin: 0 !important; padding: 8px 14px !important; font-size: 11px !important;">
+                                <a href="tel:+19073283218" class="btn-primary text-center justify-content-center text-nowrap px-3" style="min-height: 38px; width: 140px; margin: 0 !important;">
                                     Call Kitchen
                                 </a>
                             </div>
