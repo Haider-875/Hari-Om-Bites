@@ -573,27 +573,41 @@ a {
         gap: 0.75rem !important;
     }
 
-    /* Contact & Gallery Page Buttons — Keep Side-by-Side in 1 Row */
+    /* Dual Button Rows — Equal Width Side-by-Side in 1 Row on Mobile */
     .contact-button-row,
-    .gallery-button-row {
+    .gallery-button-row,
+    .modal-button-row,
+    .visit-button-row {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         align-items: center !important;
         justify-content: center !important;
-        width: auto !important;
+        width: 100% !important;
         gap: 0.65rem !important;
     }
-    .contact-button-row {
+    .contact-button-row,
+    .visit-button-row {
         justify-content: flex-start !important;
     }
     .contact-button-row .btn-primary,
-    .gallery-button-row .btn-primary {
+    .gallery-button-row .btn-primary,
+    .modal-button-row .btn-primary,
+    .visit-button-row .btn-primary,
+    .contact-button-row .btn-secondary,
+    .gallery-button-row .btn-secondary,
+    .modal-button-row .btn-secondary,
+    .visit-button-row .btn-secondary {
         margin: 0 !important;
-        width: auto !important;
-        max-width: none !important;
+        width: 140px !important;
+        min-width: 125px !important;
+        max-width: 160px !important;
+        flex: 1 1 0px !important;
         white-space: nowrap !important;
-        flex: 0 1 auto !important;
+        text-align: center !important;
+        justify-content: center !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 
     /* Our Menu Section & Headings (Compact & Proportionate on Mobile) */
@@ -1909,6 +1923,43 @@ img.object-cover {
     color: var(--color-saffron) !important;
     margin-left: 0.35rem !important;
     vertical-align: middle !important;
+}
+
+/* ==========================================================================
+   DUAL BUTTON ROWS — EQUAL WIDTH ACROSS ALL SCREENS
+   ========================================================================== */
+.contact-button-row,
+.gallery-button-row,
+.modal-button-row,
+.visit-button-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+}
+
+.gallery-button-row {
+    justify-content: center !important;
+}
+
+.contact-button-row,
+.visit-button-row {
+    justify-content: flex-start !important;
+}
+
+.contact-button-row .btn-primary,
+.gallery-button-row .btn-primary,
+.modal-button-row .btn-primary,
+.visit-button-row .btn-primary,
+.contact-button-row .btn-secondary,
+.gallery-button-row .btn-secondary,
+.modal-button-row .btn-secondary,
+.visit-button-row .btn-secondary {
+    width: 140px !important;
+    min-width: 130px !important;
+    text-align: center !important;
+    justify-content: center !important;
 }
 
 /* ==========================================================================

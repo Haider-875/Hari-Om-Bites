@@ -104,7 +104,7 @@ class="min-vh-100 bg-paper">
         </div>
         <div class="position-absolute inset-0 bg-gradient-b-ink-fade"></div>
 
-        <div class="position-relative max-w-92rem px-3 px-sm-4">
+        <div class="position-relative max-w-4xl px-3 mx-auto text-center">
             <a class="d-inline-flex align-items-center gap-2 text-uppercase tracking-wider-custom text-white-70 hover-text-saffron transition-colors text-decoration-none" 
                style="font-size: 10px;"
                href="/">
@@ -112,19 +112,17 @@ class="min-vh-100 bg-paper">
                 Back to Home
             </a>
 
-            <div class="mt-4 d-flex flex-column gap-4 flex-lg-row align-items-lg-end justify-content-lg-between">
-                <div>
-                    <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Dine in · Take out · Catering</p>
-                    <h1 class="mt-3 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">
-                        Our Menu
-                    </h1>
-                    <p class="mt-3 max-w-xl text-white-55 leading-relaxed m-0" style="font-size: 14px;">
-                        61 dishes and pours, from crisp pakoras and tandoor breads to slow-cooked curries, thali platters, wine and Alaskan beer.
-                    </p>
-                </div>
+            <div class="mt-4 d-flex flex-column align-items-center text-center">
+                <p class="label-caps text-saffron m-0 text-center" style="font-size: 10px; letter-spacing: 0.2em;">Dine in · Take out · Catering</p>
+                <h1 class="mt-3 font-display text-paper m-0 text-center" style="font-size: 26px; line-height: 1.25;">
+                    Our Menu
+                </h1>
+                <p class="mt-3 max-w-xl mx-auto text-white-55 leading-relaxed m-0 text-center" style="font-size: 14px;">
+                    61 dishes and pours, from crisp pakoras and tandoor breads to slow-cooked curries, thali platters, wine and Alaskan beer.
+                </p>
 
                 <a href="tel:+19073283218" 
-                   class="btn-primary d-inline-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto" style="min-height: 38px;">
+                   class="btn-primary d-inline-flex align-items-center justify-content-center gap-2 text-center mt-4" style="min-height: 38px; width: auto; min-width: 160px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     Call To Order
                 </a>
@@ -134,8 +132,8 @@ class="min-vh-100 bg-paper">
 
     <!-- Sticky Search & Category Navigation Bar (Matched to Homepage UI) -->
     <div class="sticky-top border-top border-bottom border-terracotta-10 bg-paper-95 backdrop-blur-md" style="top: 4.75rem; z-index: 1020;">
-        <div class="max-w-6xl px-3 px-sm-4">
-            <div class="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between gap-2 gap-sm-3 pt-3 pb-2">
+        <div class="max-w-6xl px-3 px-sm-4 mx-auto">
+            <div class="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between justify-content-md-center gap-2 gap-sm-3 pt-3 pb-2">
                 <!-- Search Input with Warm Saffron/Terracotta Focus Glow -->
                 <div class="position-relative flex-grow-1 flex-sm-grow-0" style="max-width: 22rem; min-width: 160px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search position-absolute text-terracotta-40 pointer-events-none" style="left: 0.85rem; top: 50%; transform: translateY(-50%); width: 0.95rem; height: 0.95rem;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
@@ -186,8 +184,8 @@ class="min-vh-100 bg-paper">
     </div>
 
     <!-- Main Dishes Container -->
-    <main class="position-relative max-w-6xl px-3 px-sm-4 pb-5">
-        <p class="pt-4 text-uppercase tracking-wider-custom text-ink-75 fw-semibold m-0" style="font-size: 10px;">
+    <main class="position-relative max-w-6xl px-3 px-sm-4 pb-5 mx-auto">
+        <p class="pt-4 text-uppercase tracking-wider-custom text-ink-75 fw-semibold m-0 text-center" style="font-size: 10px;">
             <span x-text="'Showing ' + (searchQuery || selectedTags.length ? filteredCount : totalItems) + ' of ' + totalItems">Showing 61 of 61</span> · (GF) gluten free · (V) vegetarian · (N) contains nuts
         </p>
 
@@ -327,14 +325,14 @@ class="min-vh-100 bg-paper">
         @endforeach
 
         <!-- Hungry yet? Call the kitchen banner -->
-        <div class="mt-5 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 border-top border-terracotta-15 pt-4 text-center text-sm-start">
+        <div class="mt-5 d-flex flex-column align-items-center justify-content-center gap-3 border-top border-terracotta-15 pt-4 text-center">
             <div>
-                <p class="font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">Hungry yet? Call the kitchen.</p>
-                <p class="mt-1 text-ink-60 m-0" style="font-size: 14px;">1528 S Cushman St · Fairbanks, Alaska</p>
+                <p class="font-display text-ember m-0 text-center" style="font-size: 26px; line-height: 1.25;">Hungry yet? Call the kitchen.</p>
+                <p class="mt-1 text-ink-60 m-0 text-center" style="font-size: 14px;">1528 S Cushman St · Fairbanks, Alaska</p>
             </div>
             <a href="tel:+19073283218" 
-               class="btn-primary w-100 w-sm-auto text-center justify-content-center"
-               style="min-height: 38px;">
+               class="btn-primary text-center justify-content-center"
+               style="min-height: 38px; width: auto; min-width: 175px;">
                 Call +1 907-328-3218
             </a>
         </div>
