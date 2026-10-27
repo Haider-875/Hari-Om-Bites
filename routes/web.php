@@ -28,18 +28,17 @@ Route::post('/contact', [HomeController::class, 'contactStore'])->name('contact.
 // Database initialization route for edge/cloud deployments
 Route::get('/init-restaurant-db', function () {
     try {
-        if (!\Illuminate\Support\Facades\Schema::hasTable('categories')) {
-            \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-        }
+        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
         \Illuminate\Support\Facades\Artisan::call('db:seed', [
             '--class' => 'RestaurantSeeder',
             '--force' => true,
         ]);
-        // Also ensure admin user exists with valid hash
+        // Also ensure admin user exists with valid hash and role
         \App\Models\User::updateOrCreate(
             ['email' => 'admin@hariombites.com'],
             [
                 'name' => 'Hari Om Admin',
+                'role' => 'Store Manager',
                 'password' => \Illuminate\Support\Facades\Hash::make('password123'),
             ]
         );
@@ -83,6 +82,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/categories', [AdminController::class, 'categoryStore'])->name('categories.store');
         Route::put('/categories/{category}', [AdminController::class, 'categoryUpdate'])->name('categories.update');
         Route::delete('/categories/{category}', [AdminController::class, 'categoryDestroy'])->name('categories.destroy');
+
+        // Staff & Roles Management
+        Route::get('/users', [AdminController::class, 'userIndex'])->name('users.index');
+        Route::post('/users', [AdminController::class, 'userStore'])->name('users.store');
+        Route::put('/users/{user}', [AdminController::class, 'userUpdate'])->name('users.update');
+        Route::delete('/users/{user}', [AdminController::class, 'userDestroy'])->name('users.destroy');
 
         // Reservations
         Route::get('/reservations', [AdminController::class, 'reservationIndex'])->name('reservations.index');

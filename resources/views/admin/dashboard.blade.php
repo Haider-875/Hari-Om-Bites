@@ -201,6 +201,21 @@
                         <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>
                     </a>
 
+                    <a href="{{ route('admin.users.index') }}" class="admin-action-tile">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="admin-stat-icon" style="background-color: rgba(217, 119, 6, 0.12); color: #d97706;">
+                                <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="d-block fw-semibold text-ink" style="font-size: 13.5px;">Staff & Role Assignments</span>
+                                <span class="d-block text-ink-50" style="font-size: 11.5px;">Assign roles, add members & manage access</span>
+                            </div>
+                        </div>
+                        <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>
+                    </a>
+
                     <a href="{{ route('admin.settings.index') }}" class="admin-action-tile">
                         <div class="d-flex align-items-center gap-3">
                             <div class="admin-stat-icon" style="background-color: rgba(23, 23, 23, 0.08); color: #171717;">

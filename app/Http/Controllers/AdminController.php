@@ -260,4 +260,66 @@ class AdminController extends Controller
         }
         return back()->with('success', 'Settings updated successfully.');
     }
+
+    // --- Staff & Roles Management ---
+    public function userIndex()
+    {
+        $users = User::latest()->get();
+        return view('admin.users.index', compact('users'));
+    }
+
+    public function userStore(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:users,email',
+            'password' => 'required|string|min:6',
+            'role' => 'required|string|max:50',
+            'phone' => 'nullable|string|max:30',
+            'is_active' => 'boolean',
+        ]);
+
+        $validated['password'] = Hash::make($validated['password']);
+        $validated['is_active'] = $request->boolean('is_active', true);
+
+        User::create($validated);
+        return redirect()->route('admin.users.index')->with('success', 'Staff member created successfully with assigned role.');
+    }
+
+    public function userUpdate(Request $request, User $user)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:users,email,' . $user->id,
+            'password' => 'nullable|string|min:6',
+            'role' => 'required|string|max:50',
+            'phone' => 'nullable|string|max:30',
+            'is_active' => 'boolean',
+        ]);
+
+        if (!empty($validated['password'])) {
+            $validated['password'] = Hash::make($validated['password']);
+        } else {
+            unset($validated['password']);
+        }
+
+        $validated['is_active'] = $request->boolean('is_active', true);
+
+        $user->update($validated);
+        return redirect()->route('admin.users.index')->with('success', 'Staff member details and role updated.');
+    }
+
+    public function userDestroy(User $user)
+    {
+        if (Auth::id() === $user->id) {
+            return back()->with('error', 'You cannot delete your own logged-in account.');
+        }
+
+        if (User::count() <= 1) {
+            return back()->with('error', 'Cannot delete the only administrative user.');
+        }
+
+        $user->delete();
+        return redirect()->route('admin.users.index')->with('success', 'Staff member deleted.');
+    }
 }

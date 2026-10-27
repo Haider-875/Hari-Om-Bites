@@ -79,6 +79,15 @@
                     <span>Table Bookings</span>
                 </a>
 
+                <a href="{{ route('admin.users.index') }}"
+                   class="admin-nav-item {{ request()->routeIs('admin.users.*') ? 'active' : '' }}"
+                   @click="if (window.innerWidth < 992) sidebarOpen = false">
+                    <svg style="width: 1.15rem; height: 1.15rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <span>Staff & Roles</span>
+                </a>
+
                 <a href="{{ route('admin.settings.index') }}"
                    class="admin-nav-item {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}"
                    @click="if (window.innerWidth < 992) sidebarOpen = false">
@@ -143,16 +152,10 @@
                     <span class="fw-semibold text-ink">Kitchen Live</span>
                 </div>
 
-                <!-- Admin User Profile with Separator Margin & Circle Avatar -->
-                <div class="d-flex align-items-center gap-2.5 ms-2 ms-sm-3 ps-2 ps-sm-3 border-start border-ink-10">
-                    <div class="rounded-full bg-saffron text-ink fw-bold d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm" 
-                         style="width: 36px; height: 36px; font-size: 13px; border: 2px solid rgba(217, 119, 6, 0.45); box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);">
-                        {{ strtoupper(substr(Auth::user()->name ?? 'H', 0, 1)) }}
-                    </div>
-                    <div class="d-none d-sm-block text-start" style="line-height: 1.25;">
-                        <span class="d-block fw-semibold text-ink" style="font-size: 12.5px;">{{ Auth::user()->name ?? 'Hari Om Admin' }}</span>
-                        <span class="d-block text-ink-50 text-uppercase tracking-wider-custom" style="font-size: 9.5px;">Store Manager</span>
-                    </div>
+                <!-- Admin User Profile (Circle H removed as requested, clean role display) -->
+                <div class="d-flex flex-column text-end ms-2 ms-sm-3 ps-2 ps-sm-3 border-start border-ink-10" style="line-height: 1.25;">
+                    <span class="fw-bold text-ink" style="font-size: 12.5px;">{{ Auth::user()->name ?? 'Hari Om Admin' }}</span>
+                    <span class="text-terracotta fw-semibold text-uppercase tracking-wider-custom" style="font-size: 9.5px;">{{ Auth::user()->role ?? 'Store Manager' }}</span>
                 </div>
             </div>
         </header>
