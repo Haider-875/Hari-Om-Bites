@@ -2594,7 +2594,7 @@ img.object-cover {
     .admin-mobile-btn-row {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.65rem;
         margin-top: 0.85rem;
         padding-top: 0.85rem;
         border-top: 1px solid rgba(23, 23, 23, 0.08);
@@ -2606,5 +2606,102 @@ img.object-cover {
         font-size: 10px;
         padding: 0.25rem 0.5rem;
     }
+}
+
+/* Custom Admin Pagination System */
+.admin-page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.65rem;
+    min-height: 28px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #171717;
+    background: #ffffff;
+    border: 1px solid rgba(23, 23, 23, 0.12);
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.admin-page-btn:hover:not(.admin-page-disabled) {
+    background: #fbf6ec;
+    border-color: #d97706;
+    color: #b45309;
+    transform: translateY(-1px);
+}
+.admin-page-disabled {
+    opacity: 0.4;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.02);
+}
+.admin-page-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 0.35rem;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #171717;
+    background: #ffffff;
+    border: 1px solid rgba(23, 23, 23, 0.12);
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+.admin-page-num:hover:not(.admin-page-active) {
+    background: #fbf6ec;
+    border-color: #d97706;
+    color: #b45309;
+    transform: translateY(-1px);
+}
+.admin-page-active {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    border-color: #b45309 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
+    cursor: default;
+}
+.admin-page-dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    color: rgba(23, 23, 23, 0.4);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Fallback for Bootstrap Pagination */
+.pagination {
+    margin: 0;
+    gap: 0.35rem;
+    align-items: center;
+}
+.pagination .page-item .page-link {
+    border-radius: 6px !important;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    color: #171717;
+    border: 1px solid rgba(23, 23, 23, 0.12);
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination .page-item.active .page-link {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    border-color: #b45309 !important;
+    color: #ffffff !important;
+}
+.pagination svg {
+    width: 0.85rem !important;
+    height: 0.85rem !important;
 }
 

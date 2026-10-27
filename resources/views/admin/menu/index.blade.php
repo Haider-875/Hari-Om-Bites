@@ -10,7 +10,7 @@
             </div>
             <p class="text-ink-50 m-0 mt-1" style="font-size: 12px;">Manage dishes, prices, dietary tags, and live menu availability.</p>
         </div>
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2.5">
             <a href="{{ route('admin.categories.index') }}" class="btn-admin-secondary">
                 <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -83,9 +83,9 @@
                                 </span>
                             </td>
                             <td class="py-3 px-4 text-end">
-                                <div class="d-inline-flex align-items-center gap-1.5">
+                                <div class="d-inline-flex align-items-center gap-2">
                                     <a href="{{ route('admin.menu.edit', $item) }}" class="btn-admin-action btn-admin-edit">
-                                        <svg style="width: 0.85rem; height: 0.85rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg style="width: 0.75rem; height: 0.75rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                         </svg>
                                         <span>Edit</span>
@@ -94,7 +94,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn-admin-action btn-admin-delete">
-                                            <svg style="width: 0.85rem; height: 0.85rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg style="width: 0.75rem; height: 0.75rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                             </svg>
                                             <span>Delete</span>
@@ -115,7 +115,7 @@
         </div>
 
         <div class="p-3 border-top border-ink-10 bg-white">
-            {{ $items->links() }}
+            {{ $items->links('admin.pagination') }}
         </div>
     </div>
 
@@ -185,7 +185,7 @@
         @endforelse
 
         <div class="p-3">
-            {{ $items->links() }}
+            {{ $items->links('admin.pagination') }}
         </div>
     </div>
 @endsection
