@@ -170,6 +170,7 @@ class="min-vh-100 bg-paper">
                             data-cat-slug="{{ $cat->slug }}"
                             @click="scrollToCategory('{{ $cat->slug }}', $event.currentTarget)"
                             class="ref-tab-btn"
+                            style="font-size: 10px;"
                             :class="activeCategory === '{{ $cat->slug }}' ? 'is-active' : ''">
                         <span>{{ $cat->name }}</span>
                     </button>

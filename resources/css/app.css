@@ -632,6 +632,9 @@ a {
         padding: 0.45rem 0.75rem 0.65rem 0.75rem !important;
         font-size: 11.5px !important;
     }
+    .menu-nav-tabs-track .ref-tab-btn {
+        font-size: 10px !important;
+    }
     .ref-dish-item {
         padding-top: 0.65rem !important;
         padding-bottom: 0.65rem !important;
@@ -1206,6 +1209,8 @@ a {
 }
 .menu-nav-tabs-track .ref-tab-btn {
     padding: 0.5rem 0.85rem 0.75rem 0.85rem;
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
 }
 
 .menu-search-input {
