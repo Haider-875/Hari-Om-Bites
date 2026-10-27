@@ -33,7 +33,7 @@
                 <h2 class="mt-3 mt-lg-4 font-display text-ember display-title-section">
                     Slow-cooked,<span class="d-block fst-italic text-terracotta">never rushed</span>
                 </h2>
-                <div class="mt-4 text-ink-70 d-flex flex-column gap-3" style="font-size: 15px; line-height: 1.85;">
+                <div class="mt-4 text-ink-70 d-flex flex-column gap-3" style="font-size: clamp(0.95rem, 1.1vw, 1.0625rem); line-height: 1.8;">
                     <p class="mb-0">At Hari Om Cuisine of India we cook the way it is done back home: onions cooked down slowly until they sweeten, whole spices toasted and ground the same day, and naan pressed onto the hot wall of the tandoor until it blisters and puffs.</p>
                     <p class="mb-0">Our kitchen on South Cushman Street serves Fairbanks the length of the Indian table — crisp pakoras and papad to start, creamy dhaba dal, palak paneer and Kashmiri dum aloo, slow-braised lamb rogan josh, saffron biryani and the full thali platter.</p>
                     <p class="mb-0">Whether it is a weeknight take-out box or a table full of friends on a cold Alaskan evening, the food leaves the kitchen the same way: hot, generous and made to order.</p>

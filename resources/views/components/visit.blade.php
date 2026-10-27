@@ -7,7 +7,7 @@
                 <h2 class="mt-3 font-display text-ember display-title-section m-0">
                     Find us on<span class="d-block fst-italic text-terracotta">Cushman Street</span>
                 </h2>
-                <p class="mt-4 max-w-md text-ink-65 m-0" style="font-size: 14px; line-height: 1.9;">
+                <p class="mt-4 max-w-md text-ink-65 m-0" style="font-size: clamp(0.95rem, 1.1vw, 1.0625rem); line-height: 1.8;">
                     A short drive from downtown Fairbanks. Dine in with us, call ahead for take out, or let us cater your next gathering.
                 </p>
 
@@ -15,7 +15,7 @@
                     <div class="d-flex gap-3 align-items-start">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mt-1 w-4 h-4 flex-shrink-0 text-saffron"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         <div>
-                            <dt class="text-uppercase tracking-wider-custom text-ink-40 m-0" style="font-size: 9px;">Address</dt>
+                            <dt class="text-uppercase tracking-wider-custom text-ink-50 m-0" style="font-size: 11px;">Address</dt>
                             <dd class="mt-1 small leading-relaxed text-ink-80 m-0">1528 S Cushman St, Fairbanks, AK 99701, United States</dd>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                     <div class="d-flex gap-3 align-items-start">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mt-1 w-4 h-4 flex-shrink-0 text-saffron"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <div>
-                            <dt class="text-uppercase tracking-wider-custom text-ink-40 m-0" style="font-size: 9px;">Call us</dt>
+                            <dt class="text-uppercase tracking-wider-custom text-ink-50 m-0" style="font-size: 11px;">Call us</dt>
                             <dd class="mt-1 m-0">
                                 <a href="tel:+19073283218" class="small text-ink-80 transition-colors hover-text-saffron text-decoration-none">+1 907-328-3218</a>
                             </dd>
@@ -33,7 +33,7 @@
                     <div class="d-flex gap-3 align-items-start">
                         <svg class="mt-1 w-4 h-4 flex-shrink-0 text-saffron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"></path><path d="M6 2v20"></path><path d="M21 15V2a5 5 0 0 0-3 4.5V15h3Z"></path><path d="M18 15v7"></path></svg>
                         <div>
-                            <dt class="text-uppercase tracking-wider-custom text-ink-40 m-0" style="font-size: 9px;">Service</dt>
+                            <dt class="text-uppercase tracking-wider-custom text-ink-50 m-0" style="font-size: 11px;">Service</dt>
                             <dd class="mt-1 small text-ink-80 m-0">Dine in · Take out · Catering</dd>
                         </div>
                     </div>

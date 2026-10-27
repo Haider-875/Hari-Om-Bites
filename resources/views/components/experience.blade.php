@@ -29,13 +29,13 @@
                         <div class="d-flex align-items-center justify-content-center rounded-full border border-saffron-40 text-saffron w-12 h-12">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"></path><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"></path><path d="m2.1 21.8 6.4-6.3"></path><path d="m19 5-7 7"></path></svg>
                         </div>
-                        <h3 class="mt-4 font-display text-paper m-0" style="font-size: 1.75rem;">Dine in</h3>
-                        <p class="mt-3 text-white-60 m-0" style="font-size: 13px; line-height: 1.85;">
+                        <h3 class="mt-3 mt-sm-4 font-display text-paper m-0" style="font-size: clamp(1.25rem, 1.8vw, 1.45rem); line-height: 1.3;">Dine in</h3>
+                        <p class="mt-3 text-white-70 m-0" style="font-size: clamp(0.9375rem, 1vw, 1rem); line-height: 1.75;">
                             Copper bowls, warm naan and a table that fills up with thali. Walk in and settle in — the kitchen cooks every curry to order.
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
-                        <a href="{{ route('reservations') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 44px;">
+                        <a href="{{ route('reservations') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 13.5px; min-height: 44px;">
                             Book a table
                         </a>
                     </div>
@@ -49,13 +49,13 @@
                         <div class="d-flex align-items-center justify-content-center rounded-full border border-saffron-40 text-saffron w-12 h-12">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                         </div>
-                        <h3 class="mt-4 font-display text-paper m-0" style="font-size: 1.75rem;">Take out</h3>
-                        <p class="mt-3 text-white-60 m-0" style="font-size: 13px; line-height: 1.85;">
+                        <h3 class="mt-3 mt-sm-4 font-display text-paper m-0" style="font-size: clamp(1.25rem, 1.8vw, 1.45rem); line-height: 1.3;">Take out</h3>
+                        <p class="mt-3 text-white-70 m-0" style="font-size: clamp(0.9375rem, 1vw, 1rem); line-height: 1.75;">
                             Call the kitchen, tell us what you are craving, and we will have it packed hot and ready for the drive home through the snow.
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
-                        <a href="tel:+19073283218" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 44px;">
+                        <a href="tel:+19073283218" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 13.5px; min-height: 44px;">
                             Order takeout
                         </a>
                     </div>
@@ -69,14 +69,14 @@
                         <div class="d-flex align-items-center justify-content-center rounded-full border border-saffron-40 text-saffron w-12 h-12">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                         </div>
-                        <h3 class="mt-4 font-display text-paper m-0" style="font-size: 1.75rem;">Catering</h3>
-                        <p class="mt-3 text-white-60 m-0" style="font-size: 13px; line-height: 1.85;">
+                        <h3 class="mt-3 mt-sm-4 font-display text-paper m-0" style="font-size: clamp(1.25rem, 1.8vw, 1.45rem); line-height: 1.3;">Catering</h3>
+                        <p class="mt-3 text-white-70 m-0" style="font-size: clamp(0.9375rem, 1vw, 1rem); line-height: 1.75;">
                             Feeding a party, an office or a family gathering? We build platters of curries, biryani, breads and sweets for the whole room.
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
-                        <a href="{{ route('contact') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 44px;">
-                            Catering inquiries
+                        <a href="{{ route('contact') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 13.5px; min-height: 44px;">
+                            Catering Quote
                         </a>
                     </div>
                 </div>
