@@ -1269,15 +1269,32 @@ a {
 .cta-circle-btn svg {
     transition: transform 0.3s ease;
 }
-.group:hover .cta-circle-btn svg {
-    transform: translateX(3px);
+/* Hero Slider Pagination & Breathing Spacing */
+.hero-pagination {
+    pointer-events: auto;
 }
+.hero-pagination .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.35);
+    opacity: 1;
+    border-radius: 9999px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    margin: 0 4px !important;
+}
+.hero-pagination .swiper-pagination-bullet-active {
+    width: 20px;
+    background: var(--color-saffron);
+    box-shadow: 0 0 10px rgba(217, 119, 6, 0.45);
+}
+
 /* Luxury Reference Hero Scroll Indicator */
 .hero-scroll-indicator {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.65rem;
+    gap: 0.45rem;
     text-decoration: none;
     cursor: pointer;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1300,7 +1317,7 @@ a {
 .hero-scroll-indicator .hero-scroll-track {
     position: relative;
     width: 1px;
-    height: 48px;
+    height: 38px;
     background: rgba(255, 255, 255, 0.20);
     overflow: hidden;
     border-radius: 9999px;

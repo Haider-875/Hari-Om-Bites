@@ -83,8 +83,8 @@
         </div>
     </div>
 
-    <!-- Slider Pagination Indicators -->
-    <div class="hero-pagination position-absolute start-50 translate-middle-x d-flex justify-content-center gap-2" style="bottom: 5.5rem; z-index: 20;"></div>
+    <!-- Slider Pagination Indicators (Separated with generous breathing room) -->
+    <div class="hero-pagination position-absolute start-50 translate-middle-x d-flex justify-content-center gap-2" style="bottom: 7.25rem; z-index: 20;"></div>
 
     <!-- Animated Center Scroll Indicator (Luxury Flowing Saffron Light Beam) -->
     <a href="#story" 
