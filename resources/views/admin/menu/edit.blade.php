@@ -18,7 +18,10 @@
 
             <div class="row g-3">
                 <div class="col-12 col-md-6">
-                    <label class="admin-label">Menu Category *</label>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <label class="admin-label m-0">Menu Category *</label>
+                        <a href="{{ route('admin.categories.index') }}" class="text-terracotta text-decoration-none fw-semibold" style="font-size: 11px;">+ New Category</a>
+                    </div>
                     <select name="category_id" required class="admin-select">
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}" {{ $item->category_id == $category->id ? 'selected' : '' }}>

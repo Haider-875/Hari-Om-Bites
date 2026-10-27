@@ -10,12 +10,20 @@
             </div>
             <p class="text-ink-50 m-0 mt-1" style="font-size: 12px;">Manage dishes, prices, dietary tags, and live menu availability.</p>
         </div>
-        <a href="{{ route('admin.menu.create') }}" class="btn-admin-primary">
-            <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 4v16m8-8H4" />
-            </svg>
-            <span>Add New Dish</span>
-        </a>
+        <div class="d-flex align-items-center gap-2">
+            <a href="{{ route('admin.categories.index') }}" class="btn-admin-secondary">
+                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+                <span>Categories</span>
+            </a>
+            <a href="{{ route('admin.menu.create') }}" class="btn-admin-primary">
+                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 4v16m8-8H4" />
+                </svg>
+                <span>Add New Dish</span>
+            </a>
+        </div>
     </div>
 
     <!-- Desktop Data Table View (Hidden on mobile) -->

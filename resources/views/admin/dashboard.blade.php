@@ -34,7 +34,10 @@
                 </div>
                 <div>
                     <p class="font-display fw-bold text-terracotta m-0" style="font-size: 2.2rem; line-height: 1;">{{ $totalCategories }}</p>
-                    <span class="text-ink-50 mt-1 d-block" style="font-size: 11px;">All active online</span>
+                    <a href="{{ route('admin.categories.index') }}" class="text-terracotta text-decoration-none fw-semibold mt-1 d-inline-flex align-items-center gap-1" style="font-size: 11px;">
+                        <span>Manage Categories</span>
+                        <span style="font-size: 13px;">→</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -107,9 +110,21 @@
                                                 {{ $res->status }}
                                             </span>
                                         </div>
-                                        <span class="text-ink-50 d-block mt-0.5" style="font-size: 11.5px;">
-                                            📅 {{ $res->date->format('M d, Y') }} at {{ $res->time }} · 📞 {{ $res->phone }}
-                                        </span>
+                                        <div class="d-flex flex-wrap align-items-center gap-2 mt-1 text-ink-50" style="font-size: 11.5px;">
+                                            <span class="d-inline-flex align-items-center gap-1">
+                                                <svg style="width: 0.85rem; height: 0.85rem; color: #b45309;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                </svg>
+                                                <span>{{ $res->date->format('M d, Y') }} at {{ $res->time }}</span>
+                                            </span>
+                                            <span class="text-ink-30">·</span>
+                                            <span class="d-inline-flex align-items-center gap-1">
+                                                <svg style="width: 0.85rem; height: 0.85rem; color: #7c2d12;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                                </svg>
+                                                <span>{{ $res->phone }}</span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -140,7 +155,7 @@
                     </div>
                 </div>
 
-                <div class="p-3 p-sm-4 d-flex flex-column gap-3">
+                <div class="p-3 p-sm-4 d-flex flex-column gap-2.5">
                     <a href="{{ route('admin.menu.create') }}" class="admin-action-tile">
                         <div class="d-flex align-items-center gap-3">
                             <div class="admin-stat-icon" style="background-color: rgba(217, 119, 6, 0.12); color: #d97706;">
@@ -151,6 +166,21 @@
                             <div>
                                 <span class="d-block fw-semibold text-ink" style="font-size: 13.5px;">Add New Menu Dish</span>
                                 <span class="d-block text-ink-50" style="font-size: 11.5px;">Create a new specialty or appetizer</span>
+                            </div>
+                        </div>
+                        <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>
+                    </a>
+
+                    <a href="{{ route('admin.categories.index') }}" class="admin-action-tile">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="admin-stat-icon" style="background-color: rgba(217, 119, 6, 0.15); color: #b45309;">
+                                <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="d-block fw-semibold text-ink" style="font-size: 13.5px;">Manage Categories</span>
+                                <span class="d-block text-ink-50" style="font-size: 11.5px;">Create, organize & reorder categories</span>
                             </div>
                         </div>
                         <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>

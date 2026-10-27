@@ -78,6 +78,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('/menu/{item}', [AdminController::class, 'menuUpdate'])->name('menu.update');
         Route::delete('/menu/{item}', [AdminController::class, 'menuDestroy'])->name('menu.destroy');
 
+        // Categories
+        Route::get('/categories', [AdminController::class, 'categoryIndex'])->name('categories.index');
+        Route::post('/categories', [AdminController::class, 'categoryStore'])->name('categories.store');
+        Route::put('/categories/{category}', [AdminController::class, 'categoryUpdate'])->name('categories.update');
+        Route::delete('/categories/{category}', [AdminController::class, 'categoryDestroy'])->name('categories.destroy');
+
         // Reservations
         Route::get('/reservations', [AdminController::class, 'reservationIndex'])->name('reservations.index');
         Route::patch('/reservations/{reservation}/status', [AdminController::class, 'reservationStatus'])->name('reservations.status');

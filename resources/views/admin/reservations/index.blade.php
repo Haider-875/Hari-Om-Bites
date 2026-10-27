@@ -32,9 +32,19 @@
                             <td class="py-3 px-4">
                                 <span class="fw-semibold text-ink d-block">{{ $res->name }}</span>
                                 <div class="d-flex align-items-center gap-2 mt-0.5" style="font-size: 11.5px;">
-                                    <a href="tel:{{ $res->phone }}" class="text-terracotta text-decoration-none">📞 {{ $res->phone }}</a>
+                                    <a href="tel:{{ $res->phone }}" class="text-terracotta text-decoration-none d-inline-flex align-items-center gap-1">
+                                        <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                        <span>{{ $res->phone }}</span>
+                                    </a>
                                     <span class="text-ink-30">·</span>
-                                    <a href="mailto:{{ $res->email }}" class="text-ink-60 text-decoration-none">✉️ {{ $res->email }}</a>
+                                    <a href="mailto:{{ $res->email }}" class="text-ink-60 text-decoration-none d-inline-flex align-items-center gap-1">
+                                        <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                        <span>{{ $res->email }}</span>
+                                    </a>
                                 </div>
                             </td>
                             <td class="py-3 px-3">
@@ -43,8 +53,18 @@
                                 </span>
                             </td>
                             <td class="py-3 px-3">
-                                <span class="fw-semibold text-ink d-block">{{ $res->date->format('l, M d, Y') }}</span>
-                                <span class="text-ink-50 d-block" style="font-size: 11.5px;">⏰ {{ $res->time }}</span>
+                                <span class="fw-semibold text-ink d-inline-flex align-items-center gap-1.5">
+                                    <svg style="width: 0.85rem; height: 0.85rem; color: #b45309;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <span>{{ $res->date->format('l, M d, Y') }}</span>
+                                </span>
+                                <span class="text-ink-50 d-inline-flex align-items-center gap-1 mt-0.5" style="font-size: 11.5px;">
+                                    <svg style="width: 0.8rem; height: 0.8rem; color: #78716c;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>{{ $res->time }}</span>
+                                </span>
                             </td>
                             <td class="py-3 px-3 text-ink-70 small max-w-xs">
                                 @if($res->special_requests)
@@ -119,18 +139,34 @@
 
                 <!-- Schedule & Contact Info -->
                 <div class="mt-2.5 d-flex flex-column gap-1.5" style="font-size: 12.5px;">
-                    <div class="d-flex align-items-center gap-2 text-ink">
-                        <span class="text-terracotta fw-semibold">📅 {{ $res->date->format('l, M d, Y') }}</span>
+                    <div class="d-flex flex-wrap align-items-center gap-2 text-ink">
+                        <span class="text-terracotta fw-semibold d-inline-flex align-items-center gap-1">
+                            <svg style="width: 0.85rem; height: 0.85rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span>{{ $res->date->format('l, M d, Y') }}</span>
+                        </span>
                         <span class="text-ink-40">·</span>
-                        <span class="fw-semibold">⏰ {{ $res->time }}</span>
+                        <span class="fw-semibold d-inline-flex align-items-center gap-1">
+                            <svg style="width: 0.85rem; height: 0.85rem; color: #78716c;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>{{ $res->time }}</span>
+                        </span>
                     </div>
 
                     <div class="d-flex flex-wrap gap-3 mt-1">
-                        <a href="tel:{{ $res->phone }}" class="text-decoration-none text-terracotta fw-medium">
-                            📞 {{ $res->phone }}
+                        <a href="tel:{{ $res->phone }}" class="text-decoration-none text-terracotta fw-medium d-inline-flex align-items-center gap-1">
+                            <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>{{ $res->phone }}</span>
                         </a>
-                        <a href="mailto:{{ $res->email }}" class="text-decoration-none text-ink-60">
-                            ✉️ {{ $res->email }}
+                        <a href="mailto:{{ $res->email }}" class="text-decoration-none text-ink-60 d-inline-flex align-items-center gap-1">
+                            <svg style="width: 0.8rem; height: 0.8rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>{{ $res->email }}</span>
                         </a>
                     </div>
 

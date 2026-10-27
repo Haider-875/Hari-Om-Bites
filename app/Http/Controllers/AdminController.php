@@ -167,6 +167,69 @@ class AdminController extends Controller
         return redirect()->route('admin.menu.index')->with('success', 'Menu item deleted.');
     }
 
+    // --- Categories Management ---
+    public function categoryIndex()
+    {
+        $categories = Category::withCount('menuItems')->orderBy('sort_order')->get();
+        return view('admin.categories.index', compact('categories'));
+    }
+
+    public function categoryStore(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:categories,slug',
+            'tagline' => 'nullable|string|max:255',
+            'sort_order' => 'nullable|integer',
+            'is_active' => 'boolean',
+        ]);
+
+        if (empty($validated['slug'])) {
+            $validated['slug'] = \Illuminate\Support\Str::slug($validated['name']);
+            $originalSlug = $validated['slug'];
+            $count = 1;
+            while (Category::where('slug', $validated['slug'])->exists()) {
+                $validated['slug'] = $originalSlug . '-' . $count++;
+            }
+        }
+
+        $validated['is_active'] = $request->boolean('is_active', true);
+        $validated['sort_order'] = $validated['sort_order'] ?? ((Category::max('sort_order') ?? 0) + 1);
+
+        Category::create($validated);
+        return redirect()->route('admin.categories.index')->with('success', 'Category created successfully.');
+    }
+
+    public function categoryUpdate(Request $request, Category $category)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:categories,slug,' . $category->id,
+            'tagline' => 'nullable|string|max:255',
+            'sort_order' => 'nullable|integer',
+            'is_active' => 'boolean',
+        ]);
+
+        if (empty($validated['slug'])) {
+            $validated['slug'] = \Illuminate\Support\Str::slug($validated['name']);
+        }
+
+        $validated['is_active'] = $request->boolean('is_active', true);
+
+        $category->update($validated);
+        return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully.');
+    }
+
+    public function categoryDestroy(Category $category)
+    {
+        if ($category->menuItems()->count() > 0) {
+            return back()->with('error', 'Cannot delete category with associated menu items. Reassign or delete those dishes first.');
+        }
+
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('success', 'Category deleted successfully.');
+    }
+
     // --- Reservations ---
     public function reservationIndex()
     {

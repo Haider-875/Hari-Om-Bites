@@ -61,6 +61,15 @@
                     <span class="flex-grow-1">Menu Items</span>
                 </a>
 
+                <a href="{{ route('admin.categories.index') }}"
+                   class="admin-nav-item {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}"
+                   @click="if (window.innerWidth < 992) sidebarOpen = false">
+                    <svg style="width: 1.15rem; height: 1.15rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    <span>Categories</span>
+                </a>
+
                 <a href="{{ route('admin.reservations.index') }}"
                    class="admin-nav-item {{ request()->routeIs('admin.reservations.*') ? 'active' : '' }}"
                    @click="if (window.innerWidth < 992) sidebarOpen = false">
@@ -127,19 +136,22 @@
             </div>
 
             <!-- Right: Kitchen Status & User Profile -->
-            <div class="d-flex align-items-center gap-3">
-                <div class="d-none d-md-flex align-items-center gap-2 px-2.5 py-1 rounded-full bg-white border border-ink-10 shadow-sm" style="font-size: 11px;">
+            <div class="d-flex align-items-center gap-2.5">
+                <!-- Kitchen Live Badge (Balanced padding & glow dot) -->
+                <div class="d-none d-md-flex align-items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-ink-10 shadow-sm" style="font-size: 11.5px; letter-spacing: 0.03em;">
                     <span class="pulse-live-indicator"></span>
                     <span class="fw-semibold text-ink">Kitchen Live</span>
                 </div>
 
-                <div class="d-flex align-items-center gap-2.5 pl-2">
-                    <div class="rounded-full bg-saffron text-ink fw-bold d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; font-size: 12px;">
-                        {{ strtoupper(substr(Auth::user()->name ?? 'A', 0, 1)) }}
+                <!-- Admin User Profile with Separator Margin & Circle Avatar -->
+                <div class="d-flex align-items-center gap-2.5 ms-2 ms-sm-3 ps-2 ps-sm-3 border-start border-ink-10">
+                    <div class="rounded-full bg-saffron text-ink fw-bold d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm" 
+                         style="width: 36px; height: 36px; font-size: 13px; border: 2px solid rgba(217, 119, 6, 0.45); box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);">
+                        {{ strtoupper(substr(Auth::user()->name ?? 'H', 0, 1)) }}
                     </div>
-                    <div class="d-none d-sm-block text-start leading-tight">
-                        <span class="d-block fw-semibold text-ink" style="font-size: 12px;">{{ Auth::user()->name ?? 'Admin' }}</span>
-                        <span class="d-block text-ink-50" style="font-size: 10px;">Manager</span>
+                    <div class="d-none d-sm-block text-start" style="line-height: 1.25;">
+                        <span class="d-block fw-semibold text-ink" style="font-size: 12.5px;">{{ Auth::user()->name ?? 'Hari Om Admin' }}</span>
+                        <span class="d-block text-ink-50 text-uppercase tracking-wider-custom" style="font-size: 9.5px;">Store Manager</span>
                     </div>
                 </div>
             </div>
