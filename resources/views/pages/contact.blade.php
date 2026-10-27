@@ -10,11 +10,11 @@
         <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
 
         <div class="position-relative max-w-92rem px-3 px-sm-4 text-center text-sm-start">
-            <p class="label-caps text-saffron m-0">Location & Inquiries</p>
-            <h1 class="mt-3 font-display text-paper display-title-hero m-0">
+            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Location & Inquiries</p>
+            <h1 class="mt-3 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">
                 Visit Us in<span class="d-block fst-italic text-terracotta">Fairbanks</span>
             </h1>
-            <p class="mt-4 max-w-2xl text-white-70 leading-relaxed fs-6 m-0">
+            <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0" style="font-size: 14px;">
                 Located on South Cushman Street, just minutes from downtown Fairbanks. Stop by for dinner, order take out, or reach out regarding catering.
             </p>
         </div>
@@ -28,9 +28,9 @@
                 <div class="col-12 col-lg-5">
                     <div class="d-flex flex-column gap-4">
                         <div class="rounded-sm border border-terracotta-15 bg-white-60 p-4 p-sm-5 shadow-sm">
-                            <p class="label-caps text-saffron m-0">Our Location</p>
-                            <h2 class="mt-2 font-display fs-2 text-ember m-0">1528 S Cushman St</h2>
-                            <p class="mt-1 small text-ink-60 m-0">Fairbanks, AK 99701, United States</p>
+                            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Our Location</p>
+                            <h2 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">1528 S Cushman St</h2>
+                            <p class="mt-1 text-ink-60 m-0" style="font-size: 14px;">Fairbanks, AK 99701, United States</p>
 
                             <dl class="mt-4 d-flex flex-column gap-3 mb-0">
                                 <div class="d-flex align-items-start gap-3">
@@ -82,8 +82,8 @@
                                 <img src="/images/cultureExterior.jpg" class="w-100 h-100 object-cover" alt="Hari Om Fairbanks Exterior">
                                 <div class="position-absolute inset-0 bg-gradient-t-ink"></div>
                                 <div class="position-absolute bottom-0 start-0 end-0 p-3">
-                                    <p class="text-uppercase tracking-widest-custom text-saffron m-0" style="font-size: 9px;">On South Cushman Street</p>
-                                    <p class="font-display fs-5 text-paper m-0">Look for the Om & Red Stairs</p>
+                                    <p class="text-uppercase tracking-widest-custom text-saffron m-0" style="font-size: 10px;">On South Cushman Street</p>
+                                    <p class="font-display text-paper m-0" style="font-size: 20px; line-height: 1.25;">Look for the Om & Red Stairs</p>
                                 </div>
                             </div>
                         </div>
@@ -100,9 +100,9 @@
                     @endif
 
                     <div class="rounded-sm border border-terracotta-20 bg-white-70 p-4 p-sm-5 shadow-lg">
-                        <p class="label-caps text-saffron m-0">Inquiries & Catering</p>
-                        <h2 class="mt-2 font-display text-ember display-title-section m-0">Send Us a Message</h2>
-                        <p class="mt-3 small leading-relaxed text-ink-65 m-0">
+                        <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Inquiries & Catering</p>
+                        <h2 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">Send Us a Message</h2>
+                        <p class="mt-3 leading-relaxed text-ink-65 m-0" style="font-size: 14px;">
                             Have questions about our ingredients, hosting private banquets, or scheduling event catering? Drop us a note below.
                         </p>
 

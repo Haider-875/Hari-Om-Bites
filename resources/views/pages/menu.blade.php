@@ -114,8 +114,8 @@ class="min-vh-100 bg-paper">
 
             <div class="mt-4 d-flex flex-column gap-4 flex-lg-row align-items-lg-end justify-content-lg-between">
                 <div>
-                    <p class="label-caps text-saffron m-0">Dine in · Take out · Catering</p>
-                    <h1 class="mt-3 font-display text-paper display-title-hero m-0">
+                    <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Dine in · Take out · Catering</p>
+                    <h1 class="mt-3 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">
                         Our Menu
                     </h1>
                     <p class="mt-3 max-w-xl text-white-55 leading-relaxed m-0" style="font-size: 14px;">
@@ -126,7 +126,7 @@ class="min-vh-100 bg-paper">
                 <a href="tel:+19073283218" 
                    class="btn-primary d-inline-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto" style="min-height: 38px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    Call to order · +1 907-328-3218
+                    Call To Order
                 </a>
             </div>
         </div>
@@ -213,7 +213,7 @@ class="min-vh-100 bg-paper">
 
                 <!-- Special Description for Thali Platter -->
                 @if ($cat->slug === 'thali-platter')
-                    <div class="max-w-2xl mx-auto mt-4 text-center small leading-relaxed text-ink-65">
+                    <div class="max-w-2xl mx-auto mt-4 text-center leading-relaxed text-ink-65" style="font-size: 14px;">
                         Thali is the cornerstone of our menu. It is a generous platter consisting of a wide variety of dishes that provide texture and vivid colors, showcasing the diverse flavors of India. Includes chef's choice of four dishes, one chicken dish (non-veg), basmati rice, naan, papad, raitha and dessert.
                     </div>
                 @endif
@@ -329,8 +329,8 @@ class="min-vh-100 bg-paper">
         <!-- Hungry yet? Call the kitchen banner -->
         <div class="mt-5 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 border-top border-terracotta-15 pt-4 text-center text-sm-start">
             <div>
-                <p class="font-display fs-2 text-ember m-0">Hungry yet? Call the kitchen.</p>
-                <p class="mt-1 small text-ink-60 m-0">1528 S Cushman St · Fairbanks, Alaska</p>
+                <p class="font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">Hungry yet? Call the kitchen.</p>
+                <p class="mt-1 text-ink-60 m-0" style="font-size: 14px;">1528 S Cushman St · Fairbanks, Alaska</p>
             </div>
             <a href="tel:+19073283218" 
                class="btn-primary w-100 w-sm-auto text-center justify-content-center"

@@ -18,11 +18,11 @@
         <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
 
         <div class="position-relative max-w-92rem px-3 px-sm-4 text-center text-sm-start">
-            <p class="label-caps text-saffron m-0">Visual Journey</p>
-            <h1 class="mt-3 font-display text-paper display-title-hero m-0">
+            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Visual Journey</p>
+            <h1 class="mt-3 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">
                 Food & Atmosphere<span class="d-block fst-italic text-terracotta">Gallery</span>
             </h1>
-            <p class="mt-4 max-w-2xl text-white-70 leading-relaxed fs-6 m-0">
+            <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0" style="font-size: 14px;">
                 Explore the colorful vibrancy of our kitchen — from freshly blistered tandoori breads and slow-simmered rich curries to our cozy, warm Fairbanks dining room.
             </p>
         </div>
@@ -93,9 +93,9 @@
                             <!-- Gradient Overlay & Info -->
                             <div class="position-absolute inset-0 bg-gradient-t-ink opacity-75"></div>
                             <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4">
-                                <span class="text-uppercase tracking-widest-custom text-saffron m-0" style="font-size: 9px;">{{ $item['category'] }}</span>
-                                <h3 class="mt-1 font-display fs-4 text-paper m-0">{{ $item['title'] }}</h3>
-                                <p class="mt-2 line-clamp-2 small text-white-70 m-0">{{ $item['caption'] }}</p>
+                                <span class="text-uppercase tracking-widest-custom text-saffron m-0" style="font-size: 10px;">{{ $item['category'] }}</span>
+                                <h3 class="mt-1 font-display text-paper m-0" style="font-size: 20px; line-height: 1.25;">{{ $item['title'] }}</h3>
+                                <p class="mt-2 line-clamp-2 text-white-70 m-0" style="font-size: 14px;">{{ $item['caption'] }}</p>
                             </div>
                         </div>
                     </div>
@@ -131,8 +131,8 @@
                     </div>
                     <div class="p-4 p-sm-5">
                         <span class="text-uppercase tracking-widest-custom text-saffron m-0" style="font-size: 10px;" x-text="activeItem.category"></span>
-                        <h3 class="mt-2 font-display fs-2 text-ember m-0" x-text="activeItem.title"></h3>
-                        <p class="mt-3 small leading-relaxed text-ink-75 m-0" x-text="activeItem.caption"></p>
+                        <h3 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;" x-text="activeItem.title"></h3>
+                        <p class="mt-3 leading-relaxed text-ink-75 m-0" style="font-size: 14px;" x-text="activeItem.caption"></p>
                         <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start align-items-center gap-3">
                             <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                                 Order on Menu
@@ -150,9 +150,9 @@
     <!-- Bottom Reservation Banner -->
     <section class="bg-paper-dark border-top border-terracotta-15 py-5 text-center">
         <div class="max-w-3xl px-3 mx-auto">
-            <p class="label-caps text-saffron m-0">Taste in Person</p>
-            <h2 class="mt-3 font-display text-ember display-title-section m-0">Join Us for Dinner Tonight</h2>
-            <p class="mt-3 small text-ink-65 m-0">Serving authentic Punjabi flavors on S Cushman Street in Fairbanks.</p>
+            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Taste in Person</p>
+            <h2 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">Join Us for Dinner Tonight</h2>
+            <p class="mt-2 text-ink-65 m-0" style="font-size: 14px;">Serving authentic Punjabi flavors on S Cushman Street in Fairbanks.</p>
             <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
                 <a href="{{ route('reservations') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                     Book a Table

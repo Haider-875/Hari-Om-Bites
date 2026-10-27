@@ -10,11 +10,11 @@
         <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
 
         <div class="position-relative max-w-92rem px-3 px-sm-4 text-center text-sm-start">
-            <p class="label-caps text-saffron m-0">Dine In Experience</p>
-            <h1 class="mt-3 font-display text-paper display-title-hero m-0">
+            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Dine In Experience</p>
+            <h1 class="mt-3 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">
                 Reserve Your<span class="d-block fst-italic text-terracotta">Table</span>
             </h1>
-            <p class="mt-4 max-w-2xl text-white-70 leading-relaxed fs-6 m-0">
+            <p class="mt-3 max-w-2xl text-white-70 leading-relaxed m-0" style="font-size: 14px;">
                 Join us for an unforgettable evening of Punjabi hospitality, warm tandoor breads, and comforting curries on South Cushman Street.
             </p>
         </div>
@@ -34,9 +34,9 @@
                     @endif
 
                     <div class="rounded-sm border border-terracotta-20 bg-white-70 p-4 p-sm-5 shadow-lg">
-                        <p class="label-caps text-saffron m-0">Bookings</p>
-                        <h2 class="mt-2 font-display text-ember display-title-section m-0">Table Request</h2>
-                        <p class="mt-3 small leading-relaxed text-ink-65 m-0">
+                        <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Bookings</p>
+                        <h2 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">Table Request</h2>
+                        <p class="mt-3 leading-relaxed text-ink-65 m-0" style="font-size: 14px;">
                             Please submit your reservation details below. For parties larger than 8 guests or same-evening inquiries, we recommend calling the kitchen directly.
                         </p>
 
@@ -108,9 +108,9 @@
                 <div class="col-12 col-lg-5">
                     <div class="d-flex flex-column gap-4">
                         <div class="rounded-sm border border-terracotta-15 bg-white-50 p-4 p-sm-5">
-                            <p class="label-caps text-saffron m-0">Kitchen Policy</p>
-                            <h3 class="mt-2 font-display fs-3 text-ember m-0">Dining Guidelines</h3>
-                            <ul class="list-unstyled mt-4 d-flex flex-column gap-3 small leading-relaxed text-ink-75 m-0">
+                            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Kitchen Policy</p>
+                            <h3 class="mt-2 font-display text-ember m-0" style="font-size: 26px; line-height: 1.25;">Dining Guidelines</h3>
+                            <ul class="list-unstyled mt-4 d-flex flex-column gap-3 leading-relaxed text-ink-75 m-0" style="font-size: 14px;">
                                 <li class="d-flex align-items-start gap-2">
                                     <span class="mt-2 flex-shrink-0 rounded-full bg-terracotta" style="width: 6px; height: 6px;"></span>
                                     <span><strong>Seating Grace:</strong> We hold tables for 15 minutes past your reserved time before releasing them to waiting walk-in guests.</span>
@@ -127,9 +127,9 @@
                         </div>
 
                         <div class="rounded-sm border border-terracotta-15 bg-ink p-4 p-sm-5 text-paper shadow-lg">
-                            <p class="label-caps text-saffron m-0">Immediate Inquiries</p>
-                            <h3 class="mt-2 font-display fs-3 text-paper m-0">Prefer to Call Ahead?</h3>
-                            <p class="mt-3 small leading-relaxed text-white-65 m-0">
+                            <p class="label-caps text-saffron m-0" style="font-size: 10px; letter-spacing: 0.2em;">Immediate Inquiries</p>
+                            <h3 class="mt-2 font-display text-paper m-0" style="font-size: 26px; line-height: 1.25;">Prefer to Call Ahead?</h3>
+                            <p class="mt-3 leading-relaxed text-white-65 m-0" style="font-size: 14px;">
                                 Our host is ready to assist you with same-day dining or take-out orders.
                             </p>
                             <a href="tel:+19073283218" class="mt-3 d-block font-display text-saffron text-decoration-none" style="font-size: 2rem;">

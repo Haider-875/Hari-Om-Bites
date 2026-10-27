@@ -514,8 +514,8 @@ a {
         line-height: 1.12 !important;
     }
     .display-title-section {
-        font-size: clamp(1.625rem, 4.5vw, 2rem) !important; /* 26px – 32px */
-        line-height: 1.18 !important;
+        font-size: 26px !important;
+        line-height: 1.25 !important;
     }
     .hero-tagline {
         font-size: clamp(1.25rem, 3.5vw, 1.55rem) !important;
@@ -597,13 +597,13 @@ a {
         padding-bottom: 2.75rem !important;
     }
     .ref-menu-title {
-        font-size: clamp(1.65rem, 5vw, 2.15rem) !important;
-        line-height: 1.1 !important;
+        font-size: 26px !important;
+        line-height: 1.25 !important;
         margin-top: 0.35rem !important;
     }
     .ref-menu-subtitle {
         font-size: 10px !important;
-        letter-spacing: 0.12em !important;
+        letter-spacing: 0.20em !important;
     }
     .ref-tabs-track {
         margin-top: 1.25rem !important;
@@ -635,8 +635,8 @@ a {
 
     /* Menu Page Inner Banner & Category Headings on Mobile */
     .menu-category-title {
-        font-size: clamp(1.35rem, 4.2vw, 1.75rem) !important;
-        line-height: 1.2 !important;
+        font-size: 26px !important;
+        line-height: 1.25 !important;
     }
     .dish-title {
         font-size: clamp(1.05rem, 3vw, 1.2rem) !important;
@@ -1860,16 +1860,16 @@ img.object-cover {
    ========================================================================== */
 .menu-category-title {
     font-family: var(--font-display, serif) !important;
-    font-size: clamp(1.45rem, 2.8vw, 2.2rem) !important;
-    line-height: 1.18 !important;
+    font-size: 26px !important;
+    line-height: 1.25 !important;
     color: var(--color-ember) !important;
     letter-spacing: 0.02em !important;
     font-weight: 600 !important;
 }
 .menu-category-meta {
     font-family: var(--font-sans) !important;
-    font-size: 11px !important;
-    letter-spacing: 0.18em !important;
+    font-size: 10px !important;
+    letter-spacing: 0.20em !important;
     text-transform: uppercase !important;
     color: var(--color-saffron) !important;
     font-weight: 600 !important;
@@ -1892,7 +1892,7 @@ img.object-cover {
 }
 .dish-description {
     font-family: var(--font-sans) !important;
-    font-size: clamp(0.875rem, 0.95vw, 0.975rem) !important;
+    font-size: 14px !important;
     line-height: 1.6 !important;
     color: rgba(23, 23, 23, 0.72) !important;
 }
