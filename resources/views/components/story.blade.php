@@ -55,16 +55,10 @@
                     </div>
                 </div>
 
-                <!-- Luxury Animated CTA Button -->
+                <!-- CTA Button (Standard website btn-primary, zero-arrow) -->
                 <div class="mt-4 pt-2">
-                    <a class="story-cta-lux-btn" href="{{ route('menu') }}">
-                        <span class="btn-label">See the full menu</span>
-                        <span class="btn-arrow-badge">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                        </span>
+                    <a href="{{ route('menu') }}" class="btn-primary">
+                        See the full menu
                     </a>
                 </div>
                 <p class="mt-4 text-uppercase text-ink-40 mb-0" style="font-size: 11px; letter-spacing: 0.18em;">1528 S Cushman St · Fairbanks, Alaska</p>
