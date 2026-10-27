@@ -2130,10 +2130,16 @@ img.object-cover {
 }
 
 .admin-content-area {
-    padding: 1.75rem;
+    padding: 1.75rem 1.75rem 5.5rem 1.75rem;
     flex-grow: 1;
     overflow-y: auto;
     animation: adminFadeIn 0.4s ease-out;
+}
+
+@media (max-width: 768px) {
+    .admin-content-area {
+        padding: 1.25rem 1rem 5.5rem 1rem;
+    }
 }
 
 /* Animations */

@@ -182,7 +182,7 @@
         </header>
 
         <!-- Dynamic Main Content Area -->
-        <main class="admin-content-area">
+        <main class="admin-content-area pb-5 mb-4">
             @if(session('success'))
                 <div class="admin-card mb-4 border-0 p-3 d-flex align-items-center gap-3 shadow-sm" style="background-color: #ecfdf5; border-left: 4px solid #059669 !important; animation: adminFadeIn 0.3s ease;">
                     <svg style="width: 1.25rem; height: 1.25rem; color: #059669;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -243,8 +243,8 @@
                 </button>
             </div>
 
-            <!-- Security Advisory Banner -->
-            <div class="mx-4 mt-3.5 p-2.5 px-3 rounded-3 d-flex align-items-center gap-2.5" style="background-color: #faf5ea; border: 1px solid rgba(217, 119, 6, 0.25);">
+            <!-- Security Advisory Banner with bottom margin -->
+            <div class="mx-4 mt-3.5 mb-2.5 p-2.5 px-3 rounded-3 d-flex align-items-center gap-2.5" style="background-color: #faf5ea; border: 1px solid rgba(217, 119, 6, 0.25);">
                 <svg style="width: 1.05rem; height: 1.05rem; color: #b45309;" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
@@ -253,14 +253,14 @@
                 </span>
             </div>
 
-            <!-- Modal Form -->
+            <!-- Modal Form with enhanced bottom and item spacing -->
             <form action="{{ route('admin.profile.password') }}" method="POST" class="m-0">
                 @csrf
                 @method('PUT')
-                <div class="p-4 pt-3 d-flex flex-column gap-3">
+                <div class="p-4 pt-2.5 pb-4.5 d-flex flex-column gap-3.5 mb-1">
                     <!-- Current Password Field -->
-                    <div>
-                        <div class="d-flex align-items-center justify-content-between mb-1.5">
+                    <div class="mb-1">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
                             <label class="text-uppercase tracking-wider-custom fw-bold text-ink-70 m-0" style="font-size: 10.5px;">
                                 Current Password
                             </label>
@@ -281,9 +281,9 @@
                                    class="admin-form-input" 
                                    style="padding-left: 2.6rem !important; padding-right: 2.75rem !important;" />
                             <button type="button" 
-                                    @click="showCurrent = !showCurrent" 
-                                    class="admin-input-eye-btn"
-                                    title="Toggle visibility">
+                                     @click="showCurrent = !showCurrent" 
+                                     class="admin-input-eye-btn"
+                                     title="Toggle visibility">
                                 <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!showCurrent">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -296,8 +296,8 @@
                     </div>
 
                     <!-- New Password Field -->
-                    <div>
-                        <div class="d-flex align-items-center justify-content-between mb-1.5">
+                    <div class="mb-1">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
                             <label class="text-uppercase tracking-wider-custom fw-bold text-ink-70 m-0" style="font-size: 10.5px;">
                                 New Password
                             </label>
@@ -334,8 +334,8 @@
                     </div>
 
                     <!-- Confirm Password Field -->
-                    <div>
-                        <div class="d-flex align-items-center justify-content-between mb-1.5">
+                    <div class="mb-1">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
                             <label class="text-uppercase tracking-wider-custom fw-bold text-ink-70 m-0" style="font-size: 10.5px;">
                                 Confirm Password
                             </label>
