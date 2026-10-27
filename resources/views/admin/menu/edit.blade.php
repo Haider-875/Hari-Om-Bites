@@ -91,16 +91,16 @@
                 </div>
             </div>
 
-            <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center justify-content-between gap-2.5 pt-4 border-top border-ink-10 mt-2">
-                <button type="submit" class="btn-admin-primary order-1 order-sm-0">
+            <div class="admin-form-actions pt-4 border-top border-ink-10 mt-3">
+                <a href="{{ route('admin.menu.index') }}" class="btn-admin-secondary">
+                    Cancel
+                </a>
+                <button type="submit" class="btn-admin-primary">
                     <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7" />
                     </svg>
                     <span>Save Changes</span>
                 </button>
-                <a href="{{ route('admin.menu.index') }}" class="btn-admin-secondary text-center order-2 order-sm-1">
-                    Cancel
-                </a>
             </div>
         </form>
     </div>

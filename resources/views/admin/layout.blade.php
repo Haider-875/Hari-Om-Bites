@@ -373,12 +373,12 @@
                 </div>
 
                 <!-- Modal Actions Footer -->
-                <div class="p-3.5 px-4 border-top border-ink-10 d-flex align-items-center justify-content-end gap-2.5" 
+                <div class="p-3.5 px-4 border-top border-ink-10 admin-btn-group-equal w-100 justify-content-end" 
                      style="background: linear-gradient(180deg, #faf7f2 0%, #f4ede1 100%);">
-                    <button type="button" class="btn-admin-secondary" style="min-height: 34px; padding: 0.35rem 1.15rem; font-size: 11px;" @click="changePasswordOpen = false">
+                    <button type="button" class="btn-admin-secondary" @click="changePasswordOpen = false">
                         Cancel
                     </button>
-                    <button type="submit" class="btn-admin-primary" style="min-height: 34px; padding: 0.35rem 1.35rem; font-size: 11px;">
+                    <button type="submit" class="btn-admin-primary">
                         <svg style="width: 0.85rem; height: 0.85rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7" />
                         </svg>

@@ -123,15 +123,15 @@
                 </div>
             </div>
 
-            <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-2.5 pt-2">
-                <button type="submit" class="btn-admin-primary" style="min-height: 40px; font-size: 11.5px;">
+            <div class="admin-btn-group-equal pt-2">
+                <button type="button" @click="showForm = false" class="btn-admin-secondary text-center">
+                    Cancel
+                </button>
+                <button type="submit" class="btn-admin-primary">
                     <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span x-text="isEdit ? 'Save Changes' : 'Create & Assign Role'"></span>
-                </button>
-                <button type="button" @click="showForm = false" class="btn-admin-secondary text-center" style="min-height: 40px; font-size: 11.5px;">
-                    Cancel
+                    <span x-text="isEdit ? 'Save Changes' : 'Create User'"></span>
                 </button>
             </div>
         </form>
