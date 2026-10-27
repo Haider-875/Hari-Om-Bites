@@ -328,4 +328,23 @@ class AdminController extends Controller
         $user->delete();
         return redirect()->route('admin.users.index')->with('success', 'Staff member deleted.');
     }
+
+    public function updatePassword(Request $request)
+    {
+        $validated = $request->validate([
+            'current_password' => 'required|string',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        $user = Auth::user();
+
+        if (!Hash::check($validated['current_password'], $user->password) && $user->password !== $validated['current_password']) {
+            return back()->withErrors(['current_password' => 'The current password provided is incorrect.'])->with('error', 'Current password does not match our records.');
+        }
+
+        $user->password = Hash::make($validated['password']);
+        $user->save();
+
+        return back()->with('success', 'Your password has been changed successfully.');
+    }
 }

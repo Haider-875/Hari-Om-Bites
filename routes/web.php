@@ -94,6 +94,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::patch('/reservations/{reservation}/status', [AdminController::class, 'reservationStatus'])->name('reservations.status');
         Route::delete('/reservations/{reservation}', [AdminController::class, 'reservationDestroy'])->name('reservations.destroy');
 
+        // Password Update
+        Route::put('/profile/password', [AdminController::class, 'updatePassword'])->name('profile.password');
+
         // Settings
         Route::get('/settings', [AdminController::class, 'settingsIndex'])->name('settings.index');
         Route::post('/settings', [AdminController::class, 'settingsUpdate'])->name('settings.update');

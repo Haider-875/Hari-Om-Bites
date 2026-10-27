@@ -228,6 +228,21 @@
                         <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>
                     </a>
 
+                    <button type="button" @click="changePasswordOpen = true" class="admin-action-tile w-100 text-start border-0">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="admin-stat-icon" style="background-color: rgba(217, 119, 6, 0.12); color: #b45309;">
+                                <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="d-block fw-semibold text-ink" style="font-size: 13.5px;">Change Login Password</span>
+                                <span class="d-block text-ink-50" style="font-size: 11.5px;">Update your dashboard password directly</span>
+                            </div>
+                        </div>
+                        <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>
+                    </button>
+
                     <a href="{{ route('admin.settings.index') }}" class="admin-action-tile">
                         <div class="d-flex align-items-center gap-3">
                             <div class="admin-stat-icon" style="background-color: rgba(23, 23, 23, 0.08); color: #171717;">
