@@ -95,15 +95,15 @@ a {
     letter-spacing: 0.35em;
 }
 
-/* Navbar Link Indicator (A taste of India style - Cormorant Garamond Italic 14px) */
+/* Navbar Link Indicator (A taste of India style - Cormorant Garamond Thin Italic 16px) */
 .nav-link-custom {
     position: relative;
     font-family: var(--font-display), 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
-    font-size: 14px !important;
-    font-weight: 600;
+    font-size: 16px !important;
+    font-weight: 400 !important;
     text-transform: none;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     transition: color 0.3s ease;
     text-decoration: none;
     padding: 0.35rem 0;
