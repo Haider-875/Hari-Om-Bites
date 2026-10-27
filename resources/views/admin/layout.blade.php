@@ -209,105 +209,162 @@
     <div x-show="changePasswordOpen" 
          x-cloak
          class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
-         style="z-index: 1060; background-color: rgba(23, 23, 23, 0.65); backdrop-filter: blur(4px);">
-        <div class="bg-white rounded-4 shadow-xl border border-ink-10 w-100" 
-             style="max-width: 460px; animation: adminFadeIn 0.25s ease;"
+         style="z-index: 1060; background-color: rgba(23, 23, 23, 0.65); backdrop-filter: blur(6px);">
+        <div class="admin-modal-box w-100" 
+             style="max-width: 480px; animation: adminFadeIn 0.25s ease;"
              @click.away="changePasswordOpen = false"
              x-data="{ showCurrent: false, showNew: false, showConfirm: false }">
             
+            <!-- Top Gradient Accent -->
+            <div style="height: 4px; background: linear-gradient(90deg, #d97706 0%, #f59e0b 50%, #b45309 100%);"></div>
+
             <!-- Modal Header -->
-            <div class="p-3.5 px-4 border-bottom border-ink-10 d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center gap-2.5">
-                    <div class="admin-stat-icon" style="background-color: rgba(217, 119, 6, 0.12); color: #d97706; width: 34px; height: 34px;">
-                        <svg style="width: 1.1rem; height: 1.1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="p-3.5 px-4 border-bottom border-ink-10 d-flex align-items-center justify-content-between" style="background: linear-gradient(180deg, #fdfbf7 0%, #ffffff 100%);">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="rounded-3 d-flex align-items-center justify-content-center shadow-2xs flex-shrink-0" 
+                         style="width: 42px; height: 42px; background: linear-gradient(135deg, rgba(217, 119, 6, 0.16), rgba(180, 83, 9, 0.08)); border: 1.5px solid rgba(217, 119, 6, 0.25); color: #b45309;">
+                        <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
                     <div>
-                        <h2 class="h6 fw-bold text-ink m-0">Change Password</h2>
-                        <span class="text-ink-50" style="font-size: 11px;">Update login credentials for {{ Auth::user()->name ?? 'Account' }}</span>
+                        <h2 class="font-display fw-bold text-ink m-0" style="font-size: 1.2rem; line-height: 1.2;">Change Password</h2>
+                        <span class="text-ink-50 d-block mt-0.5" style="font-size: 11.5px;">Update credentials for {{ Auth::user()->name ?? 'Account' }}</span>
                     </div>
                 </div>
-                <button type="button" class="btn p-1 border-0 text-ink-50 hover-text-ink cursor-pointer" @click="changePasswordOpen = false">
-                    <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <button type="button" 
+                        class="rounded-circle border border-ink-10 bg-white text-ink-50 hover-text-ink d-flex align-items-center justify-content-center cursor-pointer transition-all shadow-2xs"
+                        style="width: 32px; height: 32px;"
+                        @click="changePasswordOpen = false"
+                        aria-label="Close modal">
+                    <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
+            </div>
+
+            <!-- Security Advisory Banner -->
+            <div class="mx-4 mt-3.5 p-2.5 px-3 rounded-3 d-flex align-items-center gap-2.5" style="background-color: #faf5ea; border: 1px solid rgba(217, 119, 6, 0.25);">
+                <svg style="width: 1.05rem; height: 1.05rem; color: #b45309;" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span class="text-ink-70" style="font-size: 11.5px; line-height: 1.35;">
+                    Choose a strong password with at least 6 characters to keep your restaurant console safe.
+                </span>
             </div>
 
             <!-- Modal Form -->
             <form action="{{ route('admin.profile.password') }}" method="POST" class="m-0">
                 @csrf
                 @method('PUT')
-                <div class="p-4 d-flex flex-column gap-3">
+                <div class="p-4 pt-3 d-flex flex-column gap-3">
+                    <!-- Current Password Field -->
                     <div>
-                        <label class="form-label text-uppercase tracking-wider-custom text-ink-60 fw-semibold mb-1" style="font-size: 10px;">
-                            Current Password <span class="text-danger">*</span>
-                        </label>
-                        <div class="position-relative">
+                        <div class="d-flex align-items-center justify-content-between mb-1.5">
+                            <label class="text-uppercase tracking-wider-custom fw-bold text-ink-70 m-0" style="font-size: 10.5px;">
+                                Current Password
+                            </label>
+                            <span class="badge rounded-pill bg-white text-ink-60 border border-ink-10 px-2 py-0.5 fw-normal" style="font-size: 9.5px;">
+                                Required
+                            </span>
+                        </div>
+                        <div class="position-relative admin-input-group">
+                            <span class="admin-input-icon-left">
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </span>
                             <input :type="showCurrent ? 'text' : 'password'" 
                                    name="current_password" 
                                    required 
-                                   placeholder="Enter current password"
-                                   class="admin-form-input w-100 pe-5" />
+                                   placeholder="Enter your current password"
+                                   class="admin-form-input" 
+                                   style="padding-left: 2.6rem !important; padding-right: 2.75rem !important;" />
                             <button type="button" 
                                     @click="showCurrent = !showCurrent" 
-                                    class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent text-ink-40 px-2.5 py-1">
-                                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!showCurrent">
+                                    class="admin-input-eye-btn"
+                                    title="Toggle visibility">
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!showCurrent">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>
-                                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="showCurrent" x-cloak>
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="showCurrent" x-cloak>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
                                 </svg>
                             </button>
                         </div>
                     </div>
 
+                    <!-- New Password Field -->
                     <div>
-                        <label class="form-label text-uppercase tracking-wider-custom text-ink-60 fw-semibold mb-1" style="font-size: 10px;">
-                            New Password <span class="text-danger">* (Min 6 chars)</span>
-                        </label>
-                        <div class="position-relative">
+                        <div class="d-flex align-items-center justify-content-between mb-1.5">
+                            <label class="text-uppercase tracking-wider-custom fw-bold text-ink-70 m-0" style="font-size: 10.5px;">
+                                New Password
+                            </label>
+                            <span class="badge rounded-pill border px-2 py-0.5 fw-medium" style="font-size: 9.5px; background: rgba(217, 119, 6, 0.1); color: #b45309; border-color: rgba(217, 119, 6, 0.25);">
+                                Min 6 characters
+                            </span>
+                        </div>
+                        <div class="position-relative admin-input-group">
+                            <span class="admin-input-icon-left">
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                </svg>
+                            </span>
                             <input :type="showNew ? 'text' : 'password'" 
                                    name="password" 
                                    required 
                                    minlength="6"
-                                   placeholder="Create new secure password"
-                                   class="admin-form-input w-100 pe-5" />
+                                   placeholder="Create a strong new password"
+                                   class="admin-form-input" 
+                                   style="padding-left: 2.6rem !important; padding-right: 2.75rem !important;" />
                             <button type="button" 
                                     @click="showNew = !showNew" 
-                                    class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent text-ink-40 px-2.5 py-1">
-                                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!showNew">
+                                    class="admin-input-eye-btn"
+                                    title="Toggle visibility">
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!showNew">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>
-                                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="showNew" x-cloak>
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="showNew" x-cloak>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
                                 </svg>
                             </button>
                         </div>
                     </div>
 
+                    <!-- Confirm Password Field -->
                     <div>
-                        <label class="form-label text-uppercase tracking-wider-custom text-ink-60 fw-semibold mb-1" style="font-size: 10px;">
-                            Confirm New Password <span class="text-danger">*</span>
-                        </label>
-                        <div class="position-relative">
+                        <div class="d-flex align-items-center justify-content-between mb-1.5">
+                            <label class="text-uppercase tracking-wider-custom fw-bold text-ink-70 m-0" style="font-size: 10.5px;">
+                                Confirm Password
+                            </label>
+                            <span class="badge rounded-pill bg-white text-ink-60 border border-ink-10 px-2 py-0.5 fw-normal" style="font-size: 9.5px;">
+                                Must match
+                            </span>
+                        </div>
+                        <div class="position-relative admin-input-group">
+                            <span class="admin-input-icon-left">
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </span>
                             <input :type="showConfirm ? 'text' : 'password'" 
                                    name="password_confirmation" 
                                    required 
                                    minlength="6"
-                                   placeholder="Re-enter new password"
-                                   class="admin-form-input w-100 pe-5" />
+                                   placeholder="Re-enter your new password"
+                                   class="admin-form-input" 
+                                   style="padding-left: 2.6rem !important; padding-right: 2.75rem !important;" />
                             <button type="button" 
                                     @click="showConfirm = !showConfirm" 
-                                    class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent text-ink-40 px-2.5 py-1">
-                                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!showConfirm">
+                                    class="admin-input-eye-btn"
+                                    title="Toggle visibility">
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!showConfirm">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>
-                                <svg style="width: 0.95rem; height: 0.95rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="showConfirm" x-cloak>
+                                <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="showConfirm" x-cloak>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
                                 </svg>
                             </button>
@@ -316,13 +373,14 @@
                 </div>
 
                 <!-- Modal Actions Footer -->
-                <div class="p-3.5 px-4 bg-paper-dark border-top border-ink-10 d-flex align-items-center justify-content-end gap-2.5 rounded-bottom-4">
-                    <button type="button" class="btn-admin-secondary" @click="changePasswordOpen = false">
+                <div class="p-3.5 px-4 border-top border-ink-10 d-flex align-items-center justify-content-end gap-2.5" 
+                     style="background: linear-gradient(180deg, #faf7f2 0%, #f4ede1 100%);">
+                    <button type="button" class="btn-admin-secondary" style="min-height: 34px; padding: 0.35rem 1.15rem; font-size: 11px;" @click="changePasswordOpen = false">
                         Cancel
                     </button>
-                    <button type="submit" class="btn-admin-primary">
+                    <button type="submit" class="btn-admin-primary" style="min-height: 34px; padding: 0.35rem 1.35rem; font-size: 11px;">
                         <svg style="width: 0.85rem; height: 0.85rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7" />
                         </svg>
                         <span>Update Password</span>
                     </button>
