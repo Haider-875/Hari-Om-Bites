@@ -87,10 +87,10 @@ $dishes = [
 
                                         <!-- Order & Menu Buttons -->
                                         <div class="mt-4 d-flex flex-wrap align-items-center gap-3">
-                                            <a href="tel:+19073283218" class="btn-terracotta">
+                                            <a href="tel:+19073283218" class="btn-terracotta w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                                                 Order this dish
                                             </a>
-                                            <!-- <a href="{{ route('menu') }}" class="btn-secondary-dark">
+                                            <!-- <a href="{{ route('menu') }}" class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                                                 View in menu
                                             </a> -->
                                         </div>

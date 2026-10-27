@@ -29,41 +29,41 @@
     </section>
 
     <!-- Interactive Category Filter Navigation -->
-    <div class="sticky-top border-top border-bottom border-terracotta-15 bg-paper-95 py-3 backdrop-blur-md" style="top: 4rem; z-index: 1020;">
-        <div class="max-w-92rem px-3 px-sm-4 d-flex align-items-center justify-content-between">
-            <div class="d-flex flex-wrap gap-2">
+    <div class="sticky-top border-top border-bottom border-terracotta-15 bg-paper-95 py-3 backdrop-blur-md" style="top: 4.75rem; z-index: 1020;">
+        <div class="max-w-92rem px-3 px-sm-4 d-flex align-items-center justify-content-between gap-3">
+            <div class="d-flex align-items-center gap-2 overflow-x-auto pb-1 pb-sm-0" style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
                 <button type="button" 
                         @click="activeCategory = 'All'" 
-                        class="rounded-full px-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0"
-                        style="font-size: 10px;"
+                        class="rounded-full px-3 px-sm-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0 flex-shrink-0"
+                        style="font-size: 10px; min-height: 38px;"
                         :class="activeCategory === 'All' ? 'bg-terracotta text-paper shadow-sm' : 'border border-terracotta-25 text-terracotta bg-transparent'">
                     All Imagery
                 </button>
                 <button type="button" 
                         @click="activeCategory = 'Dishes'" 
-                        class="rounded-full px-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0"
-                        style="font-size: 10px;"
+                        class="rounded-full px-3 px-sm-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0 flex-shrink-0"
+                        style="font-size: 10px; min-height: 38px;"
                         :class="activeCategory === 'Dishes' ? 'bg-terracotta text-paper shadow-sm' : 'border border-terracotta-25 text-terracotta bg-transparent'">
                     Dishes & Curries
                 </button>
                 <button type="button" 
                         @click="activeCategory = 'Craft'" 
-                        class="rounded-full px-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0"
-                        style="font-size: 10px;"
+                        class="rounded-full px-3 px-sm-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0 flex-shrink-0"
+                        style="font-size: 10px; min-height: 38px;"
                         :class="activeCategory === 'Craft' ? 'bg-terracotta text-paper shadow-sm' : 'border border-terracotta-25 text-terracotta bg-transparent'">
                     Tandoor & Spices
                 </button>
                 <button type="button" 
                         @click="activeCategory = 'Interior'" 
-                        class="rounded-full px-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0"
-                        style="font-size: 10px;"
+                        class="rounded-full px-3 px-sm-4 py-2 text-uppercase tracking-wider-custom transition-all cursor-pointer fw-medium border-0 flex-shrink-0"
+                        style="font-size: 10px; min-height: 38px;"
                         :class="activeCategory === 'Interior' ? 'bg-terracotta text-paper shadow-sm' : 'border border-terracotta-25 text-terracotta bg-transparent'">
                     Atmosphere & Booths
                 </button>
             </div>
 
-            <div class="d-none d-sm-block">
-                <a href="{{ route('menu') }}" class="btn-primary">
+            <div class="d-none d-sm-block flex-shrink-0">
+                <a href="{{ route('menu') }}" class="btn-primary" style="min-height: 44px;">
                     View Menu
                 </a>
             </div>
@@ -115,7 +115,7 @@
          x-cloak
          class="modal-overlay bg-ink-90 p-3 backdrop-blur-md">
         
-        <div @click.away="modalOpen = false" class="position-relative max-w-3xl w-100 overflow-hidden rounded-sm bg-paper shadow-lg border border-terracotta-20 text-ink">
+        <div @click.away="modalOpen = false" class="position-relative max-w-3xl w-100 overflow-hidden rounded-sm bg-paper shadow-lg border border-terracotta-20 text-ink" style="max-height: 90vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
             <button type="button" 
                     @click.stop="modalOpen = false" 
                     class="position-absolute d-flex align-items-center justify-content-center rounded-full bg-ink-80 text-paper border-0 cursor-pointer w-10 h-10" 
@@ -133,11 +133,11 @@
                         <span class="text-uppercase tracking-widest-custom text-saffron m-0" style="font-size: 10px;" x-text="activeItem.category"></span>
                         <h3 class="mt-2 font-display fs-2 text-ember m-0" x-text="activeItem.title"></h3>
                         <p class="mt-3 small leading-relaxed text-ink-75 m-0" x-text="activeItem.caption"></p>
-                        <div class="mt-4 pt-2 d-flex flex-wrap gap-3">
-                            <a href="{{ route('menu') }}" class="btn-primary">
+                        <div class="mt-4 pt-2 d-flex flex-column flex-sm-row gap-3">
+                            <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                                 Order on Menu
                             </a>
-                            <button type="button" @click="modalOpen = false" class="btn-secondary-dark">
+                            <button type="button" @click="modalOpen = false" class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                                 Close Preview
                             </button>
                         </div>
@@ -153,11 +153,11 @@
             <p class="label-caps text-saffron m-0">Taste in Person</p>
             <h2 class="mt-3 font-display text-ember display-title-section m-0">Join Us for Dinner Tonight</h2>
             <p class="mt-3 small text-ink-65 m-0">Serving authentic Punjabi flavors on S Cushman Street in Fairbanks.</p>
-            <div class="mt-4 pt-2 d-flex justify-content-center gap-3">
-                <a href="{{ route('reservations') }}" class="btn-primary">
+            <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="{{ route('reservations') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                     Book a Table
                 </a>
-                <a href="tel:+19073283218" class="btn-secondary-dark">
+                <a href="tel:+19073283218" class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                     Call +1 907-328-3218
                 </a>
             </div>

@@ -124,7 +124,7 @@ class="min-vh-100 bg-paper">
                 </div>
 
                 <a href="tel:+19073283218" 
-                   class="btn-primary d-inline-flex align-items-center gap-2 w-auto">
+                   class="btn-primary d-inline-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto" style="min-height: 44px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     Call to order · +1 907-328-3218
                 </a>
@@ -135,9 +135,9 @@ class="min-vh-100 bg-paper">
     <!-- Sticky Search & Category Navigation Bar (Matched to Homepage UI) -->
     <div class="sticky-top border-top border-bottom border-terracotta-10 bg-paper-95 backdrop-blur-md" style="top: 4.75rem; z-index: 1020;">
         <div class="max-w-6xl px-3 px-sm-4">
-            <div class="d-flex align-items-center gap-3 pt-3 pb-2">
+            <div class="d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between gap-2 gap-sm-3 pt-3 pb-2">
                 <!-- Search Input with Warm Saffron/Terracotta Focus Glow -->
-                <div class="position-relative flex-grow-1 flex-sm-grow-0" style="max-width: 22rem;">
+                <div class="position-relative flex-grow-1 flex-sm-grow-0" style="max-width: 22rem; min-width: 160px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search position-absolute text-terracotta-40 pointer-events-none" style="left: 0.85rem; top: 50%; transform: translateY(-50%); width: 0.95rem; height: 0.95rem;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
                     <input type="search" 
                            x-model="searchQuery" 
@@ -333,7 +333,8 @@ class="min-vh-100 bg-paper">
                 <p class="mt-1 small text-ink-60 m-0">1528 S Cushman St · Fairbanks, Alaska</p>
             </div>
             <a href="tel:+19073283218" 
-               class="btn-primary">
+               class="btn-primary w-100 w-sm-auto text-center justify-content-center"
+               style="min-height: 44px;">
                 Call +1 907-328-3218
             </a>
         </div>

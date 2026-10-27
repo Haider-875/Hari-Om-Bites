@@ -40,15 +40,16 @@
                 </dl>
 
                 <div class="mt-4 pt-2 d-flex flex-column flex-sm-row gap-3">
-                    <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                         Get directions
                     </a>
-                    <!-- <a href="tel:+19073283218" class="btn-secondary-dark">
+                    <!-- <a href="tel:+19073283218" class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                         Call to order
                     </a> -->
                     <button type="button" 
                             @click="reservationOpen = true"
-                            class="btn-secondary-dark">
+                            class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center"
+                            style="min-height: 44px;">
                         Book a Table
                     </button>
                 </div>
@@ -92,7 +93,7 @@
          x-transition:leave-end="opacity-0"
          x-cloak
          class="modal-overlay bg-ink-80 p-3 backdrop-blur-sm">
-        <div @click.away="reservationOpen = false" class="position-relative w-100 rounded-sm bg-paper p-4 p-sm-5 shadow-lg border border-terracotta-20 text-ink max-w-lg">
+        <div @click.away="reservationOpen = false" class="position-relative w-100 rounded-sm bg-paper p-4 p-sm-5 shadow-lg border border-terracotta-20 text-ink max-w-lg" style="max-height: 90vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
             <button type="button" 
                     @click.stop="reservationOpen = false" 
                     class="position-absolute border-0 bg-transparent text-ink-50 p-2 cursor-pointer" 
@@ -111,25 +112,25 @@
                     <input type="text" name="name" required class="form-control form-control-sm mt-1 bg-white-70 border-terracotta-20">
                 </div>
                 <div class="row g-3">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <label class="d-block text-uppercase tracking-wider-custom text-ink-60 m-0" style="font-size: 10px;">Email</label>
                         <input type="email" name="email" required class="form-control form-control-sm mt-1 bg-white-70 border-terracotta-20">
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <label class="d-block text-uppercase tracking-wider-custom text-ink-60 m-0" style="font-size: 10px;">Phone</label>
                         <input type="tel" name="phone" required class="form-control form-control-sm mt-1 bg-white-70 border-terracotta-20">
                     </div>
                 </div>
                 <div class="row g-3">
-                    <div class="col-4">
+                    <div class="col-12 col-sm-4">
                         <label class="d-block text-uppercase tracking-wider-custom text-ink-60 m-0" style="font-size: 10px;">Date</label>
                         <input type="date" name="date" required class="form-control form-control-sm mt-1 bg-white-70 border-terracotta-20">
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-sm-4">
                         <label class="d-block text-uppercase tracking-wider-custom text-ink-60 m-0" style="font-size: 10px;">Time</label>
                         <input type="time" name="time" required class="form-control form-control-sm mt-1 bg-white-70 border-terracotta-20">
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-sm-4">
                         <label class="d-block text-uppercase tracking-wider-custom text-ink-60 m-0" style="font-size: 10px;">Guests</label>
                         <input type="number" name="guests" min="1" max="20" value="2" required class="form-control form-control-sm mt-1 bg-white-70 border-terracotta-20">
                     </div>
@@ -138,7 +139,7 @@
                     <label class="d-block text-uppercase tracking-wider-custom text-ink-60 m-0" style="font-size: 10px;">Special Requests</label>
                     <textarea name="special_requests" rows="2" class="form-control form-control-sm mt-1 bg-white-70 border-terracotta-20"></textarea>
                 </div>
-                <button type="submit" class="btn-primary w-100 text-center mt-2">
+                <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-2" style="min-height: 44px;">
                     Confirm Reservation Request
                 </button>
             </form>

@@ -66,11 +66,11 @@
                                 </div>
                             </dl>
 
-                            <div class="mt-4 pt-2 d-flex flex-wrap gap-3">
-                                <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary">
+                            <div class="mt-4 pt-2 d-flex flex-column flex-sm-row gap-3">
+                                <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                                     Open Google Maps
                                 </a>
-                                <a href="tel:+19073283218" class="btn-secondary-dark">
+                                <a href="tel:+19073283218" class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                                     Call Kitchen
                                 </a>
                             </div>
@@ -135,7 +135,7 @@
                                 <textarea name="message" rows="5" required class="form-control mt-2 border-terracotta-20 bg-paper text-ink" placeholder="Tell us how we can help you..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn-primary w-100 text-center mt-3">
+                            <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-3" style="min-height: 44px;">
                                 Submit Message
                             </button>
                         </form>

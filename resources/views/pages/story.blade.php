@@ -18,11 +18,11 @@
                 <p class="mt-4 max-w-2xl text-white-70 leading-relaxed fs-6 m-0">
                     Since opening our doors on South Cushman Street in Fairbanks, Hari Om Cuisine of India has stood as an authentic culinary sanctuary — bringing the deep aromas, clay-oven traditions, and golden spices of Punjab to the heart of Alaska.
                 </p>
-                <div class="mt-4 pt-2 d-flex flex-wrap gap-3">
-                    <a href="{{ route('menu') }}" class="btn-primary">
+                <div class="mt-4 pt-2 d-flex flex-column flex-sm-row gap-3">
+                    <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                         Explore Full Menu
                     </a>
-                    <a href="{{ route('reservations') }}" class="btn-secondary">
+                    <a href="{{ route('reservations') }}" class="btn-secondary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                         Reserve a Table
                     </a>
                 </div>
@@ -76,11 +76,11 @@
                         </p>
                     </div>
 
-                    <div class="mt-4 pt-2 d-flex flex-wrap gap-3">
-                        <a href="tel:+19073283218" class="btn-primary">
+                    <div class="mt-4 pt-2 d-flex flex-column flex-sm-row gap-3">
+                        <a href="tel:+19073283218" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                             Call the Kitchen
                         </a>
-                        <a href="{{ route('gallery') }}" class="btn-secondary-dark">
+                        <a href="{{ route('gallery') }}" class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                             View Photo Gallery
                         </a>
                     </div>
@@ -165,11 +165,11 @@
             <p class="mx-auto mt-4 max-w-2xl small leading-relaxed text-white-60 m-0">
                 Whether celebrating a milestone or seeking the comforting embrace of hot tandoor bread and slow-simmered curry, a table is waiting for you.
             </p>
-            <div class="mt-4 pt-2 d-flex flex-wrap justify-content-center gap-3">
-                <a href="{{ route('reservations') }}" class="btn-primary">
+            <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="{{ route('reservations') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                     Book Your Table
                 </a>
-                <a href="{{ route('contact') }}" class="btn-secondary">
+                <a href="{{ route('contact') }}" class="btn-secondary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                     Directions & Hours
                 </a>
             </div>

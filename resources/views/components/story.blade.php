@@ -40,28 +40,28 @@
                 </div>
 
                 <!-- Stats Ribbon -->
-                <div class="row g-3 mt-4 pt-4 border-top border-terracotta-15">
+                <div class="row g-2 g-sm-3 mt-4 pt-4 border-top border-terracotta-15">
                     <div class="col-4">
-                        <p class="font-display text-terracotta m-0" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">61</p>
-                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Dishes &amp; pours</p>
+                        <p class="font-display text-terracotta m-0" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1;">61</p>
+                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: clamp(8px, 2.2vw, 10px); letter-spacing: 0.12em; line-height: 1.4;">Dishes &amp; pours</p>
                     </div>
                     <div class="col-4">
-                        <p class="font-display text-terracotta m-0" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">20</p>
-                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Vegetarian</p>
+                        <p class="font-display text-terracotta m-0" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1;">20</p>
+                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: clamp(8px, 2.2vw, 10px); letter-spacing: 0.12em; line-height: 1.4;">Vegetarian</p>
                     </div>
                     <div class="col-4">
-                        <p class="font-display text-terracotta m-0" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1;">42</p>
-                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: 9px; letter-spacing: 0.18em;">Gluten free</p>
+                        <p class="font-display text-terracotta m-0" style="font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1;">42</p>
+                        <p class="mt-2 text-uppercase text-ink-75 fw-semibold mb-0" style="font-size: clamp(8px, 2.2vw, 10px); letter-spacing: 0.12em; line-height: 1.4;">Gluten free</p>
                     </div>
                 </div>
 
                 <!-- CTA Button (Standard website btn-primary, zero-arrow) -->
                 <div class="mt-4 pt-2">
-                    <a href="{{ route('menu') }}" class="btn-primary">
+                    <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                         See the full menu
                     </a>
                 </div>
-                <p class="mt-4 text-uppercase text-ink-40 mb-0" style="font-size: 11px; letter-spacing: 0.18em;">1528 S Cushman St · Fairbanks, Alaska</p>
+                <p class="mt-4 text-uppercase text-ink-40 mb-0" style="font-size: clamp(10px, 2.4vw, 11px); letter-spacing: 0.16em;">1528 S Cushman St · Fairbanks, Alaska</p>
             </div>
         </div>
 

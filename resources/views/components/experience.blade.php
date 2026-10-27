@@ -23,7 +23,7 @@
         <!-- 3 Feature Cards with GSAP Stagger Entrance -->
         <div class="gsap-stagger-group mt-5 row g-4">
             <!-- Dine in -->
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-md-4">
                 <div class="gsap-stagger-item rounded-sm border border-white-10 bg-ink-70 p-4 p-sm-5 backdrop-blur-md transition-all shadow-lg h-100 d-flex flex-column justify-content-between">
                     <div>
                         <div class="d-flex align-items-center justify-content-center rounded-full border border-saffron-40 text-saffron w-12 h-12">
@@ -35,7 +35,7 @@
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10">
-                        <a href="{{ route('reservations') }}" class="btn-secondary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center" style="font-size: 10px;">
+                        <a href="{{ route('reservations') }}" class="btn-secondary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center justify-content-center" style="font-size: 10px; min-height: 44px;">
                             Book a table
                         </a>
                     </div>
@@ -43,7 +43,7 @@
             </div>
 
             <!-- Take out -->
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-md-4">
                 <div class="gsap-stagger-item rounded-sm border border-white-10 bg-ink-70 p-4 p-sm-5 backdrop-blur-md transition-all shadow-lg h-100 d-flex flex-column justify-content-between">
                     <div>
                         <div class="d-flex align-items-center justify-content-center rounded-full border border-saffron-40 text-saffron w-12 h-12">
@@ -55,7 +55,7 @@
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10">
-                        <a href="tel:+19073283218" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center" style="font-size: 10px;">
+                        <a href="tel:+19073283218" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center justify-content-center" style="font-size: 10px; min-height: 44px;">
                             Order takeout
                         </a>
                     </div>
@@ -63,7 +63,7 @@
             </div>
 
             <!-- Catering -->
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-md-4">
                 <div class="gsap-stagger-item rounded-sm border border-white-10 bg-ink-70 p-4 p-sm-5 backdrop-blur-md transition-all shadow-lg h-100 d-flex flex-column justify-content-between">
                     <div>
                         <div class="d-flex align-items-center justify-content-center rounded-full border border-saffron-40 text-saffron w-12 h-12">
@@ -75,7 +75,7 @@
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10">
-                        <a href="{{ route('contact') }}" class="btn-secondary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center" style="font-size: 10px;">
+                        <a href="{{ route('contact') }}" class="btn-secondary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center justify-content-center" style="font-size: 10px; min-height: 44px;">
                             Catering inquiries
                         </a>
                     </div>

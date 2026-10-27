@@ -30,6 +30,8 @@ html {
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    overflow-x: clip;
+    max-width: 100vw;
 }
 
 body {
@@ -40,6 +42,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
+    overflow-x: clip;
+    max-width: 100vw;
 }
 
 ::selection {
@@ -328,11 +332,13 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     padding: 0.9rem 1.85rem;
+    min-height: 44px;
     border: none;
     box-shadow: 0 10px 25px -10px rgba(217, 119, 6, 0.45);
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     text-decoration: none;
+    touch-action: manipulation;
 }
 
 .btn-primary:hover {
@@ -363,9 +369,11 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     padding: 0.85rem 1.85rem;
+    min-height: 44px;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     text-decoration: none;
+    touch-action: manipulation;
 }
 
 .btn-secondary:hover {
@@ -393,9 +401,11 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     padding: 0.85rem 1.85rem;
+    min-height: 44px;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     text-decoration: none;
+    touch-action: manipulation;
 }
 
 .btn-secondary-dark:hover {
@@ -418,11 +428,13 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     padding: 0.9rem 1.85rem;
+    min-height: 44px;
     border: none;
     box-shadow: 0 10px 25px -10px rgba(124, 45, 18, 0.4);
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     text-decoration: none;
+    touch-action: manipulation;
 }
 
 .btn-terracotta:hover {
@@ -434,6 +446,17 @@ a {
 
 .btn-terracotta:active {
     transform: translateY(0) scale(0.98);
+}
+
+@media (max-width: 480px) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-secondary-dark,
+    .btn-terracotta {
+        padding: 0.75rem 1.35rem;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+    }
 }
 
 /* Animations */
@@ -529,13 +552,15 @@ a {
 
 /* Display & Line Heights */
 .display-title-hero {
-    font-size: clamp(3rem, 7vw, 6rem);
-    line-height: 0.95;
+    font-size: clamp(2.15rem, 6vw, 6rem);
+    line-height: 1.02;
+    overflow-wrap: break-word;
 }
 
 .display-title-section {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 0.95;
+    font-size: clamp(1.85rem, 4.5vw, 4rem);
+    line-height: 1.05;
+    overflow-wrap: break-word;
 }
 
 /* Sizing helpers */
@@ -1118,6 +1143,7 @@ a {
 .ref-menu-cta {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     border-radius: 9999px;
     background-color: var(--color-terracotta);
@@ -1127,10 +1153,20 @@ a {
     letter-spacing: 0.22em;
     color: var(--color-paper);
     text-decoration: none;
+    min-height: 44px;
+    touch-action: manipulation;
     transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
                 transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 14px rgba(124, 45, 18, 0.2);
     margin-top: 2.5rem;
+}
+@media (max-width: 480px) {
+    .ref-menu-cta {
+        width: 100%;
+        text-align: center;
+        padding: 0.85rem 1.25rem;
+        letter-spacing: 0.16em;
+    }
 }
 .ref-menu-cta:hover {
     background-color: var(--color-ink);
@@ -1376,6 +1412,78 @@ a {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* ==========================================================================
+   Complete Mobile Responsiveness & Breakpoint Hardening
+   (320px, 375px, 390px, 430px, 480px, 600px, 768px, 1024px, 1280px, 1440px)
+   ========================================================================== */
+
+/* 1. Prevent unwanted iOS Safari auto-zoom on form inputs */
+@media (max-width: 768px) {
+    input,
+    select,
+    textarea,
+    .form-control,
+    .form-select {
+        font-size: 16px !important;
+    }
+}
+
+/* 2. Modal Overlay & Dialog Responsiveness */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.75rem, 3vw, 1.5rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 3. Safe Area Padding for Notch Devices */
+@supports (padding: max(0px)) {
+    .position-fixed.top-0 {
+        padding-top: max(0px, env(safe-area-inset-top));
+    }
+    footer {
+        padding-bottom: max(0px, env(safe-area-inset-bottom));
+    }
+}
+
+/* 4. Small Mobile Gutter & Spacing Tuning (< 480px / 320px) */
+@media (max-width: 480px) {
+    .container,
+    .max-w-92rem,
+    .max-w-6xl {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Prevent awkward card overflowing */
+    .card,
+    figure {
+        max-width: 100%;
+    }
+}
+
+/* 5. Touch Target Consistency & Image Protection */
+button,
+a.btn-primary,
+a.btn-secondary,
+a.btn-secondary-dark,
+a.btn-terracotta {
+    touch-action: manipulation;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+img.object-cover {
+    height: 100%;
 }
 
 
