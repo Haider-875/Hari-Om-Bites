@@ -95,15 +95,17 @@ a {
     letter-spacing: 0.35em;
 }
 
-/* Navbar Link Indicator */
+/* Navbar Link Indicator (Recommended Scale: 14–16px) */
 .nav-link-custom {
     position: relative;
-    font-size: 11px;
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.12em;
     transition: color 0.3s ease;
     text-decoration: none;
-    padding: 0.25rem 0;
+    padding: 0.35rem 0;
     display: inline-block;
 }
 .nav-link-custom::after {
@@ -112,12 +114,16 @@ a {
     bottom: -2px;
     left: 0;
     width: 0;
-    height: 1px;
+    height: 2px;
     background-color: #d97706;
     transition: width 0.3s ease;
 }
-.nav-link-custom:hover::after {
+.nav-link-custom:hover::after,
+.nav-link-custom.active-nav::after {
     width: 100%;
+}
+.nav-link-custom:hover {
+    color: #f59e0b !important;
 }
 
 /* Theme Colors - Backgrounds */
@@ -484,11 +490,11 @@ a {
 
 /* Hero Banner CTA Buttons — Identical Width & Compact Size */
 .hero-cta-btn {
-    width: 185px !important;
-    min-height: 40px !important;
-    font-size: 10.5px !important;
-    letter-spacing: 0.16em !important;
-    padding: 0.62rem 1.15rem !important;
+    width: 195px !important;
+    min-height: 44px !important;
+    font-size: 13.5px !important;
+    letter-spacing: 0.12em !important;
+    padding: 12px 20px !important;
     justify-content: center !important;
     text-align: center !important;
     white-space: nowrap !important;
@@ -496,39 +502,32 @@ a {
 
 /* Mobile Typography, Centered Buttons & Compact Dimensions (<= 767px) */
 @media (max-width: 767px) {
-    /* Headings & Display Typography Refinements (Slightly Smaller on Mobile) */
-    h1, .display-title-hero {
-        font-size: clamp(1.65rem, 5.2vw, 2.35rem) !important;
+    /* Headings & Display Typography Refinements (Recommended Mobile Scale) */
+    .display-title-hero {
+        font-size: clamp(2rem, 5.2vw, 2.5rem) !important; /* 32px – 40px */
         line-height: 1.12 !important;
     }
-    h2, .display-title-section {
-        font-size: clamp(1.35rem, 4.2vw, 1.95rem) !important;
-        line-height: 1.15 !important;
-    }
-    h3 {
-        font-size: 1.25rem !important;
+    .display-title-section {
+        font-size: clamp(1.625rem, 4.5vw, 2rem) !important; /* 26px – 32px */
+        line-height: 1.18 !important;
     }
     .hero-tagline {
-        font-size: clamp(1.15rem, 3.2vw, 1.45rem) !important;
+        font-size: clamp(1.25rem, 3.5vw, 1.55rem) !important;
     }
     .hero-subtagline {
-        font-size: 9px !important;
-        letter-spacing: 0.18em !important;
+        font-size: 10px !important;
+        letter-spacing: 0.20em !important;
     }
     .hero-eyebrow {
-        font-size: 8.5px !important;
-        letter-spacing: 0.18em !important;
+        font-size: 9px !important;
+        letter-spacing: 0.20em !important;
     }
     .label-caps {
-        font-size: 9px !important;
-        letter-spacing: 0.18em !important;
-    }
-    p {
-        font-size: 13.5px !important;
-        line-height: 1.6 !important;
+        font-size: 10px !important;
+        letter-spacing: 0.22em !important;
     }
 
-    /* Buttons Slightly Smaller & Compact on Mobile */
+    /* Buttons Centered & Proportionate (13-14px) on Mobile */
     .btn-primary,
     .btn-secondary,
     .btn-secondary-dark,
@@ -541,19 +540,19 @@ a {
         margin-right: auto !important;
         justify-content: center !important;
         text-align: center !important;
-        font-size: 11.5px !important;
-        padding: 10px 18px !important;
-        min-height: 40px !important;
-        letter-spacing: 0.14em !important;
+        font-size: 13.5px !important;
+        padding: 12px 22px !important;
+        min-height: 44px !important;
+        letter-spacing: 0.12em !important;
     }
 
     /* Hero Banner Buttons — Identical Width & Compact Size on Mobile */
     .hero-cta-btn {
-        width: 195px !important;
+        width: 205px !important;
         max-width: 82% !important;
-        font-size: 11px !important;
-        padding: 0.62rem 1rem !important;
-        min-height: 40px !important;
+        font-size: 13px !important;
+        padding: 11px 18px !important;
+        min-height: 44px !important;
     }
 
     /* Center and neatly stack button containers on mobile */
@@ -573,12 +572,12 @@ a {
         bottom: 4.15rem !important;
     }
 
-    /* Luxury mobile menu links slightly smaller and elegant */
+    /* Luxury mobile menu links (Recommended Mobile Scale: 16–20px) */
     .luxury-nav-text {
-        font-size: clamp(1.15rem, 4.2vw, 1.4rem) !important;
+        font-size: clamp(1.1rem, 4.2vw, 1.35rem) !important; /* 17.5px – 21.5px */
     }
     .luxury-nav-item {
-        padding: 0.65rem 0.5rem !important;
+        padding: 0.75rem 0.5rem !important;
     }
 }
 
@@ -673,16 +672,20 @@ a {
     transition: transform 0.5s ease;
 }
 
-/* Display & Line Heights */
+/* Display & Line Heights — Calibrated to Recommended Typography Scale */
 .display-title-hero {
-    font-size: clamp(2.15rem, 6vw, 6rem);
-    line-height: 1.02;
+    font-family: var(--font-display, serif);
+    font-size: clamp(2.5rem, 5vw, 4.25rem); /* 40px mobile -> 68px desktop (56–72px scale) */
+    line-height: 1.08;
+    letter-spacing: -0.01em;
     overflow-wrap: break-word;
 }
 
 .display-title-section {
-    font-size: clamp(1.85rem, 4.5vw, 4rem);
-    line-height: 1.05;
+    font-family: var(--font-display, serif);
+    font-size: clamp(1.75rem, 3.2vw, 2.75rem); /* 28px mobile -> 44px desktop (36–48px scale) */
+    line-height: 1.15;
+    letter-spacing: 0.01em;
     overflow-wrap: break-word;
 }
 
@@ -1053,23 +1056,24 @@ a {
 .ref-tab-btn {
     position: relative;
     flex-shrink: 0;
-    padding: 0.5rem 1rem 1rem 1rem;
-    font-size: 10px;
+    padding: 0.65rem 1.15rem 0.85rem 1.15rem;
+    font-family: var(--font-sans);
+    font-size: 13.5px;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.10em;
     font-weight: 600;
     border: none;
     background: transparent;
     cursor: pointer;
     white-space: nowrap;
-    color: rgba(23, 23, 23, 0.72);
-    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    color: rgba(23, 23, 23, 0.75);
+    transition: color 0.25s ease;
 }
 .ref-tab-btn:hover {
-    color: var(--color-terracotta);
+    color: var(--color-saffron);
 }
 .ref-tab-btn.is-active {
-    color: var(--color-terracotta);
+    color: var(--color-ember);
     font-weight: 700;
 }
 
@@ -1106,13 +1110,14 @@ a {
 
 .menu-search-input {
     width: 100%;
-    height: 2.35rem;
-    padding: 0.375rem 1rem 0.375rem 2.35rem;
-    font-size: 12px;
+    height: 2.65rem;
+    padding: 0.45rem 1rem 0.45rem 2.45rem;
+    font-family: var(--font-sans);
+    font-size: 14px;
     letter-spacing: 0.02em;
     color: var(--color-ink);
-    background-color: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(124, 45, 18, 0.18);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(124, 45, 18, 0.20);
     border-radius: 9999px;
     transition: all 0.25s ease;
 }
@@ -1130,11 +1135,12 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.4rem 0.85rem;
-    font-size: 9px;
+    padding: 0.45rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.12em;
     border-radius: 9999px;
     border: 1px solid rgba(124, 45, 18, 0.30);
     background: transparent;
@@ -1144,15 +1150,15 @@ a {
     white-space: nowrap;
 }
 .menu-filter-pill:hover {
-    border-color: var(--color-terracotta);
-    color: var(--color-terracotta);
-    background: rgba(124, 45, 18, 0.08);
+    border-color: var(--color-saffron);
+    color: var(--color-saffron);
+    background: rgba(217, 119, 6, 0.08);
 }
 .menu-filter-pill.is-active {
-    background: var(--color-terracotta);
-    border-color: var(--color-terracotta);
+    background: var(--color-ember);
+    border-color: var(--color-ember);
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(124, 45, 18, 0.25);
+    box-shadow: 0 2px 8px rgba(139, 37, 25, 0.25);
 }
 
 
@@ -1766,4 +1772,164 @@ img.object-cover {
     width: 22px;
     height: 7px;
     background-color: #d97706;
+}
+
+/* ==========================================================================
+   MENU PAGE TYPOGRAPHY & DISH STYLING
+   ========================================================================== */
+.menu-category-title {
+    font-family: var(--font-display, serif) !important;
+    font-size: clamp(2rem, 3.5vw, 2.75rem) !important;
+    line-height: 1.15 !important;
+    color: var(--color-ember) !important;
+    letter-spacing: 0.04em !important;
+    font-weight: 600 !important;
+}
+.menu-category-meta {
+    font-family: var(--font-sans) !important;
+    font-size: 12px !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    color: var(--color-saffron) !important;
+    font-weight: 600 !important;
+}
+.dish-title {
+    font-family: var(--font-display, serif) !important;
+    font-size: clamp(1.2rem, 1.8vw, 1.45rem) !important; /* 19px – 23px (Card Heading scale 20-24px) */
+    font-weight: 600 !important;
+    color: var(--color-ember) !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.01em !important;
+}
+.dish-price {
+    flex-shrink: 0 !important;
+    font-family: var(--font-sans) !important;
+    font-size: clamp(1rem, 1.4vw, 1.15rem) !important; /* 16px – 18.5px */
+    font-weight: 700 !important;
+    color: var(--color-ember) !important;
+    letter-spacing: 0.02em !important;
+}
+.dish-description {
+    font-family: var(--font-sans) !important;
+    font-size: clamp(0.92rem, 1.1vw, 1.02rem) !important; /* 14.5px – 16.5px (Paragraph scale 15-16px) */
+    line-height: 1.65 !important;
+    color: rgba(23, 23, 23, 0.72) !important;
+}
+.dish-dietary-tag {
+    font-family: var(--font-sans) !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    color: var(--color-saffron) !important;
+    margin-left: 0.35rem !important;
+    vertical-align: middle !important;
+}
+
+/* ==========================================================================
+   FOOTER STYLING & RESPONSIVE GRID
+   ========================================================================== */
+.footer-heading {
+    font-family: var(--font-sans) !important;
+    font-size: 12px !important;
+    letter-spacing: 0.22em !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    color: #f59e0b !important;
+    margin: 0 !important;
+}
+.footer-eyebrow {
+    font-family: var(--font-sans) !important;
+    font-size: 11px !important;
+    letter-spacing: 0.22em !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    color: #f59e0b !important;
+    margin: 0 !important;
+}
+.footer-logo {
+    display: block !important;
+    height: 56px !important;
+    width: auto !important;
+    aspect-ratio: 612 / 311 !important;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4)) !important;
+}
+.footer-bio {
+    font-family: var(--font-sans) !important;
+    font-size: 14.5px !important;
+    line-height: 1.7 !important;
+    color: rgba(253, 251, 247, 0.65) !important;
+    max-width: 22rem !important;
+    margin: 0 !important;
+}
+.footer-nav-list {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.footer-nav-link {
+    font-family: var(--font-sans) !important;
+    font-size: 14px !important;
+    color: rgba(253, 251, 247, 0.72) !important;
+    text-decoration: none !important;
+    transition: color 0.25s ease !important;
+    display: inline-block !important;
+    padding: 0.18rem 0 !important;
+}
+.footer-nav-link:hover {
+    color: #f59e0b !important;
+}
+.footer-contact-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    font-family: var(--font-sans) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: rgba(253, 251, 247, 0.72) !important;
+    transition: color 0.25s ease !important;
+}
+.footer-contact-item:hover {
+    color: #f59e0b !important;
+}
+.footer-contact-icon {
+    margin-top: 0.2rem !important;
+    flex-shrink: 0 !important;
+    color: #f59e0b !important;
+}
+.footer-bottom {
+    font-family: var(--font-sans) !important;
+    font-size: 12px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    line-height: 1.6 !important;
+}
+.footer-credit-link {
+    color: rgba(253, 251, 247, 0.72) !important;
+    text-decoration: none !important;
+    transition: color 0.25s ease !important;
+}
+.footer-credit-link:hover {
+    color: #f59e0b !important;
+}
+@media (max-width: 767px) {
+    .footer-logo {
+        height: 48px !important;
+    }
+    .footer-heading {
+        font-size: 11.5px !important;
+        letter-spacing: 0.18em !important;
+    }
+    .footer-bio {
+        font-size: 13.5px !important;
+        line-height: 1.65 !important;
+    }
+    .footer-nav-link {
+        font-size: 13.5px !important;
+    }
+    .footer-contact-item {
+        font-size: 13.5px !important;
+    }
+    .footer-bottom {
+        font-size: 11px !important;
+        letter-spacing: 0.06em !important;
+    }
 }

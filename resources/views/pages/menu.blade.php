@@ -195,10 +195,10 @@ class="min-vh-100 bg-paper">
             <section id="{{ $cat->slug }}" class="pt-5" style="scroll-margin-top: 10rem;">
                 <!-- Category Heading -->
                 <div class="text-center">
-                    <p class="label-caps text-saffron m-0">
+                    <p class="menu-category-meta m-0">
                         {{ str_pad($cat->sort_order, 2, '0', STR_PAD_LEFT) }} · {{ $cat->description }}
                     </p>
-                    <h2 class="mt-3 font-display text-ember fs-1 text-uppercase tracking-wide m-0">
+                    <h2 class="mt-2 menu-category-title text-uppercase m-0">
                         {{ $cat->name }}
                     </h2>
                     <div class="mx-auto mt-3 bg-terracotta-25" style="width: 4rem; height: 1px;"></div>
@@ -230,8 +230,8 @@ class="min-vh-100 bg-paper">
                                             <img src="/images/redWine.png" class="w-100 h-100 inset-0 position-absolute object-cover" alt="Red Wine">
                                         </div>
                                         <div>
-                                            <h4 class="font-display fs-2 leading-none text-ember m-0">Red Wine</h4>
-                                            <p class="mt-2 text-uppercase tracking-wider-custom text-terracotta-60 m-0" style="font-size: 11px;">$12 Glass</p>
+                                            <h3 class="dish-title m-0" style="font-size: 24px;">Red Wine</h3>
+                                            <p class="dish-price m-0 mt-1" style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">$12 Glass</p>
                                         </div>
                                     </div>
                                     <ul class="list-unstyled mt-4 d-flex flex-column gap-2 mb-0">
@@ -255,8 +255,8 @@ class="min-vh-100 bg-paper">
                                             <img src="/images/whiteWine.png" class="w-100 h-100 inset-0 position-absolute object-cover" alt="White Wine">
                                         </div>
                                         <div>
-                                            <h4 class="font-display fs-2 leading-none text-ember m-0">White Wine</h4>
-                                            <p class="mt-2 text-uppercase tracking-wider-custom text-terracotta-60 m-0" style="font-size: 11px;">$12 Glass</p>
+                                            <h3 class="dish-title m-0" style="font-size: 24px;">White Wine</h3>
+                                            <p class="dish-price m-0 mt-1" style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">$12 Glass</p>
                                         </div>
                                     </div>
                                     <ul class="list-unstyled mt-4 d-flex flex-column gap-2 mb-0">
@@ -295,24 +295,24 @@ class="min-vh-100 bg-paper">
                                         <!-- Dish Details -->
                                         <div class="min-w-0 flex-grow-1">
                                             <div class="d-flex align-items-baseline justify-content-between gap-2">
-                                                <h4 class="fw-semibold leading-snug text-ember m-0" style="font-size: 15px;">
+                                                <h3 class="dish-title m-0">
                                                     {{ $item->name }}
                                                     @if (in_array('GF', $item->dietary_tags ?? []))
-                                                        <span title="Gluten free" class="ms-1 align-middle text-uppercase tracking-wider-custom text-terracotta-55" style="font-size: 9px;">(GF)</span>
+                                                        <span title="Gluten free" class="dish-dietary-tag">(GF)</span>
                                                     @endif
                                                     @if (in_array('V', $item->dietary_tags ?? []))
-                                                        <span title="Vegetarian" class="ms-1 align-middle text-uppercase tracking-wider-custom text-terracotta-55" style="font-size: 9px;">(V)</span>
+                                                        <span title="Vegetarian" class="dish-dietary-tag">(V)</span>
                                                     @endif
                                                     @if (in_array('N', $item->dietary_tags ?? []))
-                                                        <span title="Contains nuts" class="ms-1 align-middle text-uppercase tracking-wider-custom text-terracotta-55" style="font-size: 9px;">(N)</span>
+                                                        <span title="Contains nuts" class="dish-dietary-tag">(N)</span>
                                                     @endif
-                                                </h4>
-                                                <span class="flex-shrink-0 fw-semibold text-ember" style="font-size: 15px;">
+                                                </h3>
+                                                <span class="dish-price">
                                                     {{ $item->formatted_price }}
                                                 </span>
                                             </div>
                                             @if ($item->description)
-                                                <p class="mt-1 small leading-relaxed text-ink-65 m-0">
+                                                <p class="dish-description m-0 mt-1">
                                                     {{ $item->description }}
                                                 </p>
                                             @endif
