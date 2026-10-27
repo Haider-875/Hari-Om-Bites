@@ -1203,6 +1203,127 @@ a {
     transform: translateX(3px);
 }
 
+/* ==========================================================================
+   Story CTA Luxury Animated Button ("See the full menu")
+   ========================================================================== */
+.story-cta-lux-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 13px 22px 13px 28px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #181512 0%, #2b2016 50%, #181512 100%);
+    background-size: 200% 100%;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #fdfbf7 !important;
+    text-decoration: none !important;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 
+        0 4px 16px rgba(24, 21, 18, 0.2),
+        0 0 0 1px rgba(245, 158, 11, 0.15),
+        0 8px 24px -4px rgba(217, 119, 6, 0.22);
+    transition: 
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.4s ease,
+        background-position 0.6s ease;
+    will-change: transform, box-shadow;
+}
+
+/* Diagonal glossy shimmer sweep */
+.story-cta-lux-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.04) 20%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(251, 191, 36, 0.4) 60%,
+        transparent 100%
+    );
+    transform: skewX(-22deg);
+    transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Hover state */
+.story-cta-lux-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    border-color: rgba(251, 191, 36, 0.9);
+    background-position: 100% 0;
+    box-shadow: 
+        0 14px 34px -4px rgba(217, 119, 6, 0.45),
+        0 6px 18px rgba(24, 21, 18, 0.3),
+        0 0 24px rgba(245, 158, 11, 0.3);
+    color: #ffffff !important;
+}
+
+.story-cta-lux-btn:hover::before {
+    left: 140%;
+}
+
+.story-cta-lux-btn:active {
+    transform: translateY(-1px) scale(0.99);
+    box-shadow: 0 6px 18px rgba(217, 119, 6, 0.3);
+}
+
+/* Text label */
+.story-cta-lux-btn .btn-label {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.story-cta-lux-btn:hover .btn-label {
+    letter-spacing: 0.26em;
+    color: #fffdf9 !important;
+}
+
+/* Arrow circle badge */
+.story-cta-lux-btn .btn-arrow-badge {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    color: #181512;
+    box-shadow: 0 2px 10px rgba(217, 119, 6, 0.45);
+    transition: 
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background 0.3s ease,
+        box-shadow 0.4s ease;
+}
+
+.story-cta-lux-btn:hover .btn-arrow-badge {
+    transform: translateX(4px) scale(1.08);
+    background: linear-gradient(135deg, #fef08a 0%, #f59e0b 100%);
+    box-shadow: 0 0 18px rgba(251, 191, 36, 0.9);
+}
+
+.story-cta-lux-btn .btn-arrow-badge svg {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.story-cta-lux-btn:hover .btn-arrow-badge svg {
+    transform: translateX(2px);
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     *,

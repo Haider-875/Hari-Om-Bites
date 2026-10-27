@@ -55,14 +55,15 @@
                     </div>
                 </div>
 
-                <!-- CTA Link (exact base44 circular button arrow link) -->
+                <!-- Luxury Animated CTA Button -->
                 <div class="mt-4 pt-2">
-                    <a class="group d-inline-flex align-items-center gap-3 text-uppercase text-decoration-none text-terracotta hover-text-ink transition-colors"
-                       style="font-size: 10px; letter-spacing: 0.24em;" 
-                       href="{{ route('menu') }}">
-                        <span class="fw-semibold">See the full menu</span>
-                        <span class="d-inline-flex align-items-center justify-content-center rounded-circle border border-terracotta-30 transition-all cta-circle-btn" style="width: 36px; height: 36px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    <a class="story-cta-lux-btn" href="{{ route('menu') }}">
+                        <span class="btn-label">See the full menu</span>
+                        <span class="btn-arrow-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
                         </span>
                     </a>
                 </div>
