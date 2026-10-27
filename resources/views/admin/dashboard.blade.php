@@ -1,87 +1,202 @@
 @extends('admin.layout', ['title' => 'Dashboard Overview'])
 
 @section('content')
-    <!-- Metric Cards -->
-    <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="bg-paper p-4 rounded-sm border border-ink-10 shadow-sm h-100">
-                <span class="text-uppercase tracking-widest-custom text-ink-40 m-0" style="font-size: 10px;">Total Menu Items</span>
-                <p class="font-display fs-1 text-ember mt-2 mb-0">{{ $totalItems }}</p>
-                <span class="small text-ink-50 mt-1 d-block">Across {{ $totalCategories }} categories</span>
+    <!-- Metric Cards Grid -->
+    <div class="row g-3 g-lg-4">
+        <!-- Metric: Menu Items -->
+        <div class="col-6 col-lg-3">
+            <div class="admin-stat-card d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="text-uppercase tracking-wider-custom text-ink-50 fw-semibold" style="font-size: 10px;">Menu Dishes</span>
+                    <div class="admin-stat-icon" style="background-color: rgba(217, 119, 6, 0.12); color: #d97706;">
+                        <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <p class="font-display fw-bold text-ember m-0" style="font-size: 2.2rem; line-height: 1;">{{ $totalItems }}</p>
+                    <span class="text-ink-50 mt-1 d-block" style="font-size: 11px;">Across {{ $totalCategories }} categories</span>
+                </div>
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="bg-paper p-4 rounded-sm border border-ink-10 shadow-sm h-100">
-                <span class="text-uppercase tracking-widest-custom text-ink-40 m-0" style="font-size: 10px;">Categories</span>
-                <p class="font-display fs-1 text-terracotta mt-2 mb-0">{{ $totalCategories }}</p>
-                <span class="small text-ink-50 mt-1 d-block">Active on digital menu</span>
+        <!-- Metric: Categories -->
+        <div class="col-6 col-lg-3">
+            <div class="admin-stat-card d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="text-uppercase tracking-wider-custom text-ink-50 fw-semibold" style="font-size: 10px;">Categories</span>
+                    <div class="admin-stat-icon" style="background-color: rgba(124, 45, 18, 0.12); color: #7c2d12;">
+                        <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <p class="font-display fw-bold text-terracotta m-0" style="font-size: 2.2rem; line-height: 1;">{{ $totalCategories }}</p>
+                    <span class="text-ink-50 mt-1 d-block" style="font-size: 11px;">All active online</span>
+                </div>
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="bg-paper p-4 rounded-sm border border-ink-10 shadow-sm h-100">
-                <span class="text-uppercase tracking-widest-custom text-ink-40 m-0" style="font-size: 10px;">Pending Bookings</span>
-                <p class="font-display fs-1 text-saffron mt-2 mb-0">{{ $pendingReservations }}</p>
-                <a href="{{ route('admin.reservations.index') }}" class="small text-terracotta text-decoration-none mt-1 d-block">Manage requests</a>
+        <!-- Metric: Pending Reservations -->
+        <div class="col-6 col-lg-3">
+            <div class="admin-stat-card d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="text-uppercase tracking-wider-custom text-ink-50 fw-semibold" style="font-size: 10px;">Pending Bookings</span>
+                    <div class="admin-stat-icon" style="background-color: rgba(217, 119, 6, 0.15); color: #b45309;">
+                        <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <p class="font-display fw-bold text-saffron m-0" style="font-size: 2.2rem; line-height: 1;">{{ $pendingReservations }}</p>
+                    <a href="{{ route('admin.reservations.index') }}" class="text-terracotta text-decoration-none fw-semibold mt-1 d-inline-flex align-items-center gap-1" style="font-size: 11px;">
+                        <span>Review Bookings</span>
+                        <span style="font-size: 13px;">→</span>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="bg-paper p-4 rounded-sm border border-ink-10 shadow-sm h-100">
-                <span class="text-uppercase tracking-widest-custom text-ink-40 m-0" style="font-size: 10px;">Kitchen Status</span>
-                <p class="font-display fs-2 mt-2 mb-0" style="color: #047857;">Active</p>
-                <span class="small text-ink-50 mt-1 d-block">Dine In · Take Out · Catering</span>
+        <!-- Metric: Kitchen Status -->
+        <div class="col-6 col-lg-3">
+            <div class="admin-stat-card d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="text-uppercase tracking-wider-custom text-ink-50 fw-semibold" style="font-size: 10px;">Kitchen Operations</span>
+                    <div class="admin-stat-icon" style="background-color: rgba(16, 185, 129, 0.12); color: #059669;">
+                        <span class="pulse-live-indicator" style="width: 10px; height: 10px;"></span>
+                    </div>
+                </div>
+                <div>
+                    <p class="font-display fw-bold m-0" style="font-size: 2.2rem; line-height: 1; color: #047857;">Active</p>
+                    <span class="text-ink-50 mt-1 d-block" style="font-size: 11px;">Dine-In · Take-Out · Events</span>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Recent Table Reservations & Quick Actions -->
-    <div class="mt-4 row g-4">
-        <!-- Reservations List -->
-        <div class="col-12 col-lg-6">
-            <div class="bg-paper p-4 rounded-sm border border-ink-10 shadow-sm h-100">
-                <div class="d-flex align-items-center justify-content-between border-bottom border-ink-10 pb-3">
-                    <h2 class="small text-uppercase tracking-wider-custom text-ink fw-semibold m-0">Recent Table Reservations</h2>
-                    <a href="{{ route('admin.reservations.index') }}" class="small text-terracotta text-decoration-none">View All</a>
+    <!-- Main Section: Recent Bookings & Quick Actions -->
+    <div class="mt-4 row g-3 g-lg-4">
+        <!-- Recent Table Reservations -->
+        <div class="col-12 col-lg-7">
+            <div class="admin-card h-100">
+                <div class="admin-card-header">
+                    <div>
+                        <h2 class="h6 text-uppercase tracking-wider-custom text-ink fw-bold m-0" style="font-size: 12px;">Recent Table Bookings</h2>
+                        <span class="text-ink-50" style="font-size: 11px;">Latest reservation requests from customers</span>
+                    </div>
+                    <a href="{{ route('admin.reservations.index') }}" class="btn-admin-secondary py-1 px-3" style="min-height: 30px; font-size: 10.5px;">
+                        View All
+                    </a>
                 </div>
 
-                <div class="mt-3 d-flex flex-column">
-                    @forelse($recentReservations as $res)
-                        <div class="py-2.5 border-bottom border-ink-10 d-flex align-items-center justify-content-between">
-                            <div>
-                                <p class="small fw-semibold text-ink m-0">{{ $res->name }} ({{ $res->guests }} guests)</p>
-                                <p class="text-ink-50 m-0" style="font-size: 11px;">{{ $res->date->format('M d, Y') }} at {{ $res->time }} · {{ $res->phone }}</p>
+                <div class="p-3 p-sm-4">
+                    <div class="d-flex flex-column gap-2.5">
+                        @forelse($recentReservations as $res)
+                            <div class="p-3 rounded-3 border border-ink-10 bg-white d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-2 shadow-2xs hover-scale-101 transition-all">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-full bg-saffron bg-opacity-10 text-saffron fw-bold d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px; font-size: 12px;">
+                                        {{ $res->guests }}p
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="fw-semibold text-ink" style="font-size: 13.5px;">{{ $res->name }}</span>
+                                            <span class="admin-badge {{ $res->status === 'confirmed' ? 'admin-badge-success' : ($res->status === 'cancelled' ? 'admin-badge-danger' : 'admin-badge-warning') }}">
+                                                {{ $res->status }}
+                                            </span>
+                                        </div>
+                                        <span class="text-ink-50 d-block mt-0.5" style="font-size: 11.5px;">
+                                            📅 {{ $res->date->format('M d, Y') }} at {{ $res->time }} · 📞 {{ $res->phone }}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <a href="{{ route('admin.reservations.index') }}" class="btn-admin-action btn-admin-edit align-self-end align-self-sm-center">
+                                    Details
+                                </a>
                             </div>
-                            <span class="px-2 py-1 text-uppercase tracking-wider-custom rounded-full" 
-                                  style="font-size: 9px; {{ $res->status === 'confirmed' ? 'background-color: #d1fae5; color: #065f46;' : 'background-color: #fef3c7; color: #92400e;' }}">
-                                {{ $res->status }}
-                            </span>
-                        </div>
-                    @empty
-                        <p class="py-4 text-center small text-ink-40 m-0">No reservation requests yet.</p>
-                    @endforelse
+                        @empty
+                            <div class="py-5 text-center text-ink-40">
+                                <svg style="width: 2.5rem; height: 2.5rem; opacity: 0.4;" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="mx-auto mb-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                <p class="small m-0">No reservation requests registered yet.</p>
+                            </div>
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Quick Links & System Information -->
-        <div class="col-12 col-lg-6">
-            <div class="bg-paper p-4 rounded-sm border border-ink-10 shadow-sm h-100">
-                <h2 class="small text-uppercase tracking-wider-custom text-ink fw-semibold border-bottom border-ink-10 pb-3 m-0">Quick Management</h2>
-                <div class="mt-3 d-flex flex-column gap-2">
-                    <a href="{{ route('admin.menu.create') }}" class="d-flex align-items-center justify-content-between p-3 rounded-sm border border-ink-10 text-decoration-none transition-colors" style="background-color: #fff;">
-                        <span class="small fw-medium text-ink">Add New Menu Dish</span>
-                        <span class="small text-terracotta">+ Create</span>
+        <!-- Quick Management Actions -->
+        <div class="col-12 col-lg-5">
+            <div class="admin-card h-100">
+                <div class="admin-card-header">
+                    <div>
+                        <h2 class="h6 text-uppercase tracking-wider-custom text-ink fw-bold m-0" style="font-size: 12px;">Quick Management</h2>
+                        <span class="text-ink-50" style="font-size: 11px;">Direct controls & quick links</span>
+                    </div>
+                </div>
+
+                <div class="p-3 p-sm-4 d-flex flex-column gap-3">
+                    <a href="{{ route('admin.menu.create') }}" class="admin-action-tile">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="admin-stat-icon" style="background-color: rgba(217, 119, 6, 0.12); color: #d97706;">
+                                <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="d-block fw-semibold text-ink" style="font-size: 13.5px;">Add New Menu Dish</span>
+                                <span class="d-block text-ink-50" style="font-size: 11.5px;">Create a new specialty or appetizer</span>
+                            </div>
+                        </div>
+                        <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>
                     </a>
-                    <a href="{{ route('admin.menu.index') }}" class="d-flex align-items-center justify-content-between p-3 rounded-sm border border-ink-10 text-decoration-none transition-colors" style="background-color: #fff;">
-                        <span class="small fw-medium text-ink">Update Dish Prices & Availability</span>
-                        <span class="small text-terracotta">Manage</span>
+
+                    <a href="{{ route('admin.menu.index') }}" class="admin-action-tile">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="admin-stat-icon" style="background-color: rgba(124, 45, 18, 0.12); color: #7c2d12;">
+                                <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="d-block fw-semibold text-ink" style="font-size: 13.5px;">Manage Dishes & Prices</span>
+                                <span class="d-block text-ink-50" style="font-size: 11.5px;">Update pricing, tags & availability</span>
+                            </div>
+                        </div>
+                        <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>
                     </a>
-                    <a href="{{ route('admin.settings.index') }}" class="d-flex align-items-center justify-content-between p-3 rounded-sm border border-ink-10 text-decoration-none transition-colors" style="background-color: #fff;">
-                        <span class="small fw-medium text-ink">Update Hours & Contact Info</span>
-                        <span class="small text-terracotta">Edit</span>
+
+                    <a href="{{ route('admin.settings.index') }}" class="admin-action-tile">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="admin-stat-icon" style="background-color: rgba(23, 23, 23, 0.08); color: #171717;">
+                                <svg style="width: 1.25rem; height: 1.25rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="d-block fw-semibold text-ink" style="font-size: 13.5px;">Hours & Restaurant Info</span>
+                                <span class="d-block text-ink-50" style="font-size: 11.5px;">Modify address, phone & schedule</span>
+                            </div>
+                        </div>
+                        <span class="admin-tile-arrow text-ink-40 transition-all font-sans fw-bold">→</span>
                     </a>
+
+                    <div class="p-3 rounded-3 border border-ink-10" style="background-color: #faf6ee;">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span class="text-uppercase tracking-wider-custom fw-bold text-saffron" style="font-size: 10px;">Public Restaurant Link</span>
+                            <span class="badge bg-saffron text-ink fw-semibold" style="font-size: 9px;">Hari Om Live</span>
+                        </div>
+                        <p class="text-ink-60 m-0 mb-2" style="font-size: 11.5px;">Review customer experience on the public live site.</p>
+                        <a href="{{ route('home') }}" target="_blank" class="btn-admin-secondary w-100" style="min-height: 34px; font-size: 11px;">
+                            <span>Visit Public Website</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

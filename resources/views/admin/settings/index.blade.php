@@ -1,24 +1,53 @@
 @extends('admin.layout', ['title' => 'Restaurant Information & Settings'])
 
 @section('content')
-    <div class="max-w-2xl bg-paper p-4 p-sm-5 rounded-sm border border-ink-10 shadow-sm">
-        <h2 class="fs-6 fw-semibold text-ink border-bottom border-ink-10 pb-3 mb-4">General Information</h2>
+    <div class="admin-form-card mx-auto">
+        <div class="d-flex align-items-center justify-content-between border-bottom border-ink-10 pb-3 mb-4">
+            <div>
+                <h2 class="h5 fw-bold text-ink m-0">Restaurant Settings & Details</h2>
+                <p class="text-ink-50 m-0 mt-0.5" style="font-size: 12px;">Update public contact info, schedule hours, and location data</p>
+            </div>
+            <a href="{{ route('admin.dashboard') }}" class="btn-admin-secondary" style="min-height: 32px; font-size: 11px;">
+                Dashboard
+            </a>
+        </div>
 
-        <form action="{{ route('admin.settings.update') }}" method="POST" class="d-flex flex-column gap-3 small">
+        <form action="{{ route('admin.settings.update') }}" method="POST" class="d-flex flex-column gap-3.5">
             @csrf
 
-            @foreach($settings as $setting)
-                <div>
-                    <label class="d-block text-uppercase tracking-wider-custom text-ink-60 mb-1" style="font-size: 10px;">{{ str_replace('_', ' ', $setting->key) }}</label>
-                    <input type="text" name="{{ $setting->key }}" value="{{ old($setting->key, $setting->value) }}"
-                           class="form-control form-control-sm border-ink-20 bg-white" />
-                </div>
-            @endforeach
+            <div class="row g-3">
+                @foreach($settings as $setting)
+                    @php
+                        $key = $setting->key;
+                        $label = ucwords(str_replace('_', ' ', $key));
+                        $isTextarea = in_array($key, ['address', 'hours', 'notice', 'announcement']);
+                    @endphp
 
-            <div class="pt-3 border-top border-ink-10">
-                <button type="submit" class="rounded-sm bg-terracotta px-4 py-2 text-uppercase tracking-wider-custom text-paper border-0 fw-medium" style="font-size: 11px;">
-                    Save Restaurant Settings
+                    <div class="{{ $isTextarea ? 'col-12' : 'col-12 col-md-6' }}">
+                        <label class="admin-label d-flex align-items-center justify-content-between">
+                            <span>{{ $label }}</span>
+                            <span class="text-ink-40 fw-normal" style="font-size: 9.5px;">{{ $key }}</span>
+                        </label>
+                        
+                        @if($isTextarea)
+                            <textarea name="{{ $key }}" rows="2" class="admin-textarea">{{ old($key, $setting->value) }}</textarea>
+                        @else
+                            <input type="text" name="{{ $key }}" value="{{ old($key, $setting->value) }}" class="admin-input" />
+                        @endif
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="pt-4 border-top border-ink-10 mt-2 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+                <button type="submit" class="btn-admin-primary w-100 w-sm-auto">
+                    <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+                    </svg>
+                    <span>Save Restaurant Settings</span>
                 </button>
+                <a href="{{ route('admin.dashboard') }}" class="btn-admin-secondary w-100 w-sm-auto text-center">
+                    Cancel
+                </a>
             </div>
         </form>
     </div>
