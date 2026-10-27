@@ -38,14 +38,14 @@
                 @endforeach
             </div>
 
-            <div class="pt-4 border-top border-ink-10 mt-2 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
-                <button type="submit" class="btn-admin-primary w-100 w-sm-auto">
+            <div class="pt-4 border-top border-ink-10 mt-3 d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center justify-content-between gap-2.5">
+                <button type="submit" class="btn-admin-primary order-1 order-sm-0">
                     <svg style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
                     </svg>
                     <span>Save Restaurant Settings</span>
                 </button>
-                <a href="{{ route('admin.dashboard') }}" class="btn-admin-secondary w-100 w-sm-auto text-center">
+                <a href="{{ route('admin.dashboard') }}" class="btn-admin-secondary text-center order-2 order-sm-1">
                     Cancel
                 </a>
             </div>
