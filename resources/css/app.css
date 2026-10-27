@@ -805,18 +805,369 @@ a {
     color: #7c2d12 !important;
 }
 
-/* Dish List Micro-interactions */
+/* ==========================================================================
+   Base44 Reference Clone: Fairbanks · Alaska Our Menu Section
+   ========================================================================== */
+.ref-menu-section {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-paper);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+@media (min-width: 640px) {
+    .ref-menu-section {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+}
+
+.ref-menu-container {
+    max-width: 72rem; /* max-w-6xl (1152px) */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+@media (min-width: 640px) {
+    .ref-menu-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.ref-menu-title {
+    font-family: var(--font-display) !important;
+    font-size: 3rem;
+    line-height: 0.95;
+    color: var(--color-ember);
+    margin: 1rem 0 0 0;
+    letter-spacing: -0.01em;
+}
+@media (min-width: 640px) {
+    .ref-menu-title {
+        font-size: 3.75rem;
+    }
+}
+
+.ref-menu-subtitle {
+    max-width: 20rem;
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 1.625;
+    letter-spacing: 0.16em;
+    color: rgba(23, 23, 23, 0.45);
+    margin: 0;
+}
+.ref-menu-subtitle span {
+    display: block;
+    margin-top: 0.25rem;
+    color: rgba(23, 23, 23, 0.30);
+}
+
+/* Scrollable Category Tabs Bar */
+.ref-tabs-track {
+    position: relative;
+    margin-top: 2.5rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    border-bottom: 1px solid rgba(124, 45, 18, 0.15);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 640px) {
+    .ref-tabs-track {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.ref-tabs-track::-webkit-scrollbar {
+    display: none;
+}
+
+.ref-tab-btn {
+    position: relative;
+    flex-shrink: 0;
+    padding: 0.5rem 1rem 1rem 1rem;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    color: rgba(23, 23, 23, 0.40);
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ref-tab-btn:hover {
+    color: rgba(124, 45, 18, 0.70);
+}
+.ref-tab-btn.is-active {
+    color: var(--color-terracotta);
+    font-weight: 600;
+}
+
+/* Spring Gliding Active Underline (mimics Framer Motion layoutId stiffness: 360, damping: 32) */
+.ref-tab-indicator {
+    position: absolute;
+    bottom: -1px;
+    height: 2px;
+    background-color: var(--color-saffron);
+    pointer-events: none;
+    will-change: left, width;
+    transition: left 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+                width 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease;
+}
+
+/* 2-Column Responsive Dish Grid with Dashed Dividers */
+.ref-dish-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 3rem;
+    row-gap: 0;
+    margin-top: 1rem;
+    will-change: opacity, transform;
+}
+@media (min-width: 768px) {
+    .ref-dish-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Individual Dish Item */
+.ref-dish-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px dashed rgba(23, 23, 23, 0.10);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    will-change: transform, opacity;
+}
+
+/* Circular Dish Image with Fluid Zoom */
+.ref-dish-img-wrap {
+    width: 3.5rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 9999px;
+    box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
+    background-color: rgba(247, 243, 236, 0.9);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (min-width: 640px) {
+    .ref-dish-img-wrap {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+.ref-dish-item:hover .ref-dish-img-wrap {
+    transform: scale(1.05);
+}
+.ref-dish-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dish Info */
+.ref-dish-info {
+    min-width: 0;
+    flex: 1 1 0%;
+}
+.ref-dish-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+.ref-dish-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-ember);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s ease;
+}
+.ref-dish-item:hover .ref-dish-title {
+    color: var(--color-terracotta);
+}
+.ref-dish-price {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-terracotta);
+}
+.ref-dish-desc {
+    margin: 0.25rem 0 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(23, 23, 23, 0.55);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Category Dish Count Indicator */
+.ref-more-text {
+    margin-top: 1rem;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(23, 23, 23, 0.35);
+}
+
+/* Signature Reference View Full Menu Button */
+.ref-menu-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 9999px;
+    background-color: var(--color-terracotta);
+    padding: 1rem 2rem;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--color-paper);
+    text-decoration: none;
+    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(124, 45, 18, 0.2);
+    margin-top: 2.5rem;
+}
+.ref-menu-cta:hover {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+    transform: translateY(-1px);
+}
+.ref-menu-cta-bar {
+    display: block;
+    height: 2px;
+    width: 1.25rem;
+    background-color: rgba(253, 251, 247, 0.6);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ref-menu-cta:hover .ref-menu-cta-bar {
+    width: 2rem;
+    background-color: var(--color-paper);
+}
+
+/* Dish Preview Card with Hardware-Accelerated Micro-Interactions */
+.dish-preview-card {
+    will-change: transform, opacity;
+}
+
 .hover-dish-item {
-    transition: transform 0.25s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0.95rem !important;
+    margin: -0.25rem -0.35rem;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+@media (min-width: 576px) {
+    .hover-dish-item {
+        gap: 1.25rem;
+    }
+}
+
 .hover-dish-item:hover {
-    transform: translateX(4px);
+    background-color: rgba(247, 243, 236, 0.85);
+    border-color: rgba(217, 119, 6, 0.16);
+    transform: translateY(-2.5px);
+    box-shadow: 0 10px 25px -4px rgba(23, 23, 23, 0.06), 0 2px 6px -1px rgba(23, 23, 23, 0.02);
 }
+
+/* Circular Dish Image Wrap */
+.dish-thumb-wrap {
+    position: relative;
+    width: 3.85rem;
+    height: 3.85rem;
+    min-width: 3.85rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    background-color: rgba(247, 243, 236, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(23, 23, 23, 0.06);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-dish-item:hover .dish-thumb-wrap {
+    transform: scale(1.09) rotate(2.5deg);
+    border-color: rgba(217, 119, 6, 0.35);
+    box-shadow: 0 8px 20px -3px rgba(124, 45, 18, 0.22);
+}
+
+.dish-thumb-wrap img,
 .dish-thumb-img {
-    transition: transform 0.35s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.hover-dish-item:hover .dish-thumb-wrap img,
 .hover-dish-item:hover .dish-thumb-img {
-    transform: scale(1.08);
+    transform: scale(1.06);
+}
+
+/* Dish Title & Price Micro-Interactions */
+.dish-title {
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-dish-item:hover .dish-title {
+    color: var(--color-terracotta) !important;
+    transform: translateX(3px);
+}
+
+.dish-price {
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-dish-item:hover .dish-price {
+    color: var(--color-saffron) !important;
+    transform: scale(1.05);
+}
+
+.dish-desc {
+    transition: color 0.3s ease;
+}
+
+.hover-dish-item:hover .dish-desc {
+    color: rgba(23, 23, 23, 0.72) !important;
+}
+
+.menu-more-indicator {
+    transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* CTA Circle Button & Story Hover */

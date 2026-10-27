@@ -107,107 +107,181 @@
 @endphp
 
 <section id="menu" 
-         x-data="{
-            activeTab: '{{ $firstCatId }}',
-            isTransitioning: false,
-            _timer: null,
-            categories: {{ Js::from($categoriesData) }},
-            selectTab(id) {
-                if (this.activeTab === id) return;
-                this.isTransitioning = true;
-                clearTimeout(this._timer);
-                this._timer = setTimeout(() => {
-                    this.activeTab = id;
-                    this.$nextTick(() => {
-                        this.isTransitioning = false;
-                    });
-                }, 160);
-            },
-            get currentCategory() {
-                return this.categories.find(c => c.id === this.activeTab) || this.categories[0];
-            }
-         }"
-         class="position-relative overflow-hidden bg-paper py-5 py-sm-6" 
-         style="padding-top: clamp(4rem, 8vw, 7rem) !important; padding-bottom: clamp(4rem, 8vw, 7rem) !important;">
-    <div class="max-w-92rem mx-auto px-4 px-sm-5">
+         x-data="refMenuPreviewComponent({{ Js::from($categoriesData) }}, '{{ $firstCatId }}')"
+         class="ref-menu-section">
+    <div class="ref-menu-container">
         <!-- Section Header -->
         <div class="d-flex flex-column gap-3 flex-sm-row align-items-sm-end justify-content-sm-between gsap-fade-up">
             <div>
                 <p class="label-caps text-saffron m-0">Fairbanks · Alaska</p>
-                <h2 class="mt-3 font-display text-ember display-title-section m-0">
+                <h2 class="ref-menu-title">
                     Our menu
                 </h2>
             </div>
-            <p class="max-w-xs text-start text-sm-end text-uppercase leading-relaxed tracking-wider-custom text-ink-40 d-none d-sm-block m-0" style="font-size: 10px;">
-                {{ $totalDishes }} dishes and pours<br>
-                appetizers · curries · thali · wine · beer
+            <p class="ref-menu-subtitle">
+                {{ $totalDishes }} dishes and pours
+                <span>Appetizers · Curries · Thali · Wine · Beer</span>
             </p>
         </div>
 
-        <!-- Scrollable Category Tabs Bar with Animated Saffron Underline -->
-        <div class="mt-4 mt-sm-5 d-flex gap-2 gap-sm-3 overflow-x-auto no-scrollbar border-bottom border-terracotta-15 mx-n4 px-4 mx-sm-0 px-sm-0" 
-             style="-webkit-overflow-scrolling: touch;">
+        <!-- Scrollable Category Tabs Bar with Spring Gliding Saffron Underline -->
+        <div class="ref-tabs-track">
             <template x-for="cat in categories" :key="cat.id">
                 <button type="button" 
-                        @click="selectTab(cat.id)"
-                        class="position-relative px-3 px-sm-4 pt-2 pb-3 text-uppercase tracking-wider-custom cursor-pointer text-nowrap flex-shrink-0 border-0 bg-transparent"
-                        style="font-size: 10px; letter-spacing: 0.18em; transition: color 0.25s ease;"
-                        :class="activeTab === cat.id ? 'text-terracotta fw-semibold' : 'text-ink-40 hover-text-terracotta'">
+                        x-bind:data-cat-id="cat.id"
+                        @click="selectTab(cat.id, $event.currentTarget)"
+                        class="ref-tab-btn"
+                        x-bind:class="activeTab === cat.id ? 'is-active' : ''">
                     <span x-text="cat.name"></span>
-                    <!-- Smooth Animated Underline -->
-                    <span class="position-absolute start-0 end-0 bottom-0 bg-saffron" 
-                          style="height: 2px; margin-bottom: -1px; transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;"
-                          :style="activeTab === cat.id ? 'opacity: 1; transform: scaleX(1);' : 'opacity: 0; transform: scaleX(0.4);'"></span>
                 </button>
             </template>
+            <!-- Spring Gliding Saffron Underline (stiffness: 360, damping: 32) -->
+            <div class="ref-tab-indicator"
+                 x-bind:style="'left: ' + indicatorLeft + 'px; width: ' + indicatorWidth + 'px; opacity: ' + (indicatorReady ? 1 : 0) + ';'">
+            </div>
         </div>
 
-        <!-- Category Items Preview with Buttery Smooth Crossfade & Glide Transition -->
-        <div class="mt-4 pt-2"
-             style="will-change: opacity, transform;"
-             :style="isTransitioning 
-                 ? 'opacity: 0; transform: translateY(6px); transition: opacity 160ms cubic-bezier(0.4, 0, 1, 1), transform 160ms cubic-bezier(0.4, 0, 1, 1);' 
-                 : 'opacity: 1; transform: translateY(0px); transition: opacity 320ms cubic-bezier(0.16, 1, 0.3, 1), transform 320ms cubic-bezier(0.16, 1, 0.3, 1);'">
-            <div class="row g-4 gx-lg-5">
+        <!-- Dishes List Area with Framer Motion-style Exit/Enter Animations -->
+        <div class="mt-4">
+            <div class="ref-dish-grid">
                 <template x-for="(item, idx) in currentCategory.items.slice(0, 6)" :key="item.name">
-                    <div class="col-12 col-md-6">
-                        <div class="d-flex align-items-center gap-3 gap-sm-4 py-2 hover-dish-item">
-                            <!-- Circular Dish Image -->
-                            <div class="position-relative flex-shrink-0 overflow-hidden rounded-full ring-1 ring-ink-5 shadow-sm" 
-                                 style="width: 3.75rem; height: 3.75rem; min-width: 3.75rem; background-color: rgba(247, 243, 236, 0.8);">
-                                <img :src="item.image" :alt="item.name" class="w-100 h-100 position-absolute inset-0 object-cover dish-thumb-img">
-                            </div>
+                    <div class="ref-dish-item group">
+                        <!-- Circular Image with Ring and Hover Zoom -->
+                        <div class="ref-dish-img-wrap">
+                            <img x-bind:src="item.image" x-bind:alt="item.name">
+                        </div>
 
-                            <!-- Item Name, Price & Description -->
-                            <div class="min-w-0 flex-grow-1">
-                                <div class="d-flex align-items-baseline justify-content-between gap-3">
-                                    <h3 class="font-sans fw-semibold text-ember text-truncate m-0" style="font-size: 14px; letter-spacing: 0.01em;" x-text="item.name"></h3>
-                                    <span class="flex-shrink-0 font-sans fw-semibold text-terracotta ps-2" style="font-size: 13px;" x-text="item.price"></span>
-                                </div>
-                                <p class="mt-1 line-clamp-1 text-ink-55 m-0" style="font-size: 12px; line-height: 1.5;" x-text="item.desc"></p>
+                        <!-- Name, Price & Description -->
+                        <div class="ref-dish-info">
+                            <div class="ref-dish-header">
+                                <h3 class="ref-dish-title" x-text="item.name"></h3>
+                                <span class="ref-dish-price" x-text="item.price"></span>
                             </div>
+                            <p class="ref-dish-desc" x-text="item.desc"></p>
                         </div>
                     </div>
                 </template>
             </div>
 
-            <!-- More Items Indicator if > 6 -->
-            <div class="mt-4 pt-2">
-                <p class="text-uppercase tracking-wider-custom text-ink-35 m-0" style="font-size: 10px; letter-spacing: 0.18em;">
-                    <span x-show="currentCategory.more > 0" x-text="'+ ' + currentCategory.more + ' more in ' + currentCategory.name.toLowerCase()"></span>
-                    <span x-show="currentCategory.more === 0" x-text="'All ' + currentCategory.items.length + ' dishes shown in ' + currentCategory.name.toLowerCase()"></span>
-                </p>
-            </div>
+            <!-- More Items Text -->
+            <p x-show="currentCategory.more > 0" class="ref-more-text">
+                <span x-text="'+ ' + currentCategory.more + ' more in ' + currentCategory.name.toLowerCase()"></span>
+            </p>
         </div>
 
-        <!-- Full Menu CTA Button (Only THIS navigates to the full menu page) -->
-        <div class="mt-5 d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3">
-            <a href="{{ route('menu') }}" class="btn-terracotta text-center shadow-sm">
-                View the complete menu
-            </a>
-            <a href="{{ route('reservations') }}" class="btn-secondary-dark text-center">
-                Reserve a dining table
+        <!-- Signature View the Full Menu Button with Expanding Line -->
+        <div>
+            <a href="{{ route('menu') }}" class="ref-menu-cta group">
+                <span>View the full menu</span>
+                <span class="ref-menu-cta-bar"></span>
             </a>
         </div>
     </div>
 </section>
+
+<script>
+    function refMenuPreviewComponent(categoriesData, firstCatId) {
+        return {
+            activeTab: firstCatId,
+            categories: categoriesData,
+            indicatorLeft: 0,
+            indicatorWidth: 0,
+            indicatorReady: false,
+            isSwitching: false,
+            init() {
+                this.$nextTick(() => {
+                    const activeBtn = this.$el.querySelector(`.ref-tab-btn[data-cat-id='${this.activeTab}']`);
+                    if (activeBtn) {
+                        this.updateIndicator(activeBtn);
+                    }
+                    this.initScrollReveal();
+                });
+                window.addEventListener('resize', () => {
+                    const activeBtn = this.$el.querySelector(`.ref-tab-btn[data-cat-id='${this.activeTab}']`);
+                    if (activeBtn) {
+                        this.updateIndicator(activeBtn);
+                    }
+                });
+            },
+            updateIndicator(el) {
+                if (!el) return;
+                const insetX = 8; // matches inset-x-2 from base44 reference
+                this.indicatorLeft = el.offsetLeft + insetX;
+                this.indicatorWidth = Math.max(16, el.offsetWidth - (insetX * 2));
+                this.indicatorReady = true;
+            },
+            selectTab(id, el) {
+                if (this.activeTab === id || this.isSwitching) return;
+                this.isSwitching = true;
+                this.updateIndicator(el);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+
+                if (window.gsap) {
+                    // 1. Ultra smooth exit transition (matching reference exit animation)
+                    window.gsap.to('.ref-dish-grid', {
+                        opacity: 0,
+                        y: -8,
+                        duration: 0.16,
+                        ease: 'power2.in',
+                        onComplete: () => {
+                            this.activeTab = id;
+                            this.$nextTick(() => {
+                                // 2. Ultra smooth container entrance (matching reference animate)
+                                window.gsap.fromTo('.ref-dish-grid',
+                                    { opacity: 0, y: 12 },
+                                    { opacity: 1, y: 0, duration: 0.32, ease: 'power2.out' }
+                                );
+
+                                // 3. Staggered dish items entrance (matching reference stagger)
+                                window.gsap.fromTo('.ref-dish-item',
+                                    { opacity: 0, y: 14 },
+                                    {
+                                        opacity: 1,
+                                        y: 0,
+                                        duration: 0.4,
+                                        stagger: 0.05,
+                                        ease: 'power3.out',
+                                        clearProps: 'transform',
+                                        onComplete: () => {
+                                            this.isSwitching = false;
+                                        }
+                                    }
+                                );
+                            });
+                        }
+                    });
+                } else {
+                    this.activeTab = id;
+                    this.isSwitching = false;
+                }
+            },
+            initScrollReveal() {
+                if (window.gsap && window.ScrollTrigger) {
+                    window.ScrollTrigger.create({
+                        trigger: '#menu',
+                        start: 'top 82%',
+                        once: true,
+                        onEnter: () => {
+                            window.gsap.fromTo('.ref-dish-item',
+                                { opacity: 0, y: 16 },
+                                {
+                                    opacity: 1,
+                                    y: 0,
+                                    duration: 0.45,
+                                    stagger: 0.05,
+                                    ease: 'power3.out',
+                                    clearProps: 'transform'
+                                }
+                            );
+                        }
+                    });
+                }
+            },
+            get currentCategory() {
+                return this.categories.find(c => c.id === this.activeTab) || this.categories[0];
+            }
+        };
+    }
+</script>
