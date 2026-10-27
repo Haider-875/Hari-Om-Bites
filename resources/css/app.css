@@ -601,13 +601,17 @@ a {
         margin: 0 !important;
         width: 140px !important;
         min-width: 125px !important;
-        max-width: 160px !important;
-        flex: 1 1 0px !important;
+        max-width: 155px !important;
+        flex: 0 1 140px !important;
         white-space: nowrap !important;
         text-align: center !important;
         justify-content: center !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        align-items: center !important;
+        padding: 8px 14px !important;
+        font-size: 11px !important;
+        min-height: 38px !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.12em !important;
     }
 
     /* Our Menu Section & Headings (Compact & Proportionate on Mobile) */
@@ -1963,8 +1967,18 @@ img.object-cover {
 .visit-button-row .btn-secondary {
     width: 140px !important;
     min-width: 130px !important;
+    max-width: 155px !important;
+    flex: 0 1 140px !important;
+    margin: 0 !important;
     text-align: center !important;
     justify-content: center !important;
+    align-items: center !important;
+    padding: 8px 14px !important;
+    font-size: 11px !important;
+    min-height: 38px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.12em !important;
+    white-space: nowrap !important;
 }
 
 /* ==========================================================================
