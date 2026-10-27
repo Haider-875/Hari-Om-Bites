@@ -25,6 +25,30 @@ Route::get('/visit', [HomeController::class, 'contact'])->name('visit');
 Route::post('/reservation', [HomeController::class, 'reservationStore'])->name('reservation.store');
 Route::post('/contact', [HomeController::class, 'contactStore'])->name('contact.store');
 
+// Database initialization route for edge/cloud deployments
+Route::get('/init-restaurant-db', function () {
+    try {
+        if (!\Illuminate\Support\Facades\Schema::hasTable('categories')) {
+            \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        }
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'RestaurantSeeder',
+            '--force' => true,
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'categories' => \App\Models\Category::count(),
+            'menu_items' => \App\Models\MenuItem::count(),
+            'settings' => \App\Models\Setting::count(),
+        ]);
+    } catch (\Throwable $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage(),
+        ], 500);
+    }
+});
+
 // Standard Login Route (redirects to admin login)
 Route::get('/login', [AdminController::class, 'showLogin'])->name('login');
 
