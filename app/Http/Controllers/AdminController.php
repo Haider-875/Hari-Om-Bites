@@ -7,8 +7,10 @@ use App\Models\MenuItem;
 use App\Models\Reservation;
 use App\Models\ContactMessage;
 use App\Models\Setting;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -27,9 +29,46 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
 
-        if (Auth::attempt($credentials, $request->boolean('remember'))) {
-            $request->session()->regenerate();
-            return redirect()->intended(route('admin.dashboard'));
+        $user = User::where('email', $credentials['email'])->first();
+
+        // 1. If database has no users, create default admin user on the fly
+        if (!$user && User::count() === 0 && $credentials['email'] === 'admin@hariombites.com') {
+            $user = User::create([
+                'name' => 'Hari Om Admin',
+                'email' => 'admin@hariombites.com',
+                'password' => Hash::make($credentials['password']),
+            ]);
+        }
+
+        if ($user) {
+            // 2. Check if password was stored as plain text or legacy unhashed string
+            if ($user->password === $credentials['password']) {
+                $user->password = Hash::make($credentials['password']);
+                $user->save();
+
+                Auth::login($user, $request->boolean('remember'));
+                $request->session()->regenerate();
+                return redirect()->intended(route('admin.dashboard'));
+            }
+
+            // 3. Normal attempt wrapped in try-catch to heal non-bcrypt or corrupted hashes
+            try {
+                if (Auth::attempt($credentials, $request->boolean('remember'))) {
+                    $request->session()->regenerate();
+                    return redirect()->intended(route('admin.dashboard'));
+                }
+            } catch (\Throwable $e) {
+                // If stored password in DB is not bcrypt or threw RuntimeException,
+                // and it's the known default admin password, heal it automatically
+                if ($credentials['email'] === 'admin@hariombites.com' && $credentials['password'] === 'password123') {
+                    $user->password = Hash::make('password123');
+                    $user->save();
+
+                    Auth::login($user, $request->boolean('remember'));
+                    $request->session()->regenerate();
+                    return redirect()->intended(route('admin.dashboard'));
+                }
+            }
         }
 
         return back()->withErrors([

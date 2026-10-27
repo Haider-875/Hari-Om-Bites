@@ -35,8 +35,17 @@ Route::get('/init-restaurant-db', function () {
             '--class' => 'RestaurantSeeder',
             '--force' => true,
         ]);
+        // Also ensure admin user exists with valid hash
+        \App\Models\User::updateOrCreate(
+            ['email' => 'admin@hariombites.com'],
+            [
+                'name' => 'Hari Om Admin',
+                'password' => \Illuminate\Support\Facades\Hash::make('password123'),
+            ]
+        );
         return response()->json([
             'status' => 'success',
+            'admin_user' => 'admin@hariombites.com',
             'categories' => \App\Models\Category::count(),
             'menu_items' => \App\Models\MenuItem::count(),
             'settings' => \App\Models\Setting::count(),

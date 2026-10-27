@@ -63,7 +63,7 @@
         <!-- Bottom Copyright Line -->
         <div class="mt-5 pt-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 border-top border-white-10 text-white-60 text-uppercase text-center text-sm-start" style="font-size: 10px; letter-spacing: 0.16em;">
             <p class="mb-0">© 2026 Hari Om Cuisine Of India</p>
-            <a href="https://azorasolution.com/" target="_blank" rel="noreferrer" class="text-white-70 hover-text-saffron transition-colors text-decoration-none">Designed By Azora</a>
+            <a href="https://azorasolution.com/" target="_blank" rel="noreferrer" class="text-white-70 hover-text-saffron transition-colors text-decoration-none">Designed By Azora Solutions</a>
             <p class="mb-0">Dine in · Take out · Catering · Fairbanks, Alaska</p>
         </div>
     </div>
