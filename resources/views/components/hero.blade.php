@@ -84,14 +84,17 @@
     </div>
 
     <!-- Slider Pagination Indicators -->
-    <div class="hero-pagination position-absolute start-50 translate-middle-x d-flex justify-content-center gap-2" style="bottom: 5rem; z-index: 20;"></div>
+    <div class="hero-pagination position-absolute start-50 translate-middle-x d-flex justify-content-center gap-2" style="bottom: 5.5rem; z-index: 20;"></div>
 
-    <!-- Animated Center Scroll Indicator -->
-    <a href="#story" class="hero-scroll-indicator position-absolute start-50 translate-middle-x d-flex flex-column align-items-center gap-1 text-decoration-none transition-transform" style="bottom: 1.25rem; z-index: 20;">
-        <span class="text-uppercase text-saffron fw-medium" style="font-size: 9px; letter-spacing: 0.35em;">Scroll</span>
-        <div class="position-relative d-flex align-items-start justify-content-center rounded-pill border border-2 border-warning p-1" style="height: 32px; width: 18px; box-shadow: 0 0 12px rgba(217,119,6,0.3);">
-            <span class="rounded-pill bg-saffron" style="height: 6px; width: 4px;"></span>
-        </div>
+    <!-- Animated Center Scroll Indicator (Luxury Flowing Saffron Light Beam) -->
+    <a href="#story" 
+       aria-label="Scroll to our story"
+       class="hero-scroll-indicator position-absolute start-50 translate-middle-x" 
+       style="bottom: 1.25rem; z-index: 20;">
+        <span class="hero-scroll-label">Scroll</span>
+        <span class="hero-scroll-track">
+            <span class="hero-scroll-beam"></span>
+        </span>
     </a>
 
     <!-- Left Vertical Rail -->

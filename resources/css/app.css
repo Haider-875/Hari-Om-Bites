@@ -1272,6 +1272,72 @@ a {
 .group:hover .cta-circle-btn svg {
     transform: translateX(3px);
 }
+/* Luxury Reference Hero Scroll Indicator */
+.hero-scroll-indicator {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.hero-scroll-indicator:hover {
+    transform: translate(-50%, 2px) !important;
+}
+.hero-scroll-indicator .hero-scroll-label {
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.42em;
+    color: rgba(255, 255, 255, 0.45);
+    transition: color 0.3s ease;
+    padding-left: 0.42em;
+}
+.hero-scroll-indicator:hover .hero-scroll-label {
+    color: var(--color-saffron);
+}
+.hero-scroll-indicator .hero-scroll-track {
+    position: relative;
+    width: 1px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.20);
+    overflow: hidden;
+    border-radius: 9999px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.hero-scroll-indicator:hover .hero-scroll-track {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 10px rgba(217, 119, 6, 0.45);
+}
+.hero-scroll-indicator .hero-scroll-beam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(217, 119, 6, 0) 0%, var(--color-saffron) 50%, rgba(217, 119, 6, 0) 100%);
+    border-radius: 9999px;
+    animation: heroScrollBeam 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes heroScrollBeam {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(220%);
+        opacity: 0;
+    }
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
