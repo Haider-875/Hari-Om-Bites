@@ -34,8 +34,8 @@
                             Copper bowls, warm naan and a table that fills up with thali. Walk in and settle in — the kitchen cooks every curry to order.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-top border-white-10">
-                        <a href="{{ route('reservations') }}" class="btn-secondary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center justify-content-center" style="font-size: 10px; min-height: 44px;">
+                    <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
+                        <a href="{{ route('reservations') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 44px;">
                             Book a table
                         </a>
                     </div>
@@ -54,8 +54,8 @@
                             Call the kitchen, tell us what you are craving, and we will have it packed hot and ready for the drive home through the snow.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-top border-white-10">
-                        <a href="tel:+19073283218" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center justify-content-center" style="font-size: 10px; min-height: 44px;">
+                    <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
+                        <a href="tel:+19073283218" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 44px;">
                             Order takeout
                         </a>
                     </div>
@@ -74,8 +74,8 @@
                             Feeding a party, an office or a family gathering? We build platters of curries, biryani, breads and sweets for the whole room.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-top border-white-10">
-                        <a href="{{ route('contact') }}" class="btn-secondary py-2 px-3 tracking-wider-custom text-uppercase w-100 text-center justify-content-center" style="font-size: 10px; min-height: 44px;">
+                    <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
+                        <a href="{{ route('contact') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 44px;">
                             Catering inquiries
                         </a>
                     </div>

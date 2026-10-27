@@ -85,14 +85,11 @@ $dishes = [
                                             {{ $d['desc'] }}
                                         </p>
 
-                                        <!-- Order & Menu Buttons -->
-                                        <div class="mt-4 d-flex flex-wrap align-items-center gap-3">
-                                            <a href="tel:+19073283218" class="btn-terracotta w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
+                                        <!-- Order & Menu Buttons (Centered on mobile) -->
+                                        <div class="mt-4 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
+                                            <a href="tel:+19073283218" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                                                 Order this dish
                                             </a>
-                                            <!-- <a href="{{ route('menu') }}" class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
-                                                View in menu
-                                            </a> -->
                                         </div>
                                     </div>
                                 </div>

@@ -419,27 +419,44 @@ a {
 }
 
 /* Button Variants: Colors & Shadows */
-.btn-primary {
-    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+/* Golden-Yellow Master Button (Single Source of Truth for all Primary & Converted Brown CTA buttons) */
+.btn-primary,
+.btn-secondary-dark,
+.btn-terracotta,
+.ref-menu-cta {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
     color: #171717 !important;
     font-weight: 600;
     padding: 0.9rem 1.85rem;
-    border: none;
+    border: none !important;
     box-shadow: 0 10px 25px -10px rgba(217, 119, 6, 0.45);
 }
-.btn-primary::before {
+
+.btn-primary::before,
+.btn-secondary-dark::before,
+.btn-terracotta::before,
+.ref-menu-cta::before {
     background: linear-gradient(90deg, #b45309 0%, #d97706 35%, #f59e0b 75%, #fbbf24 100%);
 }
-.btn-primary:hover {
+
+.btn-primary:hover,
+.btn-secondary-dark:hover,
+.btn-terracotta:hover,
+.ref-menu-cta:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 32px -10px rgba(217, 119, 6, 0.65), 0 0 20px rgba(245, 158, 11, 0.35);
     color: #0a0a0a !important;
 }
-.btn-primary:active {
+
+.btn-primary:active,
+.btn-secondary-dark:active,
+.btn-terracotta:active,
+.ref-menu-cta:active {
     transform: translateY(0) scale(0.98);
     box-shadow: 0 4px 12px -4px rgba(217, 119, 6, 0.4);
 }
 
+/* Secondary Glassmorphic Button */
 .btn-secondary {
     border: 1px solid rgba(255, 255, 255, 0.28);
     background-color: rgba(255, 255, 255, 0.05);
@@ -465,59 +482,36 @@ a {
     transform: translateY(0) scale(0.98);
 }
 
-.btn-secondary-dark {
-    border: 1.5px solid rgba(124, 45, 18, 0.65);
-    background-color: rgba(124, 45, 18, 0.04);
-    color: #7c2d12 !important;
-    font-weight: 600;
-    padding: 0.85rem 1.85rem;
-}
-.btn-secondary-dark::before {
-    background: linear-gradient(90deg, #7c2d12 0%, #991b1b 50%, #b91c1c 100%);
-}
-.btn-secondary-dark:hover {
-    border-color: #7c2d12;
-    background-color: transparent;
-    color: #fdfbf7 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px -8px rgba(124, 45, 18, 0.35);
-}
-.btn-secondary-dark:hover > * {
-    color: #fdfbf7 !important;
-}
-.btn-secondary-dark:active {
-    transform: translateY(0) scale(0.98);
-}
-
-.btn-terracotta {
-    background-color: #7c2d12;
-    color: #fdfbf7 !important;
-    font-weight: 600;
-    padding: 0.9rem 1.85rem;
-    border: none;
-    box-shadow: 0 10px 25px -10px rgba(124, 45, 18, 0.4);
-}
-.btn-terracotta::before,
-.ref-menu-cta::before {
-    background: linear-gradient(90deg, #601804 0%, #7c2d12 30%, #8b2519 65%, #b91c1c 100%);
-}
-.btn-terracotta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 32px -10px rgba(139, 37, 25, 0.55);
-    color: #ffffff !important;
-}
-.btn-terracotta:active {
-    transform: translateY(0) scale(0.98);
-}
-
-@media (max-width: 480px) {
+/* Mobile Button Centering & Proportional Touch Rules (<= 767px) */
+@media (max-width: 767px) {
     .btn-primary,
     .btn-secondary,
     .btn-secondary-dark,
-    .btn-terracotta {
-        padding: 0.75rem 1.35rem;
-        font-size: 10px;
-        letter-spacing: 0.16em;
+    .btn-terracotta,
+    .ref-menu-cta {
+        display: inline-flex !important;
+        width: auto !important;
+        max-width: calc(100% - 32px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 13px !important;
+        padding: 13px 22px !important;
+        min-height: 44px !important;
+        letter-spacing: 0.16em !important;
+    }
+
+    /* Center and neatly stack button containers on mobile */
+    .hero-buttons,
+    .cta-button-group,
+    .button-group-mobile-center {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 0.85rem !important;
     }
 }
 
@@ -1204,26 +1198,7 @@ a {
 /* Signature Reference View Full Menu Button */
 .ref-menu-cta {
     gap: 0.75rem;
-    background-color: var(--color-terracotta);
-    padding: 1rem 2rem;
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: var(--color-paper) !important;
-    box-shadow: 0 4px 14px rgba(124, 45, 18, 0.25);
     margin-top: 2.5rem;
-}
-@media (max-width: 480px) {
-    .ref-menu-cta {
-        width: 100%;
-        text-align: center;
-        padding: 0.85rem 1.25rem;
-        letter-spacing: 0.16em;
-    }
-}
-.ref-menu-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 32px -10px rgba(139, 37, 25, 0.55);
-    color: #ffffff !important;
 }
 .ref-menu-cta-bar {
     display: block;
@@ -1538,5 +1513,190 @@ img.object-cover {
     height: 100%;
 }
 
+/* ==========================================================================
+   6. LUXURY RESTAURANT MOBILE NAVIGATION OVERLAY & ANIMATED TOGGLE
+   ========================================================================== */
+.luxury-hamburger-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 9999px;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 2005;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    touch-action: manipulation;
+}
+.luxury-hamburger-btn.on-scrolled:not(.is-active) {
+    border-color: rgba(23, 23, 23, 0.25);
+}
+.luxury-hamburger-btn.is-active {
+    border-color: rgba(217, 119, 6, 0.6);
+    background-color: rgba(217, 119, 6, 0.08);
+}
+.hamburger-box {
+    width: 20px;
+    height: 14px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 1.75px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.25s ease,
+                background-color 0.3s ease;
+    transform-origin: center;
+}
+.luxury-hamburger-btn.on-scrolled:not(.is-active) .hamburger-line {
+    background-color: #171717;
+}
+.luxury-hamburger-btn.is-active .hamburger-line {
+    background-color: #f59e0b;
+}
+.luxury-hamburger-btn.is-active .line-1 {
+    transform: translateY(6.125px) rotate(45deg);
+}
+.luxury-hamburger-btn.is-active .line-2 {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.luxury-hamburger-btn.is-active .line-3 {
+    transform: translateY(-6.125px) rotate(-45deg);
+}
 
+/* Full-Screen Luxury Overlay */
+.luxury-mobile-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: #121212;
+    z-index: 2000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+}
+.luxury-mobile-header {
+    height: 4.75rem;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    background-color: #121212;
+    z-index: 2001;
+}
+.luxury-mobile-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 4.75rem);
+}
+.luxury-gold-line {
+    width: 44px;
+    height: 1px;
+    background: rgba(217, 119, 6, 0.5);
+}
 
+/* Editorial Navigation Links */
+.luxury-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.luxury-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 0.5rem;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(217, 119, 6, 0.18);
+    color: rgba(253, 251, 247, 0.88);
+    transition: all 0.3s ease;
+    animation: luxuryNavSlideIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(var(--i) * 45ms + 80ms);
+}
+.luxury-nav-text {
+    font-family: var(--font-display, serif);
+    font-size: clamp(1.35rem, 5vw, 1.75rem);
+    letter-spacing: 0.04em;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+.luxury-nav-item.active .luxury-nav-text,
+.luxury-nav-item:hover .luxury-nav-text {
+    color: #f59e0b;
+    transform: translateX(4px);
+}
+.luxury-active-badge {
+    color: #f59e0b;
+    font-size: 13px;
+}
+@keyframes luxuryNavSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   7. INSIDE HARI OM ATMOSPHERE SWIPER SLIDER
+   ========================================================================== */
+.inside-swiper {
+    width: 100%;
+}
+.inside-swiper-prev,
+.inside-swiper-next {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #171717;
+}
+.inside-swiper-prev:hover,
+.inside-swiper-next:hover {
+    background-color: #f59e0b !important;
+    border-color: #d97706 !important;
+    color: #171717 !important;
+    transform: scale(1.06);
+}
+.inside-swiper-prev.swiper-button-disabled,
+.inside-swiper-next.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* Minimal Golden Pagination Indicators */
+.inside-swiper-pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.inside-bullet {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background-color: rgba(124, 45, 18, 0.25);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+.inside-bullet-active {
+    width: 22px;
+    height: 7px;
+    background-color: #d97706;
+}

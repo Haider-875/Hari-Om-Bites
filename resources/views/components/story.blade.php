@@ -55,17 +55,17 @@
                     </div>
                 </div>
 
-                <!-- CTA Button (Standard website btn-primary, zero-arrow) -->
-                <div class="mt-4 pt-2">
-                    <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
+                <!-- CTA Button (Standard website btn-primary, zero-arrow, centered on mobile) -->
+                <div class="mt-4 pt-2 d-flex justify-content-center justify-content-sm-start">
+                    <a href="{{ route('menu') }}" class="btn-primary" style="min-height: 44px;">
                         See the full menu
                     </a>
                 </div>
-                <p class="mt-4 text-uppercase text-ink-40 mb-0" style="font-size: clamp(10px, 2.4vw, 11px); letter-spacing: 0.16em;">1528 S Cushman St · Fairbanks, Alaska</p>
+                <p class="mt-4 text-uppercase text-ink-40 mb-0 text-center text-sm-start" style="font-size: clamp(10px, 2.4vw, 11px); letter-spacing: 0.16em;">1528 S Cushman St · Fairbanks, Alaska</p>
             </div>
         </div>
 
-        <!-- Inside Hari Om: Atmosphere Gallery -->
+        <!-- Inside Hari Om: Atmosphere Carousel Slider -->
         <div class="mt-5 pt-4 pt-lg-5">
             <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-end gap-3 pb-4 border-top border-terracotta-15 pt-5">
                 <div>
@@ -79,50 +79,89 @@
                 </p>
             </div>
 
-            <div class="row g-4 mt-2">
-                <!-- Shrine -->
-                <div class="col-12 col-md-4">
-                    <figure class="m-0 group">
-                        <div class="position-relative aspect-4-3 w-100 overflow-hidden rounded-sm bg-cream shadow-sm">
-                            <img src="/images/cultureShrine.jpg" 
-                                 class="w-100 h-100 position-absolute inset-0 object-cover transition-transform hover-scale-103" 
-                                 alt="Ganesh, fresh flowers and a hand-painted Om on the green wall — the heart of our dining room.">
+            <!-- Interactive Carousel Container -->
+            <div class="position-relative mt-4">
+                <div class="swiper inside-swiper overflow-hidden pb-4">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1: The Shrine -->
+                        <div class="swiper-slide h-auto">
+                            <figure class="m-0 h-100 d-flex flex-column rounded-sm overflow-hidden bg-cream border border-terracotta-15 shadow-sm transition-all hover-scale-103">
+                                <div class="position-relative aspect-4-3 w-100 overflow-hidden bg-ink">
+                                    <img src="/images/cultureShrine.jpg" 
+                                         class="w-100 h-100 object-cover" 
+                                         alt="The shrine — Ganesh, fresh flowers and a hand-painted Om on the green wall — the heart of our dining room." 
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
+                                    <div>
+                                        <p class="text-uppercase text-saffron fw-semibold mb-1" style="font-size: 9px; letter-spacing: 0.22em;">The shrine</p>
+                                        <h4 class="font-display text-ember mb-1" style="font-size: 1.15rem;">Heart of Our Dining Room</h4>
+                                        <p class="text-ink-60 mb-0" style="font-size: 12px; line-height: 1.6;">Ganesh, fresh flowers and a hand-painted Om on the green wall — the heart of our dining room.</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
                         </div>
-                        <figcaption class="mt-3">
-                            <p class="text-uppercase text-terracotta-70 mb-1" style="font-size: 9px; letter-spacing: 0.22em;">The shrine</p>
-                            <p class="text-ink-55 mb-0" style="font-size: 12px; line-height: 1.6;">Ganesh, fresh flowers and a hand-painted Om on the green wall — the heart of our dining room.</p>
-                        </figcaption>
-                    </figure>
-                </div>
 
-                <!-- Booths & Murals -->
-                <div class="col-12 col-md-4">
-                    <figure class="m-0 group">
-                        <div class="position-relative aspect-4-3 w-100 overflow-hidden rounded-sm bg-cream shadow-sm">
-                            <img src="/images/cultureBooths.jpg" 
-                                 class="w-100 h-100 position-absolute inset-0 object-cover transition-transform hover-scale-103" 
-                                 alt="Burgundy booths under our Alaska mural, hung with fabric lanterns and fairy lights.">
+                        <!-- Slide 2: Booths & Murals -->
+                        <div class="swiper-slide h-auto">
+                            <figure class="m-0 h-100 d-flex flex-column rounded-sm overflow-hidden bg-cream border border-terracotta-15 shadow-sm transition-all hover-scale-103">
+                                <div class="position-relative aspect-4-3 w-100 overflow-hidden bg-ink">
+                                    <img src="/images/cultureBooths.jpg" 
+                                         class="w-100 h-100 object-cover" 
+                                         alt="Burgundy booths under our Alaska mural, hung with fabric lanterns and fairy lights." 
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
+                                    <div>
+                                        <p class="text-uppercase text-saffron fw-semibold mb-1" style="font-size: 9px; letter-spacing: 0.22em;">Booths &amp; murals</p>
+                                        <h4 class="font-display text-ember mb-1" style="font-size: 1.15rem;">Warmth &amp; Lantern Light</h4>
+                                        <p class="text-ink-60 mb-0" style="font-size: 12px; line-height: 1.6;">Burgundy booths under our Alaska mural, hung with fabric lanterns and fairy lights.</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
                         </div>
-                        <figcaption class="mt-3">
-                            <p class="text-uppercase text-terracotta-70 mb-1" style="font-size: 9px; letter-spacing: 0.22em;">Booths &amp; murals</p>
-                            <p class="text-ink-55 mb-0" style="font-size: 12px; line-height: 1.6;">Burgundy booths under our Alaska mural, hung with fabric lanterns and fairy lights.</p>
-                        </figcaption>
-                    </figure>
-                </div>
 
-                <!-- Door on Cushman -->
-                <div class="col-12 col-md-4">
-                    <figure class="m-0 group">
-                        <div class="position-relative aspect-4-3 w-100 overflow-hidden rounded-sm bg-cream shadow-sm">
-                            <img src="/images/cultureExterior.jpg" 
-                                 class="w-100 h-100 position-absolute inset-0 object-cover transition-transform hover-scale-103" 
-                                 alt="Up the red stairs on South Cushman Street — look for the Om and the gold drapes.">
+                        <!-- Slide 3: Our Door on Cushman -->
+                        <div class="swiper-slide h-auto">
+                            <figure class="m-0 h-100 d-flex flex-column rounded-sm overflow-hidden bg-cream border border-terracotta-15 shadow-sm transition-all hover-scale-103">
+                                <div class="position-relative aspect-4-3 w-100 overflow-hidden bg-ink">
+                                    <img src="/images/cultureExterior.jpg" 
+                                         class="w-100 h-100 object-cover" 
+                                         alt="Up the red stairs on South Cushman Street — look for the Om and the gold drapes." 
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
+                                    <div>
+                                        <p class="text-uppercase text-saffron fw-semibold mb-1" style="font-size: 9px; letter-spacing: 0.22em;">Our door on Cushman</p>
+                                        <h4 class="font-display text-ember mb-1" style="font-size: 1.15rem;">Welcome to Hari Om</h4>
+                                        <p class="text-ink-60 mb-0" style="font-size: 12px; line-height: 1.6;">Up the red stairs on South Cushman Street — look for the Om and the gold drapes.</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
                         </div>
-                        <figcaption class="mt-3">
-                            <p class="text-uppercase text-terracotta-70 mb-1" style="font-size: 9px; letter-spacing: 0.22em;">Our door on Cushman</p>
-                            <p class="text-ink-55 mb-0" style="font-size: 12px; line-height: 1.6;">Up the red stairs on South Cushman Street — look for the Om and the gold drapes.</p>
-                        </figcaption>
-                    </figure>
+                    </div>
+
+                    <!-- Slider Minimal Golden Arrow Navigation & Pagination Controls -->
+                    <div class="d-flex align-items-center justify-content-between mt-3 pt-2">
+                        <!-- Navigation Arrows -->
+                        <div class="d-flex align-items-center gap-2">
+                            <button type="button" 
+                                    class="inside-swiper-prev rounded-circle border border-terracotta-25 bg-paper d-flex align-items-center justify-content-center text-ink transition-all cursor-pointer shadow-xs"
+                                    style="width: 40px; height: 40px; min-width: 40px; min-height: 40px;"
+                                    aria-label="Previous slide">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            </button>
+                            <button type="button" 
+                                    class="inside-swiper-next rounded-circle border border-terracotta-25 bg-paper d-flex align-items-center justify-content-center text-ink transition-all cursor-pointer shadow-xs"
+                                    style="width: 40px; height: 40px; min-width: 40px; min-height: 40px;"
+                                    aria-label="Next slide">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </button>
+                        </div>
+
+                        <!-- Golden Progress Indicators / Pagination Dots -->
+                        <div class="inside-swiper-pagination d-flex align-items-center justify-content-end gap-1 flex-grow-1 ms-3"></div>
+                    </div>
                 </div>
             </div>
         </div>

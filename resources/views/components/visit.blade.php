@@ -39,16 +39,13 @@
                     </div>
                 </dl>
 
-                <div class="mt-4 pt-2 d-flex flex-column flex-sm-row gap-3">
+                <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start align-items-center gap-3">
                     <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
                         Get directions
                     </a>
-                    <!-- <a href="tel:+19073283218" class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
-                        Call to order
-                    </a> -->
                     <button type="button" 
                             @click="reservationOpen = true"
-                            class="btn-secondary-dark w-100 w-sm-auto text-center justify-content-center"
+                            class="btn-primary w-100 w-sm-auto text-center justify-content-center"
                             style="min-height: 44px;">
                         Book a Table
                     </button>

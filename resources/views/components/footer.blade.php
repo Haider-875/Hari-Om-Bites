@@ -53,7 +53,7 @@
                     <span>+1 907-328-3218</span>
                 </a>
                 <!-- <div class="mt-4">
-                    <a href="tel:+19073283218" class="btn-secondary-dark">
+                    <a href="tel:+19073283218" class="btn-primary">
                         Call to order
                     </a>
                 </div> -->

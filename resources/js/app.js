@@ -68,6 +68,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 2.3 Inside Hari Om Atmosphere Carousel Slider
+    const insideSlider = document.querySelector('.inside-swiper');
+    if (insideSlider) {
+        new Swiper(insideSlider, {
+            modules: [Navigation, Pagination, Autoplay],
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            speed: 650,
+            loop: true,
+            grabCursor: true,
+            navigation: {
+                nextEl: '.inside-swiper-next',
+                prevEl: '.inside-swiper-prev'
+            },
+            pagination: {
+                el: '.inside-swiper-pagination',
+                clickable: true,
+                bulletClass: 'inside-bullet',
+                bulletActiveClass: 'inside-bullet-active'
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 24
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 28
+                }
+            }
+        });
+    }
+
     // 2.5 Chef's Selection Signature Dishes Slider
     const chefSlider = document.querySelector('.chef-swiper');
     if (chefSlider) {
