@@ -337,10 +337,10 @@ a {
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
-    font-size: 11px;
+    font-size: 11.5px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    min-height: 44px;
+    letter-spacing: 0.14em;
+    min-height: 38px;
     cursor: pointer;
     text-decoration: none;
     touch-action: manipulation;
@@ -433,7 +433,10 @@ a {
     background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
     color: #171717 !important;
     font-weight: 600;
-    padding: 0.9rem 1.85rem;
+    padding: 0.62rem 1.4rem;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    min-height: 38px;
     border: none !important;
     box-shadow: 0 10px 25px -10px rgba(217, 119, 6, 0.45);
 }
@@ -470,7 +473,10 @@ a {
     -webkit-backdrop-filter: blur(8px);
     color: #fdfbf7 !important;
     font-weight: 500;
-    padding: 0.85rem 1.85rem;
+    padding: 0.6rem 1.4rem;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    min-height: 38px;
 }
 .btn-secondary::before {
     background: linear-gradient(90deg, #b45309 0%, #d97706 40%, #f59e0b 80%, #fbbf24 100%);
@@ -490,11 +496,11 @@ a {
 
 /* Hero Banner CTA Buttons — Identical Width & Compact Size */
 .hero-cta-btn {
-    width: 195px !important;
-    min-height: 44px !important;
-    font-size: 13.5px !important;
+    width: 175px !important;
+    min-height: 38px !important;
+    font-size: 11.5px !important;
     letter-spacing: 0.12em !important;
-    padding: 12px 20px !important;
+    padding: 9px 16px !important;
     justify-content: center !important;
     text-align: center !important;
     white-space: nowrap !important;
@@ -527,7 +533,7 @@ a {
         letter-spacing: 0.22em !important;
     }
 
-    /* Buttons Centered & Proportionate (13-14px) on Mobile */
+    /* Buttons Centered & Proportionate (Compact Size) on Mobile */
     .btn-primary,
     .btn-secondary,
     .btn-secondary-dark,
@@ -540,19 +546,19 @@ a {
         margin-right: auto !important;
         justify-content: center !important;
         text-align: center !important;
-        font-size: 13.5px !important;
-        padding: 12px 22px !important;
-        min-height: 44px !important;
+        font-size: 11px !important;
+        padding: 8px 18px !important;
+        min-height: 38px !important;
         letter-spacing: 0.12em !important;
     }
 
     /* Hero Banner Buttons — Identical Width & Compact Size on Mobile */
     .hero-cta-btn {
-        width: 205px !important;
+        width: 175px !important;
         max-width: 82% !important;
-        font-size: 13px !important;
-        padding: 11px 18px !important;
-        min-height: 44px !important;
+        font-size: 11px !important;
+        padding: 8px 16px !important;
+        min-height: 38px !important;
     }
 
     /* Center and neatly stack button containers on mobile */

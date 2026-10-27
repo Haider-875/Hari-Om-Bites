@@ -57,7 +57,7 @@
 
                 <!-- CTA Button (Standard website btn-primary, zero-arrow, centered on mobile) -->
                 <div class="mt-4 pt-2 d-flex justify-content-center justify-content-sm-start">
-                    <a href="{{ route('menu') }}" class="btn-primary" style="min-height: 44px;">
+                    <a href="{{ route('menu') }}" class="btn-primary" style="min-height: 38px;">
                         See the full menu
                     </a>
                 </div>

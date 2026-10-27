@@ -97,8 +97,8 @@
                                 <textarea name="special_requests" rows="3" class="form-control mt-2 border-terracotta-20 bg-paper text-ink" placeholder="Let us know if celebrating an anniversary, preferred booth seating, or severe allergies."></textarea>
                             </div>
 
-                            <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-3" style="min-height: 44px;">
-                                Request Table Reservation
+                            <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-3" style="min-height: 38px;">
+                                Table Reservation
                             </button>
                         </form>
                     </div>

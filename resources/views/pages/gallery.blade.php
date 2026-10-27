@@ -63,7 +63,7 @@
             </div>
 
             <div class="d-none d-sm-block flex-shrink-0">
-                <a href="{{ route('menu') }}" class="btn-primary" style="min-height: 44px;">
+                <a href="{{ route('menu') }}" class="btn-primary" style="min-height: 38px;">
                     View Menu
                 </a>
             </div>
@@ -134,10 +134,10 @@
                         <h3 class="mt-2 font-display fs-2 text-ember m-0" x-text="activeItem.title"></h3>
                         <p class="mt-3 small leading-relaxed text-ink-75 m-0" x-text="activeItem.caption"></p>
                         <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start align-items-center gap-3">
-                            <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
+                            <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                                 Order on Menu
                             </a>
-                            <button type="button" @click="modalOpen = false" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
+                            <button type="button" @click="modalOpen = false" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                                 Close Preview
                             </button>
                         </div>
@@ -154,10 +154,10 @@
             <h2 class="mt-3 font-display text-ember display-title-section m-0">Join Us for Dinner Tonight</h2>
             <p class="mt-3 small text-ink-65 m-0">Serving authentic Punjabi flavors on S Cushman Street in Fairbanks.</p>
             <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
-                <a href="{{ route('reservations') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
+                <a href="{{ route('reservations') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                     Book a Table
                 </a>
-                <a href="tel:+19073283218" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
+                <a href="tel:+19073283218" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                     Call +1 907-328-3218
                 </a>
             </div>

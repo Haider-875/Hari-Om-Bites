@@ -35,7 +35,7 @@
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
-                        <a href="{{ route('reservations') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 13.5px; min-height: 44px;">
+                        <a href="{{ route('reservations') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 38px;">
                             Book a table
                         </a>
                     </div>
@@ -55,7 +55,7 @@
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
-                        <a href="tel:+19073283218" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 13.5px; min-height: 44px;">
+                        <a href="tel:+19073283218" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 38px;">
                             Order takeout
                         </a>
                     </div>
@@ -75,7 +75,7 @@
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-top border-white-10 text-center d-flex justify-content-center">
-                        <a href="{{ route('contact') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 13.5px; min-height: 44px;">
+                        <a href="{{ route('contact') }}" class="btn-primary py-2 px-3 tracking-wider-custom text-uppercase text-center justify-content-center" style="font-size: 11px; min-height: 38px;">
                             Catering Quote
                         </a>
                     </div>

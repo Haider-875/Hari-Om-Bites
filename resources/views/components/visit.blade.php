@@ -40,13 +40,13 @@
                 </dl>
 
                 <div class="mt-4 pt-2 d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start align-items-center gap-3">
-                    <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px;">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=1528+S+Cushman+St,+Fairbanks,+AK+99701" target="_blank" rel="noreferrer" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 38px;">
                         Get directions
                     </a>
                     <button type="button" 
                             @click="reservationOpen = true"
                             class="btn-primary w-100 w-sm-auto text-center justify-content-center"
-                            style="min-height: 44px;">
+                            style="min-height: 38px;">
                         Book a Table
                     </button>
                 </div>
@@ -136,7 +136,7 @@
                     <label class="d-block text-uppercase tracking-wider-custom text-ink-60 m-0" style="font-size: 10px;">Special Requests</label>
                     <textarea name="special_requests" rows="2" class="form-control form-control-sm mt-1 bg-white-70 border-terracotta-20"></textarea>
                 </div>
-                <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-2" style="min-height: 44px;">
+                <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-2" style="min-height: 38px;">
                     Confirm Reservation Request
                 </button>
             </form>
