@@ -317,133 +317,195 @@ a {
     background-size: 8px 1px;
 }
 
-/* Buttons */
-.btn-primary {
+/* Buttons — Liquid Flow Dynamic System */
+.btn-primary,
+.btn-secondary,
+.btn-secondary-dark,
+.btn-terracotta,
+.ref-menu-cta {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
     border-radius: 9999px;
-    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-    color: #171717 !important;
-    font-weight: 600;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    padding: 0.9rem 1.85rem;
     min-height: 44px;
-    border: none;
-    box-shadow: 0 10px 25px -10px rgba(217, 119, 6, 0.45);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     text-decoration: none;
     touch-action: manipulation;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.35s ease;
 }
 
+/* Ensure all child icons and text remain on top of liquid */
+.btn-primary > *,
+.btn-secondary > *,
+.btn-secondary-dark > *,
+.btn-terracotta > *,
+.ref-menu-cta > * {
+    position: relative;
+    z-index: 2;
+    transition: color 0.35s ease, transform 0.35s ease;
+}
+
+/* 1. Primary Liquid Wave Body (Left-to-Right Flow with Fluid Meniscus) */
+.btn-primary::before,
+.btn-secondary::before,
+.btn-secondary-dark::before,
+.btn-terracotta::before,
+.ref-menu-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 135%;
+    height: 100%;
+    border-radius: 0 9999px 9999px 0;
+    transform: translateX(-108%) skewX(-14deg);
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* 2. Secondary Liquid Specular Sheen (Reflective Light Wave) */
+.btn-primary::after,
+.btn-secondary::after,
+.btn-secondary-dark::after,
+.btn-terracotta::after,
+.ref-menu-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.22) 40%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-160%) skewX(-20deg);
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Liquid Hover Activation */
+.btn-primary:hover::before,
+.btn-secondary:hover::before,
+.btn-secondary-dark:hover::before,
+.btn-terracotta:hover::before,
+.ref-menu-cta:hover::before {
+    transform: translateX(0%) skewX(0deg);
+}
+
+.btn-primary:hover::after,
+.btn-secondary:hover::after,
+.btn-secondary-dark:hover::after,
+.btn-terracotta:hover::after,
+.ref-menu-cta:hover::after {
+    transform: translateX(260%) skewX(-20deg);
+}
+
+/* Button Variants: Colors & Shadows */
+.btn-primary {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    color: #171717 !important;
+    font-weight: 600;
+    padding: 0.9rem 1.85rem;
+    border: none;
+    box-shadow: 0 10px 25px -10px rgba(217, 119, 6, 0.45);
+}
+.btn-primary::before {
+    background: linear-gradient(90deg, #b45309 0%, #d97706 35%, #f59e0b 75%, #fbbf24 100%);
+}
 .btn-primary:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-    box-shadow: 0 14px 32px -10px rgba(217, 119, 6, 0.65);
+    box-shadow: 0 14px 32px -10px rgba(217, 119, 6, 0.65), 0 0 20px rgba(245, 158, 11, 0.35);
     color: #0a0a0a !important;
 }
-
 .btn-primary:active {
     transform: translateY(0) scale(0.98);
     box-shadow: 0 4px 12px -4px rgba(217, 119, 6, 0.4);
 }
 
 .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border-radius: 9999px;
     border: 1px solid rgba(255, 255, 255, 0.28);
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: #fdfbf7 !important;
     font-weight: 500;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
     padding: 0.85rem 1.85rem;
-    min-height: 44px;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-    text-decoration: none;
-    touch-action: manipulation;
 }
-
+.btn-secondary::before {
+    background: linear-gradient(90deg, #b45309 0%, #d97706 40%, #f59e0b 80%, #fbbf24 100%);
+}
 .btn-secondary:hover {
-    border-color: #d97706;
-    background-color: rgba(217, 119, 6, 0.12);
-    color: #ffffff !important;
+    border-color: #f59e0b;
+    color: #171717 !important;
     transform: translateY(-2px);
+    box-shadow: 0 12px 28px -8px rgba(217, 119, 6, 0.5);
 }
-
+.btn-secondary:hover > * {
+    color: #171717 !important;
+}
 .btn-secondary:active {
     transform: translateY(0) scale(0.98);
 }
 
 .btn-secondary-dark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border-radius: 9999px;
     border: 1.5px solid rgba(124, 45, 18, 0.65);
     background-color: rgba(124, 45, 18, 0.04);
     color: #7c2d12 !important;
     font-weight: 600;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
     padding: 0.85rem 1.85rem;
-    min-height: 44px;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-    text-decoration: none;
-    touch-action: manipulation;
 }
-
+.btn-secondary-dark::before {
+    background: linear-gradient(90deg, #7c2d12 0%, #991b1b 50%, #b91c1c 100%);
+}
 .btn-secondary-dark:hover {
     border-color: #7c2d12;
-    background-color: #7c2d12;
+    background-color: transparent;
     color: #fdfbf7 !important;
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px -8px rgba(124, 45, 18, 0.3);
+    box-shadow: 0 10px 24px -8px rgba(124, 45, 18, 0.35);
+}
+.btn-secondary-dark:hover > * {
+    color: #fdfbf7 !important;
+}
+.btn-secondary-dark:active {
+    transform: translateY(0) scale(0.98);
 }
 
 .btn-terracotta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
     background-color: #7c2d12;
     color: #fdfbf7 !important;
     font-weight: 600;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
     padding: 0.9rem 1.85rem;
-    min-height: 44px;
     border: none;
     box-shadow: 0 10px 25px -10px rgba(124, 45, 18, 0.4);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-    text-decoration: none;
-    touch-action: manipulation;
 }
-
+.btn-terracotta::before,
+.ref-menu-cta::before {
+    background: linear-gradient(90deg, #601804 0%, #7c2d12 30%, #8b2519 65%, #b91c1c 100%);
+}
 .btn-terracotta:hover {
-    background-color: #8b2519;
     transform: translateY(-2px);
     box-shadow: 0 14px 32px -10px rgba(139, 37, 25, 0.55);
     color: #ffffff !important;
 }
-
 .btn-terracotta:active {
     transform: translateY(0) scale(0.98);
 }
@@ -1141,23 +1203,13 @@ a {
 
 /* Signature Reference View Full Menu Button */
 .ref-menu-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     gap: 0.75rem;
-    border-radius: 9999px;
     background-color: var(--color-terracotta);
     padding: 1rem 2rem;
     font-size: 10px;
-    text-transform: uppercase;
     letter-spacing: 0.22em;
-    color: var(--color-paper);
-    text-decoration: none;
-    min-height: 44px;
-    touch-action: manipulation;
-    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 14px rgba(124, 45, 18, 0.2);
+    color: var(--color-paper) !important;
+    box-shadow: 0 4px 14px rgba(124, 45, 18, 0.25);
     margin-top: 2.5rem;
 }
 @media (max-width: 480px) {
@@ -1169,9 +1221,9 @@ a {
     }
 }
 .ref-menu-cta:hover {
-    background-color: var(--color-ink);
-    color: var(--color-paper);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px -10px rgba(139, 37, 25, 0.55);
+    color: #ffffff !important;
 }
 .ref-menu-cta-bar {
     display: block;
