@@ -71,12 +71,12 @@
             </p>
 
             <!-- Redesigned CTA Button System -->
-            <div class="hero-buttons mt-4 d-flex w-100 flex-column flex-sm-row align-items-center justify-content-center gap-3" style="max-width: 500px;">
-                <a href="{{ route('menu') }}" class="btn-primary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px; padding: 0.85rem 1.75rem;">
+            <div class="hero-buttons mt-4 d-flex w-100 flex-column flex-sm-row align-items-center justify-content-center gap-3" style="max-width: 480px;">
+                <a href="{{ route('menu') }}" class="btn-primary hero-cta-btn text-center justify-content-center">
                     Explore our menu
                 </a>
-                <a href="tel:+19073283218" class="btn-secondary w-100 w-sm-auto text-center justify-content-center" style="min-height: 44px; padding: 0.85rem 1.75rem;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone me-2 flex-shrink-0 d-inline-block"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <a href="tel:+19073283218" class="btn-secondary hero-cta-btn text-center justify-content-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone me-2 flex-shrink-0 d-inline-block"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     Call to order
                 </a>
             </div>
@@ -84,7 +84,7 @@
     </div>
 
     <!-- Slider Pagination Indicators (Separated with generous breathing room) -->
-    <div class="hero-pagination position-absolute start-50 translate-middle-x d-flex justify-content-center gap-2" style="bottom: 7.25rem; z-index: 20;"></div>
+    <div class="hero-pagination position-absolute start-50 translate-middle-x my-4 d-flex justify-content-center gap-2" style="bottom: 4.85rem; z-index: 20;"></div>
 
     <!-- Animated Center Scroll Indicator (Luxury Flowing Saffron Light Beam) -->
     <a href="#story" 

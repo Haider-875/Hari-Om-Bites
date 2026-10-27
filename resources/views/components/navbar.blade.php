@@ -66,15 +66,15 @@
         <!-- Action Buttons & Animated Mobile Toggle -->
         <div class="d-flex align-items-center justify-content-end gap-2 gap-sm-3 flex-grow-1" style="flex-basis: 0;">
             <a href="tel:+19073283218" 
-               class="d-none d-sm-inline-flex align-items-center gap-2 rounded-pill border px-3 py-2 text-uppercase transition-all text-decoration-none"
-               style="font-size: 10px; letter-spacing: 0.2em; min-height: 44px;"
+               class="d-none d-sm-inline-flex align-items-center gap-2 rounded-pill border px-3 text-uppercase transition-all text-decoration-none"
+               style="font-size: 9.5px; letter-spacing: 0.18em; min-height: 36px; padding-top: 0.42rem; padding-bottom: 0.42rem;"
                :class="scrolled ? 'border-ink-20 text-ink' : 'border-white-30 text-white'">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 Call
             </a>
             <a href="{{ route('reservations') }}" 
-               class="btn-primary d-none d-md-inline-flex text-decoration-none" style="padding: 0.65rem 1.25rem; font-size: 10px; min-height: 44px;">
-                Book a Table
+               class="btn-primary d-none d-md-inline-flex text-decoration-none" style="padding: 0.45rem 1.05rem; font-size: 9.5px; min-height: 36px; letter-spacing: 0.16em;">
+                Reservation
             </a>
 
             <!-- Unique Animated Luxury Hamburger Button (44×44px touch target) -->
@@ -212,11 +212,11 @@
             <!-- Bottom CTA & Contact Details -->
             <div class="luxury-mobile-footer pt-4 pb-2 border-top border-white-10 text-center">
                 <!-- Golden-Yellow CTA Button -->
-                <div class="d-flex justify-content-center mb-4">
+                <div class="d-flex justify-content-center mb-3">
                     <a @click="mobileMenuOpen = false" 
                        href="{{ route('reservations') }}" 
                        class="btn-primary text-decoration-none"
-                       style="min-height: 46px; font-size: 13px; padding: 13px 28px; width: auto; max-width: calc(100% - 24px);">
+                       style="min-height: 38px; font-size: 11px; padding: 10px 22px; width: auto; max-width: 210px; letter-spacing: 0.15em;">
                         Book a Table
                     </a>
                 </div>

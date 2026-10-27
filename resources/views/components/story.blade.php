@@ -142,7 +142,7 @@
                     </div>
 
                     <!-- Slider Minimal Golden Arrow Navigation & Pagination Controls -->
-                    <div class="d-flex align-items-center justify-content-between mt-3 pt-2">
+                    <div class="d-flex align-items-center justify-content-between mt-4 pt-3 pb-2">
                         <!-- Navigation Arrows -->
                         <div class="d-flex align-items-center gap-2">
                             <button type="button" 
