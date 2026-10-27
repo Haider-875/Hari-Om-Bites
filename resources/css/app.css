@@ -613,6 +613,20 @@ a {
         letter-spacing: 0.12em !important;
     }
 
+    /* Contact Page — Send Us a Message Form Inputs on Mobile */
+    .contact-form-input {
+        font-size: 14px !important;
+        padding: 0.55rem 0.85rem !important;
+        border-radius: 4px !important;
+    }
+    .contact-form-input::placeholder {
+        font-size: 14px !important;
+    }
+    .contact-form-input:focus,
+    .contact-form-input:not(:placeholder-shown) {
+        font-size: 12px !important;
+    }
+
     /* Our Menu Section & Headings (Compact & Proportionate on Mobile) */
     .ref-menu-section {
         padding-top: 2.5rem !important;
@@ -1979,6 +1993,21 @@ img.object-cover {
     line-height: 1.2 !important;
     letter-spacing: 0.12em !important;
     white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   CONTACT PAGE — FORM INPUTS TYPOGRAPHY
+   ========================================================================== */
+.contact-form-input {
+    font-size: 14px;
+}
+.contact-form-input::placeholder {
+    font-size: 14px !important;
+    color: rgba(23, 23, 23, 0.45) !important;
+}
+.contact-form-input:focus,
+.contact-form-input:not(:placeholder-shown) {
+    font-size: 12px !important;
 }
 
 /* ==========================================================================

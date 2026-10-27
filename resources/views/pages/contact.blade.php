@@ -111,28 +111,28 @@
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <label class="d-block text-uppercase tracking-wider-custom text-ink-70 m-0" style="font-size: 10px;">Your Name *</label>
-                                    <input type="text" name="name" required class="form-control mt-2 border-terracotta-20 bg-paper text-ink" placeholder="Your Name">
+                                    <input type="text" name="name" required class="form-control contact-form-input mt-2 border-terracotta-20 bg-paper text-ink" placeholder="Your Name">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <label class="d-block text-uppercase tracking-wider-custom text-ink-70 m-0" style="font-size: 10px;">Email Address *</label>
-                                    <input type="email" name="email" required class="form-control mt-2 border-terracotta-20 bg-paper text-ink" placeholder="you@example.com">
+                                    <input type="email" name="email" required class="form-control contact-form-input mt-2 border-terracotta-20 bg-paper text-ink" placeholder="you@example.com">
                                 </div>
                             </div>
 
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <label class="d-block text-uppercase tracking-wider-custom text-ink-70 m-0" style="font-size: 10px;">Phone Number</label>
-                                    <input type="tel" name="phone" class="form-control mt-2 border-terracotta-20 bg-paper text-ink" placeholder="+1 (907) ...">
+                                    <input type="tel" name="phone" class="form-control contact-form-input mt-2 border-terracotta-20 bg-paper text-ink" placeholder="+1 (907) ...">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <label class="d-block text-uppercase tracking-wider-custom text-ink-70 m-0" style="font-size: 10px;">Inquiry Subject</label>
-                                    <input type="text" name="subject" class="form-control mt-2 border-terracotta-20 bg-paper text-ink" placeholder="General, Catering, Banquets">
+                                    <input type="text" name="subject" class="form-control contact-form-input mt-2 border-terracotta-20 bg-paper text-ink" placeholder="General, Catering, Banquets">
                                 </div>
                             </div>
 
                             <div>
                                 <label class="d-block text-uppercase tracking-wider-custom text-ink-70 m-0" style="font-size: 10px;">Your Message *</label>
-                                <textarea name="message" rows="5" required class="form-control mt-2 border-terracotta-20 bg-paper text-ink" placeholder="Tell us how we can help you..."></textarea>
+                                <textarea name="message" rows="5" required class="form-control contact-form-input mt-2 border-terracotta-20 bg-paper text-ink" placeholder="Tell us how we can help you..."></textarea>
                             </div>
 
                             <button type="submit" class="btn-primary w-100 text-center justify-content-center mt-3" style="min-height: 38px;">
