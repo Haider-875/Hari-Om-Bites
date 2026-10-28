@@ -119,8 +119,9 @@
                             <figure class="m-0 h-100 d-flex flex-column rounded-sm overflow-hidden bg-cream border border-terracotta-15 shadow-sm transition-all hover-scale-103">
                                 <div class="position-relative aspect-4-3 w-100 overflow-hidden bg-ink">
                                     <img src="/images/cultureShrine.jpg" 
-                                         class="w-100 h-100 object-cover" 
+                                         class="w-100 h-100 object-cover pointer-events-none user-select-none" 
                                          alt="The shrine — Ganesh, fresh flowers and a hand-painted Om on the green wall — the heart of our dining room." 
+                                         draggable="false"
                                          loading="lazy">
                                 </div>
                                 <figcaption class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
@@ -138,8 +139,9 @@
                             <figure class="m-0 h-100 d-flex flex-column rounded-sm overflow-hidden bg-cream border border-terracotta-15 shadow-sm transition-all hover-scale-103">
                                 <div class="position-relative aspect-4-3 w-100 overflow-hidden bg-ink">
                                     <img src="/images/cultureBooths.jpg" 
-                                         class="w-100 h-100 object-cover" 
+                                         class="w-100 h-100 object-cover pointer-events-none user-select-none" 
                                          alt="Burgundy booths under our Alaska mural, hung with fabric lanterns and fairy lights." 
+                                         draggable="false"
                                          loading="lazy">
                                 </div>
                                 <figcaption class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
@@ -152,13 +154,54 @@
                             </figure>
                         </div>
 
-                        <!-- Slide 3: Our Door on Cushman -->
+                        <!-- Slide 3: Dining Hall & Lanterns -->
+                        <div class="swiper-slide h-auto">
+                            <figure class="m-0 h-100 d-flex flex-column rounded-sm overflow-hidden bg-cream border border-terracotta-15 shadow-sm transition-all hover-scale-103">
+                                <div class="position-relative aspect-4-3 w-100 overflow-hidden bg-ink">
+                                    <img src="/images/hariomimage.jpg" 
+                                         class="w-100 h-100 object-cover pointer-events-none user-select-none" 
+                                         alt="Hari Om Cuisine of India dining booths with Alaska mural and warm glowing lanterns in Fairbanks" 
+                                         draggable="false"
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
+                                    <div>
+                                        <p class="text-uppercase text-saffron fw-semibold mb-1" style="font-size: 9px; letter-spacing: 0.22em;">Dining Hall</p>
+                                        <h4 class="font-display text-ember mb-1" style="font-size: 1.15rem;">Alaskan Hearth &amp; Lanterns</h4>
+                                        <p class="text-ink-60 mb-0" style="font-size: 12px; line-height: 1.6;">Warm wooden booths beneath fabric lanterns and our iconic hand-crafted Alaskan landscape mural.</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!-- Slide 4: Interior Dining -->
+                        <div class="swiper-slide h-auto">
+                            <figure class="m-0 h-100 d-flex flex-column rounded-sm overflow-hidden bg-cream border border-terracotta-15 shadow-sm transition-all hover-scale-103">
+                                <div class="position-relative aspect-4-3 w-100 overflow-hidden bg-ink">
+                                    <img src="/images/interior.png" 
+                                         class="w-100 h-100 object-cover pointer-events-none user-select-none" 
+                                         alt="Hari Om Cuisine of India warm dining room on Cushman Street Fairbanks" 
+                                         draggable="false"
+                                         loading="lazy">
+                                </div>
+                                <figcaption class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
+                                    <div>
+                                        <p class="text-uppercase text-saffron fw-semibold mb-1" style="font-size: 9px; letter-spacing: 0.22em;">Traditional Seating</p>
+                                        <h4 class="font-display text-ember mb-1" style="font-size: 1.15rem;">Comfortable Family Dining</h4>
+                                        <p class="text-ink-60 mb-0" style="font-size: 12px; line-height: 1.6;">Spacious seating designed for intimate family dinners, celebrations, and relaxing evenings.</p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!-- Slide 5: Our Door on Cushman -->
                         <div class="swiper-slide h-auto">
                             <figure class="m-0 h-100 d-flex flex-column rounded-sm overflow-hidden bg-cream border border-terracotta-15 shadow-sm transition-all hover-scale-103">
                                 <div class="position-relative aspect-4-3 w-100 overflow-hidden bg-ink">
                                     <img src="/images/cultureExterior.jpg" 
-                                         class="w-100 h-100 object-cover" 
+                                         class="w-100 h-100 object-cover pointer-events-none user-select-none" 
                                          alt="Up the red stairs on South Cushman Street — look for the Om and the gold drapes." 
+                                         draggable="false"
                                          loading="lazy">
                                 </div>
                                 <figcaption class="p-3 p-sm-4 d-flex flex-column justify-content-between flex-grow-1">
@@ -170,28 +213,6 @@
                                 </figcaption>
                             </figure>
                         </div>
-                    </div>
-
-                    <!-- Slider Minimal Golden Arrow Navigation & Pagination Controls -->
-                    <div class="d-flex align-items-center justify-content-between mt-4 pt-3 pb-2">
-                        <!-- Navigation Arrows -->
-                        <div class="d-flex align-items-center gap-2">
-                            <button type="button" 
-                                    class="inside-swiper-prev rounded-circle border border-terracotta-25 bg-paper d-flex align-items-center justify-content-center text-ink transition-all cursor-pointer shadow-xs"
-                                    style="width: 40px; height: 40px; min-width: 40px; min-height: 40px;"
-                                    aria-label="Previous slide">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                            </button>
-                            <button type="button" 
-                                    class="inside-swiper-next rounded-circle border border-terracotta-25 bg-paper d-flex align-items-center justify-content-center text-ink transition-all cursor-pointer shadow-xs"
-                                    style="width: 40px; height: 40px; min-width: 40px; min-height: 40px;"
-                                    aria-label="Next slide">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                            </button>
-                        </div>
-
-                        <!-- Golden Progress Indicators / Pagination Dots -->
-                        <div class="inside-swiper-pagination d-flex align-items-center justify-content-end gap-1 flex-grow-1 ms-3"></div>
                     </div>
                 </div>
             </div>

@@ -1813,6 +1813,22 @@ img.object-cover {
    ========================================================================== */
 .inside-swiper {
     width: 100%;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+}
+.inside-swiper:active {
+    cursor: grabbing;
+}
+.inside-swiper img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+    user-select: none;
+}
+.inside-swiper figure {
+    user-select: none;
 }
 .inside-swiper-prev,
 .inside-swiper-next {

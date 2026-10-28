@@ -68,38 +68,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2.3 Inside Hari Om Atmosphere Carousel Slider
+    // 2.3 Inside Hari Om Atmosphere Carousel Slider (Touch/Drag & Auto-scroll)
     const insideSlider = document.querySelector('.inside-swiper');
     if (insideSlider) {
         new Swiper(insideSlider, {
-            modules: [Navigation, Pagination, Autoplay],
-            slidesPerView: 1,
-            spaceBetween: 20,
+            modules: [Autoplay],
+            slidesPerView: 1.15,
+            spaceBetween: 18,
             autoplay: {
-                delay: 4500,
+                delay: 4000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
             },
-            speed: 650,
+            speed: 600,
             loop: true,
             grabCursor: true,
-            navigation: {
-                nextEl: '.inside-swiper-next',
-                prevEl: '.inside-swiper-prev'
-            },
-            pagination: {
-                el: '.inside-swiper-pagination',
-                clickable: true,
-                bulletClass: 'inside-bullet',
-                bulletActiveClass: 'inside-bullet-active'
-            },
+            allowTouchMove: true,
+            simulateTouch: true,
+            touchRatio: 1.2,
+            touchAngle: 45,
+            touchStartPreventDefault: false,
+            passiveListeners: true,
+            resistanceRatio: 0.85,
             breakpoints: {
-                640: {
-                    slidesPerView: 2,
+                540: {
+                    slidesPerView: 1.75,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 2.3,
                     spaceBetween: 24
                 },
                 1024: {
-                    slidesPerView: 3,
+                    slidesPerView: 3.25,
                     spaceBetween: 28
                 }
             }

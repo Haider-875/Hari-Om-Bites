@@ -47,7 +47,7 @@ class HomeController extends Controller
             ],
         ];
 
-        // Culture gallery images
+        // Culture gallery images (all atmosphere interior photos)
         $cultureGallery = [
             [
                 'title' => 'The shrine',
@@ -58,6 +58,16 @@ class HomeController extends Controller
                 'title' => 'Booths & murals',
                 'caption' => 'Burgundy booths under our Alaska mural, hung with fabric lanterns and fairy lights.',
                 'src' => asset('images/cultureBooths.jpg'),
+            ],
+            [
+                'title' => 'Dining Hall & Lanterns',
+                'caption' => 'Warm Alaskan hearth with traditional booths and glowing lanterns.',
+                'src' => asset('images/hariomimage.jpg'),
+            ],
+            [
+                'title' => 'Interior Dining',
+                'caption' => 'Cozy dining room and intimate booths on South Cushman Street.',
+                'src' => asset('images/interior.png'),
             ],
             [
                 'title' => 'Our door on Cushman',
