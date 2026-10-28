@@ -1927,6 +1927,12 @@ img.object-cover {
     justify-content: center !important;
 }
 
+@media (min-width: 768px) {
+    .visit-button-row {
+        justify-content: flex-start !important;
+    }
+}
+
 .contact-button-row .btn-primary,
 .gallery-button-row .btn-primary,
 .modal-button-row .btn-primary,
