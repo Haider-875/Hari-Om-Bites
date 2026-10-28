@@ -12,11 +12,12 @@
                     <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
                 </div>
 
-                <!-- Slide 2: Clay Tandoor Naan -->
+                <!-- Slide 2: Authentic Dining Ambiance -->
                 <div class="swiper-slide position-relative h-100 w-100 overflow-hidden">
-                    <img src="/images/tandoor.png" 
+                    <img src="/images/hariomimage.jpg" 
                          class="position-absolute inset-0 h-100 w-100 object-cover animate-ken-burns" 
-                         alt="Traditional Indian clay tandoor baking fresh naan in Fairbanks">
+                         style="object-position: center 60%;"
+                         alt="Hari Om Cuisine of India dining booths with Alaska mural and warm glowing lanterns in Fairbanks">
                     <div class="position-absolute inset-0 bg-ink-40"></div>
                     <div class="position-absolute inset-0 bg-gradient-b-hero"></div>
                 </div>

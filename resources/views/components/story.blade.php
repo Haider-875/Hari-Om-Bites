@@ -1,27 +1,42 @@
 <section id="story" class="position-relative overflow-hidden bg-paper py-5 py-sm-6 py-lg-7">
     <div class="max-w-92rem mx-auto px-4 px-sm-5">
         <div class="row align-items-center g-4 g-lg-5">
-            <!-- Visual Collage Column -->
+            <!-- Owner Visual Feature Column (Straight Image & Clean Badges) -->
             <div class="col-12 col-lg-6">
-                <div class="position-relative aspect-4-5 w-100 overflow-hidden rounded-sm bg-cream shadow-sm">
-                    <img src="/images/tandoor.png" 
-                         class="w-100 h-100 position-absolute inset-0 object-cover transition-transform hover-scale-105" 
-                         alt="Fresh naan being pressed onto the wall of a glowing clay tandoor in Fairbanks">
-                    <div class="position-absolute inset-0 bg-gradient-t-ink-subtle"></div>
-                </div>
-                <div class="row g-3 g-sm-4 mt-1 mt-sm-2">
-                    <div class="col-6">
-                        <div class="position-relative aspect-square w-100 overflow-hidden rounded-sm bg-cream shadow-sm">
-                            <img src="/images/spices.png" 
-                                 class="w-100 h-100 position-absolute inset-0 object-cover transition-transform hover-scale-105" 
-                                 alt="Whole Indian spices in dark ceramic bowls">
+                <div class="story-owner-container bg-cream mx-auto" style="max-width: 470px;">
+                    <!-- Straight Rectangular Portrait with 3:4.4 ratio -->
+                    <div class="position-relative w-100" style="aspect-ratio: 3 / 4.4; max-height: 560px;">
+                        <img src="/images/owner.jpg" 
+                             class="w-100 h-100 object-cover story-owner-img" 
+                             style="object-position: center 18%;"
+                             alt="Chef Amit Paul - Founder & Master Chef of Hari Om Cuisine of India">
+                        
+                        <!-- Subtle Bottom Vignette Gradient -->
+                        <div class="position-absolute inset-0 pointer-events-none" 
+                             style="background: linear-gradient(180deg, transparent 60%, rgba(23, 23, 23, 0.78) 100%);">
                         </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="position-relative aspect-square w-100 overflow-hidden rounded-sm bg-cream shadow-sm">
-                            <img src="/images/samosas.png" 
-                                 class="w-100 h-100 position-absolute inset-0 object-cover transition-transform hover-scale-105" 
-                                 alt="Golden samosas with chutney on a terracotta plate">
+
+                        <!-- Top-Left Corner Badge -->
+                        <div class="position-absolute" style="top: 16px; left: 16px; z-index: 3;">
+                            <div class="d-inline-flex align-items-center py-1 px-3 rounded-1 shadow-xs"
+                                 style="background: rgba(253, 251, 247, 0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(124, 45, 18, 0.2);">
+                                <span class="text-uppercase text-terracotta fw-semibold" style="font-size: 9px; letter-spacing: 0.16em;">Dum Pukht Master</span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Profile Card -->
+                        <div class="position-absolute" style="bottom: 16px; left: 16px; right: 16px; z-index: 3;">
+                            <div class="d-flex align-items-center justify-content-between p-3 rounded-2 shadow-sm"
+                                 style="background: rgba(23, 23, 23, 0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(217, 119, 6, 0.4);">
+                                <div class="min-w-0 pe-2">
+                                    <h3 class="font-display text-white mb-1 text-truncate" style="font-size: 1.3rem; font-weight: 600; line-height: 1.2; color: #ffffff !important;">Chef Amit Paul</h3>
+                                    <p class="text-white mb-0 text-truncate" style="font-size: 11px; line-height: 1.35; color: #ffffff !important;">Trained under Chef Imtiaz Qureshi · ITC Hotels</p>
+                                </div>
+                                <div class="text-end ps-3 ms-2 border-start border-white-20 flex-shrink-0 d-flex flex-column align-items-end justify-content-center">
+                                    <p class="font-display text-saffron mb-0 fw-bold" style="font-size: 1.4rem; line-height: 1;">35+</p>
+                                    <p class="text-uppercase fw-bold mb-0 mt-1" style="font-size: 9px; letter-spacing: 0.14em; line-height: 1.2; white-space: nowrap; color: #ffffff !important;">Years Of Mastery</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,13 +45,29 @@
             <!-- Story Copy & Metrics Column -->
             <div class="col-12 col-lg-6 ps-lg-4 ps-xl-5">
                 <p class="label-caps text-saffron mb-0" style="font-size: 10px; letter-spacing: 0.2em;">Our story</p>
-                <h2 class="mt-3 mt-lg-4 font-display text-ember display-title-section">
-                    Slow-cooked,<span class="d-block fst-italic text-terracotta">never rushed</span>
+                <h2 class="mt-2 mt-lg-3 font-display text-ember display-title-section">
+                    A Passion for<span class="d-block fst-italic text-terracotta">Authentic Indian Cuisine</span>
                 </h2>
-                <div class="mt-4 text-ink-70 d-flex flex-column gap-3" style="font-size: clamp(0.95rem, 1.1vw, 1.0625rem); line-height: 1.8;">
-                    <p class="mb-0">At Hari Om Cuisine of India we cook the way it is done back home: onions cooked down slowly until they sweeten, whole spices toasted and ground the same day, and naan pressed onto the hot wall of the tandoor until it blisters and puffs.</p>
-                    <p class="mb-0">Our kitchen on South Cushman Street serves Fairbanks the length of the Indian table — crisp pakoras and papad to start, creamy dhaba dal, palak paneer and Kashmiri dum aloo, slow-braised lamb rogan josh, saffron biryani and the full thali platter.</p>
-                    <p class="mb-0">Whether it is a weeknight take-out box or a table full of friends on a cold Alaskan evening, the food leaves the kitchen the same way: hot, generous and made to order.</p>
+
+                <div class="mt-4 text-ink-70 d-flex flex-column gap-3" style="font-size: clamp(0.95rem, 1.05vw, 1.025rem); line-height: 1.8;">
+                    <p class="mb-0">
+                        At <strong class="text-terracotta fw-semibold">Hari Om Cuisine of India</strong>, our story is rooted in tradition, passion, and a love for authentic Indian flavors.
+                    </p>
+                    <p class="mb-0">
+                        Founded by <strong class="text-terracotta fw-semibold">Chef Amit Paul</strong>, a master chef from Ranchi, India, our restaurant brings over <strong class="text-terracotta fw-semibold">35 years of culinary expertise</strong> to the heart of Fairbanks, Alaska.
+                    </p>
+                    <p class="mb-0">
+                        Having trained under the legendary Chef Imtiaz Qureshi at ITC Hotels, Chef Amit mastered the traditional art of <strong class="text-terracotta fw-semibold">Dum Pukht cooking</strong>, a time-honored technique celebrated for its rich aromas and exceptional flavors.
+                    </p>
+                    <p class="mb-0">
+                        With decades of experience in renowned kitchens across India, Chef Amit brings his knowledge, creativity, and dedication to every dish we serve.
+                    </p>
+                    <p class="mb-0">
+                        At Hari Om, we believe great food is more than a meal — it's an experience that brings people together.
+                    </p>
+                    <p class="mb-0 text-terracotta fw-semibold" style="font-style: italic;">
+                        From our kitchen to your table, every dish is crafted with passion, tradition, and a taste of India.
+                    </p>
                 </div>
 
                 <!-- Stats Ribbon -->
