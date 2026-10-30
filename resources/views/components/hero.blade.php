@@ -33,7 +33,7 @@
 
                 <!-- Slide 4: Warm Interior Ambiance -->
                 <div class="swiper-slide position-relative h-100 w-100 overflow-hidden">
-                    <img src="/images/interior.png" 
+                    <img src="/images/hero-interior.jpg" 
                          class="position-absolute inset-0 h-100 w-100 object-cover animate-ken-burns" 
                          alt="Hari Om Cuisine of India warm dining room on Cushman Street Fairbanks">
                     <div class="position-absolute inset-0 bg-ink-45"></div>

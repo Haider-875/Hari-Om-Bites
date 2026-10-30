@@ -116,7 +116,7 @@ class HariOmWebsiteTest extends TestCase
         $dashboardResponse = $this->get('/admin');
         $dashboardResponse->assertStatus(200);
         $dashboardResponse->assertSee('Dashboard Overview');
-        $dashboardResponse->assertSee('Total Menu Items');
+        $dashboardResponse->assertSee('Menu Dishes');
     }
 
     public function test_story_page_loads_successfully(): void
@@ -143,7 +143,7 @@ class HariOmWebsiteTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Reserve Your');
         $response->assertSee('Table Request');
-        $response->assertSee('Request Table Reservation');
+        $response->assertSee('Table Reservation');
     }
 
     public function test_contact_page_loads_successfully(): void

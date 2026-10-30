@@ -60,6 +60,12 @@ class MenuItem extends Model
             if (file_exists(public_path('images/' . $this->image . '.jpg'))) {
                 return asset('images/' . $this->image . '.jpg');
             }
+            if (file_exists(public_path('images/' . $this->image . '.webp'))) {
+                return asset('images/' . $this->image . '.webp');
+            }
+            if (file_exists(public_path('images/' . $this->image))) {
+                return asset('images/' . $this->image);
+            }
             if (str_starts_with($this->image, 'http')) {
                 return $this->image;
             }
