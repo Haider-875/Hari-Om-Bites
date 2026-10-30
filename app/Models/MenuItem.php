@@ -53,6 +53,27 @@ class MenuItem extends Model
 
     public function getImageUrlAttribute(): string
     {
+        // 1. If explicit 'menu/...' path is set on the model
+        if ($this->image && str_starts_with($this->image, 'menu/')) {
+            if (file_exists(public_path('images/' . $this->image . '.jpg'))) {
+                return asset('images/' . $this->image . '.jpg');
+            }
+            if (file_exists(public_path('images/' . $this->image . '.png'))) {
+                return asset('images/' . $this->image . '.png');
+            }
+        }
+
+        // 2. High-priority resolution from enhanced menu images folder
+        $catName = $this->category?->name ?? '';
+        $slug = \Illuminate\Support\Str::slug($this->name);
+        if (in_array($catName, ['Wine', 'Beer'])) {
+            $slug = \Illuminate\Support\Str::slug($catName . '-' . $this->name);
+        }
+        if (file_exists(public_path('images/menu/' . $slug . '.jpg'))) {
+            return asset('images/menu/' . $slug . '.jpg');
+        }
+
+        // 3. Fallback to image property if file exists
         if ($this->image) {
             if (file_exists(public_path('images/' . $this->image . '.png'))) {
                 return asset('images/' . $this->image . '.png');
@@ -70,6 +91,7 @@ class MenuItem extends Model
                 return $this->image;
             }
         }
+
         return asset('images/samosas.png');
     }
 }
